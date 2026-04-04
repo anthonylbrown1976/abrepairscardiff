@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AB Computer Repairs Cardiff &amp; South Wales | Expert PC Repair</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:      #0a0a0b;
+  --ink2:     #111114;
+  --ink3:     #18181d;
+  --smoke:    #1e1e24;
+  --silver:   #c8cdd6;
+  --platinum: #e8eaee;
+  --white:    #f8f9fb;
+  --pure:     #ffffff;
+  --gold:     #c9a84c;
+  --gold2:    #e8c96a;
+  --gold3:    #f5dfa0;
+  --gold-dim: rgba(201,168,76,0.1);
+  --gold-mid: rgba(201,168,76,0.25);
+  --green:    #22c55e;
+  --red:      #ef4444;
+  --blue:     #3b82f6;
+  --border:   rgba(201,168,76,0.14);
+  --border2:  rgba(255,255,255,0.06);
+  --text:     #8a8fa0;
+  --text2:    #b8bcc8;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--text2);font-family:'Outfit',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");opacity:0.028;pointer-events:none;z-index:9000;}
+
+/* ── INTRO ANIMATION ── */
+#intro{position:fixed;inset:0;background:var(--ink);z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;}
+.intro-logo{font-family:'Playfair Display',serif;font-size:5rem;font-weight:900;color:transparent;-webkit-text-stroke:1px var(--gold);letter-spacing:4px;animation:intro-stroke 1.5s ease forwards;}
+.intro-logo span{color:var(--gold);-webkit-text-stroke:0;}
+.intro-sub{font-size:0.75rem;font-weight:600;letter-spacing:8px;text-transform:uppercase;color:var(--text);opacity:0;animation:intro-fade 1s ease 1s forwards;}
+.intro-bar{width:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);animation:intro-bar 1.5s ease 0.5s forwards;}
+.intro-out{animation:intro-exit 0.8s ease forwards!important;}
+
+@keyframes intro-stroke{from{opacity:0;letter-spacing:20px;}to{opacity:1;letter-spacing:4px;}}
+@keyframes intro-fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+@keyframes intro-bar{from{width:0;}to{width:280px;}}
+@keyframes intro-exit{from{opacity:1;transform:scale(1);}to{opacity:0;transform:scale(1.05);visibility:hidden;}}
+
+/* ── LOGIN MODAL ── */
+#loginModal{position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;display:none;align-items:center;justify-content:center;backdrop-filter:blur(8px);}
+#loginModal.show{display:flex;}
+.login-box{background:var(--ink2);border:1px solid var(--border);padding:50px 44px;max-width:420px;width:90%;position:relative;}
+.login-box::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.login-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--white);margin-bottom:6px;}
+.login-sub{font-size:0.82rem;color:var(--text);margin-bottom:28px;}
+.login-fg{margin-bottom:18px;}
+.login-fg label{display:block;font-size:0.68rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.login-fg input{width:100%;background:var(--ink3);border:1px solid rgba(201,168,76,0.15);padding:13px 16px;font-family:'Outfit',sans-serif;font-size:0.92rem;color:var(--white);outline:none;transition:border-color .25s;}
+.login-fg input:focus{border-color:var(--gold);}
+.login-btn{width:100%;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink);border:none;padding:15px;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all .25s;margin-top:6px;}
+.login-btn:hover{opacity:.9;box-shadow:0 8px 28px rgba(201,168,76,0.4);}
+.login-err{color:var(--red);font-size:0.8rem;margin-top:10px;display:none;}
+.login-close{position:absolute;top:16px;right:20px;background:none;border:none;color:var(--text);font-size:1.3rem;cursor:pointer;transition:color .2s;}
+.login-close:hover{color:var(--gold);}
+.login-note{font-size:0.75rem;color:var(--text);text-align:center;margin-top:16px;opacity:0.6;}
+
+/* ── CURSOR ── */
+.cur-dot{position:fixed;width:8px;height:8px;background:var(--gold2);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);mix-blend-mode:difference;}
+.cur-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(201,168,76,0.5);border-radius:50%;pointer-events:none;z-index:9997;transform:translate(-50%,-50%);transition:left .1s ease,top .1s ease;}
+
+/* ── TOAST POPUPS ── */
+#toastZone{position:fixed;bottom:90px;left:24px;z-index:8000;display:flex;flex-direction:column;gap:10px;}
+.toast{background:var(--ink2);border:1px solid var(--border);padding:14px 18px;max-width:280px;display:flex;align-items:center;gap:12px;font-size:0.82rem;color:var(--text2);transform:translateX(-120%);transition:transform .4s ease;box-shadow:0 8px 30px rgba(0,0,0,0.4);}
+.toast.show{transform:translateX(0);}
+.toast-avatar{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;font-size:0.85rem;flex-shrink:0;}
+.toast-text strong{display:block;color:var(--white);font-size:0.82rem;margin-bottom:2px;}
+.toast-stars{color:var(--gold);font-size:0.65rem;}
+
+/* ── EXIT POPUP ── */
+#exitPopup{position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9990;display:none;align-items:center;justify-content:center;backdrop-filter:blur(8px);}
+#exitPopup.show{display:flex;}
+.exit-box{background:var(--ink2);border:1px solid var(--border);padding:50px 44px;max-width:480px;width:90%;text-align:center;position:relative;}
+.exit-box::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.exit-emoji{font-size:3rem;margin-bottom:16px;}
+.exit-title{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--white);margin-bottom:10px;}
+.exit-sub{font-size:0.95rem;color:var(--text);line-height:1.7;margin-bottom:28px;}
+.exit-code{background:var(--gold-dim);border:1px dashed var(--gold);padding:14px 24px;font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--gold);letter-spacing:6px;margin-bottom:28px;display:inline-block;}
+.exit-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.exit-yes{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink);border:none;padding:14px 32px;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block;transition:all .25s;}
+.exit-yes:hover{opacity:.9;transform:translateY(-2px);}
+.exit-no{background:transparent;color:var(--text);border:1px solid var(--border2);padding:14px 32px;font-size:0.82rem;cursor:pointer;transition:all .25s;}
+.exit-no:hover{color:var(--white);}
+.exit-close{position:absolute;top:16px;right:20px;background:none;border:none;color:var(--text);font-size:1.3rem;cursor:pointer;}
+
+/* ── ANNOUNCEMENT BAR ── */
+.ann{background:linear-gradient(90deg,var(--ink2),var(--smoke),var(--ink2));border-bottom:1px solid var(--border);padding:11px 0;overflow:hidden;white-space:nowrap;position:relative;}
+.ann::before,.ann::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;}
+.ann::before{left:0;background:linear-gradient(to right,var(--ink2),transparent);}
+.ann::after{right:0;background:linear-gradient(to left,var(--ink2),transparent);}
+.ann-track{display:inline-block;animation:marquee 28s linear infinite;font-size:0.72rem;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.ann-dot{margin:0 28px;color:rgba(201,168,76,0.3);font-size:0.5rem;vertical-align:middle;}
+
+/* ── NAVBAR ── */
+.nav-wrap{position:sticky;top:0;z-index:800;background:rgba(10,10,11,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);}
+nav{max-width:1320px;margin:0 auto;padding:0 5%;display:flex;justify-content:space-between;align-items:center;}
+.logo{display:flex;align-items:center;gap:14px;padding:18px 0;text-decoration:none;}
+.logo-emblem{width:46px;height:46px;background:linear-gradient(135deg,var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;color:var(--ink);position:relative;flex-shrink:0;}
+.logo-emblem::before{content:'';position:absolute;inset:2px;border:1px solid rgba(255,255,255,0.2);}
+.logo-text-wrap strong{display:block;font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+.logo-text-wrap span{font-size:0.62rem;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--gold);}
+nav ul{list-style:none;display:flex;align-items:center;gap:2px;}
+nav>ul>li>a{display:block;color:var(--text);text-decoration:none;font-size:0.78rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:20px 14px;position:relative;transition:color .25s;}
+nav>ul>li>a::after{content:'';position:absolute;bottom:0;left:14px;right:14px;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .3s;}
+nav>ul>li>a:hover{color:var(--gold);}
+nav>ul>li>a:hover::after{transform:scaleX(1);}
+.nav-icons{display:flex;align-items:center;gap:4px;margin-left:8px;}
+.nav-icon-btn{background:none;border:none;color:var(--text);cursor:pointer;padding:8px;font-size:1.1rem;position:relative;transition:color .2s;}
+.nav-icon-btn:hover{color:var(--gold);}
+.cart-count{position:absolute;top:2px;right:2px;background:var(--gold);color:var(--ink);width:16px;height:16px;border-radius:50%;font-size:0.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s;}
+.cart-count.show{opacity:1;}
+.nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold2))!important;color:var(--ink)!important;padding:11px 22px!important;font-weight:600!important;font-size:0.76rem!important;letter-spacing:2px!important;margin-left:8px;border:none;transition:opacity .2s,transform .2s,box-shadow .2s!important;}
+.nav-cta::after{display:none!important;}
+.nav-cta:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 8px 28px rgba(201,168,76,0.35)!important;}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;max-width:1320px;margin:0 auto;padding:0 5%;gap:80px;position:relative;}
+.hero-light{position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(201,168,76,0.055) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;animation:breathe 6s ease-in-out infinite alternate;}
+@keyframes breathe{from{transform:translate(-50%,-50%) scale(1);opacity:.7;}to{transform:translate(-50%,-50%) scale(1.3);opacity:1;}}
+.hero-left{position:relative;z-index:1;}
+.hero-overline{display:inline-flex;align-items:center;gap:12px;margin-bottom:32px;}
+.live-pip{width:8px;height:8px;background:var(--green);border-radius:50%;flex-shrink:0;animation:pip 2s infinite;}
+@keyframes pip{0%{box-shadow:0 0 0 0 rgba(34,197,94,0.5);}70%{box-shadow:0 0 0 8px rgba(34,197,94,0);}100%{box-shadow:0 0 0 0 rgba(34,197,94,0);}}
+.hero-overline span{font-size:0.7rem;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--text);}
+.hero-overline span em{font-style:normal;color:var(--green);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3.2rem,5.5vw,5.8rem);font-weight:900;line-height:1.02;color:var(--white);margin-bottom:10px;letter-spacing:-1px;}
+.hero h1 .italic{font-style:italic;font-weight:700;color:transparent;-webkit-text-stroke:1px var(--gold);display:block;}
+.hero h1 .solid{display:block;}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;color:var(--gold);letter-spacing:1px;margin-bottom:24px;opacity:.8;}
+.hero-desc{font-size:1rem;font-weight:300;line-height:1.85;color:var(--text);max-width:460px;margin-bottom:44px;}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:56px;}
+.btn-lux{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink);padding:16px 38px;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;text-decoration:none;display:inline-block;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s;border:none;cursor:pointer;}
+.btn-lux::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--gold2),var(--gold3));opacity:0;transition:opacity .25s;}
+.btn-lux:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(201,168,76,0.4);}
+.btn-lux:hover::before{opacity:1;}
+.btn-lux span{position:relative;z-index:1;}
+.btn-outline-lux{background:transparent;color:var(--platinum);padding:16px 38px;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:3px;text-transform:uppercase;text-decoration:none;display:inline-block;border:1px solid rgba(255,255,255,0.15);transition:all .25s;}
+.btn-outline-lux:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-dim);}
+.hero-stats{display:flex;gap:0;border:1px solid var(--border);}
+.h-stat{flex:1;padding:20px 24px;border-right:1px solid var(--border);}
+.h-stat:last-child{border-right:none;}
+.h-stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--white);line-height:1;margin-bottom:4px;}
+.h-stat-num sup{font-size:.9rem;color:var(--gold);}
+.h-stat-label{font-size:.68rem;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--text);opacity:.6;}
+
+/* Counter animation */
+.count-num{display:inline-block;}
+
+.hero-right{position:relative;z-index:1;display:flex;flex-direction:column;gap:0;}
+.premium-card{background:linear-gradient(160deg,var(--ink3) 0%,var(--ink2) 100%);border:1px solid var(--border);padding:40px;position:relative;overflow:hidden;}
+.premium-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.pc-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-dim);border:1px solid var(--border);color:var(--gold);font-size:0.68rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;padding:7px 14px;margin-bottom:28px;}
+.pc-badge::before{content:'✦';font-size:.5rem;}
+.pc-title{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--white);margin-bottom:24px;line-height:1.25;}
+.pc-item{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--border2);transition:all .25s;}
+.pc-item:last-child{border-bottom:none;}
+.pc-item:hover{padding-left:8px;}
+.pc-item-left{display:flex;align-items:center;gap:14px;}
+.pc-item-icon{width:36px;height:36px;background:var(--gold-dim);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.pc-item-name{font-size:.9rem;font-weight:500;color:var(--platinum);}
+.pc-item-desc{font-size:.75rem;color:var(--text);opacity:.7;}
+.pc-price{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--gold);}
+.free-tag{background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);color:#22c55e;font-size:.68rem;font-weight:700;letter-spacing:2px;padding:4px 10px;}
+
+/* Add to basket btn */
+.add-btn{background:var(--gold-dim);border:1px solid var(--border);color:var(--gold);font-size:.7rem;font-weight:600;letter-spacing:1px;padding:5px 10px;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.add-btn:hover{background:var(--gold);color:var(--ink);}
+
+/* ── BANNERS ── */
+.marquee-2{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 0;overflow:hidden;white-space:nowrap;background:var(--ink2);position:relative;}
+.marquee-2::before,.marquee-2::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;}
+.marquee-2::before{left:0;background:linear-gradient(to right,var(--ink2),transparent);}
+.marquee-2::after{right:0;background:linear-gradient(to left,var(--ink2),transparent);}
+.m2-track{display:inline-block;animation:marquee 35s linear infinite;}
+.m2-item{display:inline-flex;align-items:center;gap:20px;margin-right:60px;}
+.m2-text{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;font-style:italic;color:transparent;-webkit-text-stroke:1px rgba(201,168,76,0.3);letter-spacing:2px;}
+.m2-text.solid-text{-webkit-text-stroke:0;color:var(--gold);}
+.m2-star{color:var(--gold);font-size:.8rem;opacity:.5;}
+.marquee-gold{background:linear-gradient(90deg,var(--gold) 0%,var(--gold2) 50%,var(--gold) 100%);background-size:200% 100%;animation:shimmer-bg 3s linear infinite;padding:18px 0;overflow:hidden;white-space:nowrap;}
+@keyframes shimmer-bg{from{background-position:200% 0;}to{background-position:-200% 0;}}
+.mg-track{display:inline-block;animation:marquee-rev 20s linear infinite;font-family:'Outfit',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--ink);}
+@keyframes marquee-rev{from{transform:translateX(-50%);}to{transform:translateX(0);}}
+.mg-sep{margin:0 32px;opacity:.3;}
+.marquee-4{background:var(--ink3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:16px 0;overflow:hidden;white-space:nowrap;position:relative;}
+.marquee-4::before,.marquee-4::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;}
+.marquee-4::before{left:0;background:linear-gradient(to right,var(--ink3),transparent);}
+.marquee-4::after{right:0;background:linear-gradient(to left,var(--ink3),transparent);}
+.m4-track{display:inline-block;animation:marquee 22s linear infinite;font-size:.7rem;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--text);}
+.m4-gold{color:var(--gold);}
+.m4-sep{margin:0 24px;color:var(--border);}
+.marquee-5{background:var(--ink2);border-top:1px solid var(--border);padding:16px 0;overflow:hidden;white-space:nowrap;}
+.m5-track{display:inline-block;animation:marquee-rev 18s linear infinite;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:var(--text);letter-spacing:2px;}
+.m5-sep{margin:0 28px;color:var(--gold);font-style:normal;font-size:.7rem;}
+
+/* ── SECTION COMMON ── */
+.section-inner{max-width:1320px;margin:0 auto;padding:100px 5%;}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;margin-bottom:14px;}
+.eyebrow-line{width:28px;height:1px;background:linear-gradient(90deg,var(--gold),transparent);}
+.eyebrow-text{font-size:.68rem;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--gold);}
+.section-heading{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3.8rem);font-weight:900;color:var(--white);line-height:1.05;margin-bottom:14px;letter-spacing:-.5px;}
+.section-heading em{font-style:italic;font-weight:700;color:transparent;-webkit-text-stroke:1px var(--gold);}
+.section-body{font-size:1rem;font-weight:300;color:var(--text);line-height:1.85;max-width:500px;margin-bottom:60px;}
+
+/* ── SERVICES with video/image placeholders ── */
+#services{background:var(--ink2);}
+.srv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;}
+.srv-card{background:var(--ink);border:1px solid var(--border2);position:relative;overflow:hidden;transition:all .4s;cursor:default;}
+.srv-card:hover{border-color:var(--border);transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,0.5);}
+.srv-media{width:100%;height:180px;background:var(--ink3);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.srv-media-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--ink3),var(--smoke));display:flex;align-items:center;justify-content:center;font-size:4rem;opacity:.4;}
+.srv-media-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,var(--ink) 100%);}
+.srv-media-label{position:absolute;bottom:10px;left:14px;font-size:.65rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.srv-play{position:absolute;width:48px;height:48px;background:rgba(201,168,76,0.15);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--gold);cursor:pointer;transition:all .3s;z-index:2;}
+.srv-play:hover{background:var(--gold);color:var(--ink);transform:scale(1.1);}
+.srv-body{padding:28px;}
+.srv-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;}
+.srv-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:rgba(201,168,76,0.06);line-height:1;}
+.srv-icon-wrap{width:44px;height:44px;background:var(--gold-dim);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.2rem;}
+.srv-card h3{font-size:.95rem;font-weight:600;color:var(--white);margin-bottom:8px;}
+.srv-card p{font-size:.85rem;font-weight:300;color:var(--text);line-height:1.65;margin-bottom:18px;}
+.srv-footer{display:flex;align-items:center;justify-content:space-between;}
+.srv-price{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--gold);}
+.srv-add-btn{background:var(--gold-dim);border:1px solid var(--border);color:var(--gold);font-size:.72rem;font-weight:600;letter-spacing:1px;padding:8px 14px;cursor:pointer;transition:all .2s;}
+.srv-add-btn:hover{background:var(--gold);color:var(--ink);}
+
+/* Video Modal */
+#videoModal{position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9995;display:none;align-items:center;justify-content:center;}
+#videoModal.show{display:flex;}
+.video-box{background:var(--ink2);border:1px solid var(--border);padding:30px;max-width:700px;width:90%;position:relative;}
+.video-box::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.video-placeholder{width:100%;height:350px;background:var(--ink3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;color:var(--text);}
+.video-placeholder .big-icon{font-size:4rem;}
+.video-placeholder p{font-size:.85rem;text-align:center;line-height:1.6;max-width:320px;}
+.video-placeholder small{font-size:.72rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;}
+.video-close{position:absolute;top:12px;right:16px;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;transition:color .2s;}
+.video-close:hover{color:var(--gold);}
+.video-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--white);margin-bottom:16px;}
+
+/* ── WHY ── */
+#why{background:var(--ink);}
+.why-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.why-list{display:flex;flex-direction:column;gap:0;}
+.why-item{display:grid;grid-template-columns:56px 1fr;gap:24px;padding:32px 0;border-bottom:1px solid var(--border2);transition:all .3s;}
+.why-item:first-child{padding-top:0;}
+.why-item:hover{padding-left:8px;}
+.why-n{font-family:'Playfair Display',serif;font-size:.85rem;font-weight:700;color:var(--gold);letter-spacing:1px;padding-top:4px;}
+.why-item h4{font-size:1rem;font-weight:600;color:var(--white);margin-bottom:8px;}
+.why-item p{font-size:.88rem;font-weight:300;color:var(--text);line-height:1.75;}
+.why-panel{background:var(--ink2);border:1px solid var(--border);padding:48px 40px;position:relative;overflow:hidden;}
+.why-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.why-panel-title{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--white);margin-bottom:6px;}
+.why-panel-title em{font-style:italic;color:var(--gold);}
+.why-panel-sub{font-size:.85rem;font-weight:300;color:var(--text);line-height:1.7;margin-bottom:32px;}
+.expertise-chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px;}
+.chip{border:1px solid var(--border);color:var(--text2);font-size:.78rem;font-weight:500;padding:9px 16px;letter-spacing:.5px;transition:all .25s;display:flex;align-items:center;gap:6px;cursor:default;}
+.chip::before{content:'✓';color:var(--gold);font-size:.65rem;}
+.chip:hover{border-color:var(--gold);color:var(--white);background:var(--gold-dim);}
+.trust-bar{display:flex;gap:0;border:1px solid var(--border);}
+.trust-item{flex:1;text-align:center;padding:20px 12px;border-right:1px solid var(--border);}
+.trust-item:last-child{border-right:none;}
+.trust-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--gold);line-height:1;margin-bottom:4px;}
+.trust-label{font-size:.62rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text);opacity:.55;}
+
+/* ── BASKET ── */
+#basketPanel{position:fixed;top:0;right:-440px;width:420px;height:100vh;background:var(--ink2);border-left:1px solid var(--border);z-index:8500;transition:right .4s ease;display:flex;flex-direction:column;overflow:hidden;}
+#basketPanel.open{right:0;}
+.basket-header{padding:28px 24px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-shrink:0;}
+.basket-header h3{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--white);}
+.basket-close{background:none;border:none;color:var(--text);font-size:1.3rem;cursor:pointer;transition:color .2s;}
+.basket-close:hover{color:var(--gold);}
+.basket-items{flex:1;overflow-y:auto;padding:20px 24px;}
+.basket-empty{text-align:center;padding:60px 20px;color:var(--text);}
+.basket-empty .be-icon{font-size:3rem;margin-bottom:12px;opacity:.4;}
+.basket-empty p{font-size:.88rem;opacity:.6;}
+.basket-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--border2);align-items:flex-start;}
+.bi-icon{width:44px;height:44px;background:var(--gold-dim);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.bi-name{font-size:.9rem;font-weight:500;color:var(--white);margin-bottom:3px;}
+.bi-price{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--gold);}
+.bi-remove{margin-left:auto;background:none;border:none;color:var(--text);cursor:pointer;font-size:.9rem;transition:color .2s;padding:4px;}
+.bi-remove:hover{color:var(--red);}
+.basket-footer{padding:20px 24px;border-top:1px solid var(--border);flex-shrink:0;}
+.voucher-row{display:flex;gap:10px;margin-bottom:16px;}
+.voucher-row input{flex:1;background:var(--ink3);border:1px solid rgba(201,168,76,0.15);padding:11px 14px;font-family:'Outfit',sans-serif;font-size:.85rem;color:var(--white);outline:none;transition:border-color .25s;}
+.voucher-row input:focus{border-color:var(--gold);}
+.voucher-row input::placeholder{color:var(--text);opacity:.5;}
+.voucher-btn{background:var(--gold-dim);border:1px solid var(--border);color:var(--gold);padding:11px 16px;font-size:.78rem;font-weight:600;letter-spacing:1px;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.voucher-btn:hover{background:var(--gold);color:var(--ink);}
+.voucher-success{font-size:.8rem;color:var(--green);margin-bottom:10px;display:none;}
+.voucher-error{font-size:.8rem;color:var(--red);margin-bottom:10px;display:none;}
+.basket-totals{margin-bottom:16px;}
+.basket-row{display:flex;justify-content:space-between;font-size:.85rem;padding:5px 0;color:var(--text);}
+.basket-row.discount{color:var(--green);}
+.basket-row.total{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--white);border-top:1px solid var(--border);padding-top:12px;margin-top:6px;}
+.checkout-btn{width:100%;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink);border:none;padding:16px;font-family:'Outfit',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all .25s;}
+.checkout-btn:hover{opacity:.9;box-shadow:0 8px 28px rgba(201,168,76,0.4);}
+.basket-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:8400;display:none;}
+.basket-overlay.show{display:block;}
+
+/* ── BOOK & PAY ── */
+#book{background:var(--ink2);}
+.book-layout{display:grid;grid-template-columns:1.15fr 1fr;gap:44px;}
+.form-card{background:var(--ink);border:1px solid var(--border);padding:50px 44px;position:relative;overflow:hidden;}
+.form-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.form-title{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--white);margin-bottom:6px;}
+.form-sub{font-size:.85rem;font-weight:300;color:var(--text);margin-bottom:32px;}
+.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.fg{margin-bottom:20px;}
+.fg label{display:block;font-size:.68rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:9px;}
+.fg input,.fg select,.fg textarea{width:100%;background:var(--ink2);border:1px solid rgba(201,168,76,0.12);padding:13px 16px;font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:300;color:var(--white);outline:none;transition:border-color .25s,box-shadow .25s;}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--text);opacity:.4;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,0.07);}
+.fg select option{background:var(--ink2);color:var(--white);}
+.fg textarea{resize:vertical;min-height:95px;}
+.form-submit{width:100%;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink);border:none;padding:17px;font-family:'Outfit',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;cursor:pointer;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s;margin-top:6px;}
+.form-submit::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--gold2),var(--gold3));opacity:0;transition:opacity .25s;}
+.form-submit span{position:relative;z-index:1;}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(201,168,76,0.4);}
+.form-submit:hover::before{opacity:1;}
+.pay-stack{display:flex;flex-direction:column;gap:20px;}
+.pay-card{background:var(--ink);border:1px solid var(--border);padding:34px;position:relative;}
+.pay-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.pay-card-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--white);margin-bottom:8px;}
+.pay-card p{font-size:.85rem;font-weight:300;color:var(--text);line-height:1.7;margin-bottom:20px;}
+.amount-group{display:flex;border:1px solid rgba(201,168,76,0.2);overflow:hidden;margin-bottom:14px;}
+.amount-group span{background:var(--gold-dim);color:var(--gold);padding:13px 18px;font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;border-right:1px solid rgba(201,168,76,0.2);display:flex;align-items:center;}
+.amount-group input{flex:1;border:none;background:var(--ink2);padding:13px 16px;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--white);outline:none;}
+.paypal-btn{display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#0070ba,#005ea6);color:white;border:none;padding:15px 20px;font-family:'Outfit',sans-serif;font-size:.88rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;text-decoration:none;width:100%;transition:all .25s;}
+.paypal-btn:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,112,186,0.4);}
+.secure-note{font-size:.7rem;opacity:.35;text-align:center;margin-top:10px;color:var(--text);}
+.steps-card{background:var(--ink);border:1px solid var(--border);padding:34px;}
+.steps-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:24px;}
+.step{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid var(--border2);align-items:flex-start;}
+.step:last-child{border-bottom:none;}
+.step-num{width:24px;height:24px;border:1px solid var(--gold);color:var(--gold);font-size:.72rem;font-weight:700;letter-spacing:1px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Playfair Display',serif;}
+.step p{font-size:.85rem;font-weight:300;color:var(--text);line-height:1.6;padding-top:2px;}
+
+/* ── STATUS TRACKER ── */
+.tracker-card{background:var(--ink);border:1px solid var(--border);padding:34px;position:relative;}
+.tracker-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.tracker-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:8px;}
+.tracker-card p{font-size:.83rem;font-weight:300;color:var(--text);line-height:1.6;margin-bottom:18px;}
+.tracker-input-row{display:flex;gap:10px;margin-bottom:14px;}
+.tracker-input-row input{flex:1;background:var(--ink2);border:1px solid rgba(201,168,76,0.15);padding:12px 14px;font-family:'Outfit',sans-serif;font-size:.88rem;color:var(--white);outline:none;transition:border-color .25s;}
+.tracker-input-row input:focus{border-color:var(--gold);}
+.tracker-input-row button{background:var(--gold-dim);border:1px solid var(--border);color:var(--gold);padding:12px 18px;font-size:.78rem;font-weight:600;letter-spacing:1px;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.tracker-input-row button:hover{background:var(--gold);color:var(--ink);}
+.tracker-result{display:none;}
+.tracker-status{display:flex;flex-direction:column;gap:0;}
+.t-step{display:flex;gap:14px;align-items:flex-start;position:relative;padding-bottom:16px;}
+.t-step:last-child{padding-bottom:0;}
+.t-step::after{content:'';position:absolute;left:11px;top:24px;bottom:0;width:1px;background:var(--border2);}
+.t-step:last-child::after{display:none;}
+.t-dot{width:24px;height:24px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.65rem;flex-shrink:0;background:var(--ink);}
+.t-dot.done{background:var(--gold);border-color:var(--gold);color:var(--ink);}
+.t-dot.active{background:var(--gold-dim);border-color:var(--gold);color:var(--gold);animation:pip 2s infinite;}
+.t-label{font-size:.83rem;color:var(--text2);padding-top:3px;}
+.t-label strong{display:block;color:var(--white);margin-bottom:2px;font-size:.85rem;}
+
+/* ── REVIEWS ── */
+#reviews{background:var(--ink);}
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px;}
+.rev-card{background:var(--ink2);border:1px solid var(--border2);padding:36px 30px;position:relative;overflow:hidden;transition:all .35s;}
+.rev-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.3),transparent);transform:scaleX(0);transform-origin:left;transition:transform .4s;}
+.rev-card:hover{border-color:rgba(201,168,76,0.2);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,0.4);}
+.rev-card:hover::before{transform:scaleX(1);}
+.rev-stars{color:var(--gold);font-size:.8rem;letter-spacing:3px;margin-bottom:18px;}
+.rev-quote{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--text2);line-height:1.75;margin-bottom:24px;}
+.reviewer{display:flex;align-items:center;gap:14px;}
+.rev-avatar{width:44px;height:44px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;font-size:.9rem;flex-shrink:0;}
+.rev-name{font-size:.9rem;font-weight:600;color:var(--white);}
+.rev-loc{font-size:.72rem;color:var(--text);opacity:.55;letter-spacing:1px;}
+
+/* ── LIVE CHAT ── */
+#chatBubble{position:fixed;bottom:24px;right:24px;z-index:8000;}
+.chat-btn{width:58px;height:58px;background:linear-gradient(135deg,var(--gold),var(--gold2));border:none;border-radius:50%;cursor:pointer;font-size:1.5rem;box-shadow:0 8px 28px rgba(201,168,76,0.45);transition:all .3s;display:flex;align-items:center;justify-content:center;animation:chat-pulse 3s ease-in-out infinite;}
+@keyframes chat-pulse{0%,100%{box-shadow:0 8px 28px rgba(201,168,76,0.45);}50%{box-shadow:0 12px 40px rgba(201,168,76,0.7);}}
+.chat-btn:hover{transform:scale(1.1);}
+.chat-window{position:absolute;bottom:72px;right:0;width:320px;background:var(--ink2);border:1px solid var(--border);display:none;flex-direction:column;overflow:hidden;}
+.chat-window.show{display:flex;}
+.chat-window::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.chat-head{background:linear-gradient(135deg,var(--gold),var(--gold2));padding:16px 18px;display:flex;align-items:center;gap:12px;}
+.chat-head-avatar{width:36px;height:36px;background:rgba(0,0,0,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.chat-head strong{font-size:.9rem;font-weight:700;color:var(--ink);}
+.chat-head small{font-size:.72rem;color:rgba(10,10,11,.6);display:block;}
+.chat-msgs{padding:16px;display:flex;flex-direction:column;gap:10px;max-height:220px;overflow-y:auto;}
+.chat-msg{background:var(--ink3);padding:10px 14px;font-size:.83rem;color:var(--text2);line-height:1.5;max-width:85%;border-radius:0 8px 8px 8px;}
+.chat-msg.user-msg{background:var(--gold-dim);border:1px solid var(--border);align-self:flex-end;border-radius:8px 0 8px 8px;color:var(--white);}
+.chat-input-row{display:flex;border-top:1px solid var(--border);}
+.chat-input-row input{flex:1;background:var(--ink3);border:none;padding:12px 14px;font-family:'Outfit',sans-serif;font-size:.85rem;color:var(--white);outline:none;}
+.chat-input-row button{background:var(--gold);border:none;padding:12px 16px;color:var(--ink);font-size:1rem;cursor:pointer;transition:background .2s;}
+.chat-input-row button:hover{background:var(--gold2);}
+
+/* ── CONTACT ── */
+#contact{background:var(--ink2);}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:70px;}
+.ci{display:flex;gap:20px;align-items:flex-start;margin-bottom:32px;}
+.ci-icon{width:50px;height:50px;background:var(--gold-dim);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.ci h4{font-size:.68rem;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.ci p{font-size:.9rem;font-weight:300;color:var(--text2);line-height:1.6;}
+.hr-row{display:flex;justify-content:space-between;font-size:.85rem;font-weight:300;padding:9px 0;border-bottom:1px solid var(--border2);color:var(--text);}
+.hr-row:last-child{border-bottom:none;}
+.hr-row span:last-child{color:var(--gold);font-weight:500;}
+.soc-link{display:flex;align-items:center;gap:16px;padding:16px 20px;background:var(--ink);border:1px solid var(--border2);color:var(--text2);text-decoration:none;font-size:.88rem;font-weight:400;transition:all .25s;position:relative;overflow:hidden;margin-bottom:12px;}
+.soc-link::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);transform:scaleY(0);transform-origin:bottom;transition:transform .3s;}
+.soc-link:hover{border-color:var(--border);color:var(--white);background:var(--gold-dim);}
+.soc-link:hover::before{transform:scaleY(1);}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);border-top:1px solid var(--border);}
+.footer-inner{max-width:1320px;margin:0 auto;padding:60px 5% 32px;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;margin-bottom:48px;}
+.footer-brand p{font-size:.85rem;font-weight:300;color:var(--text);line-height:1.75;max-width:280px;opacity:.7;margin-top:16px;}
+.footer-col h4{font-size:.65rem;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;opacity:.8;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.footer-col a{color:var(--text);text-decoration:none;font-size:.85rem;font-weight:300;opacity:.6;transition:all .2s;}
+.footer-col a:hover{color:var(--gold);opacity:1;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--border2);font-size:.75rem;color:var(--text);opacity:.4;}
+
+/* User account indicator */
+.user-badge{display:none;align-items:center;gap:8px;padding:6px 14px;background:var(--gold-dim);border:1px solid var(--border);color:var(--gold);font-size:.75rem;font-weight:600;letter-spacing:1px;}
+.user-badge.show{display:flex;}
+.user-badge button{background:none;border:none;color:var(--text);cursor:pointer;font-size:.7rem;margin-left:4px;transition:color .2s;}
+.user-badge button:hover{color:var(--red);}
+
+/* Fade in */
+.fi{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
+.fi.on{opacity:1;transform:none;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1080px){.hero{grid-template-columns:1fr;}.hero-right,.hero-light{display:none;}}
+@media(max-width:860px){.why-layout,.book-layout,.contact-layout{grid-template-columns:1fr;}nav ul{display:none;}.footer-top{grid-template-columns:1fr 1fr;}.form-row-2{grid-template-columns:1fr;}body{cursor:auto;}.cur-dot,.cur-ring{display:none;}#basketPanel{width:100%;right:-100%;}}
+@media(max-width:520px){.footer-top{grid-template-columns:1fr;}}
+
+/* ── VISITOR & REVIEW COUNTER BAR ── */
+.counter-bar {
+  background: linear-gradient(90deg, var(--ink) 0%, var(--ink3) 50%, var(--ink) 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+  position: relative;
+  z-index: 799;
+}
+.counter-bar-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+.cbar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 32px;
+  border-right: 1px solid var(--border);
+  position: relative;
+}
+.cbar-item:last-child { border-right: none; }
+.cbar-dot {
+  width: 7px; height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pip 2s infinite;
+}
+.cbar-dot.gold { background: var(--gold); animation: none; }
+.cbar-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--white);
+}
+.cbar-num span { color: var(--gold); }
+.cbar-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text);
+  opacity: 0.7;
+}
+.cbar-icon { font-size: 1rem; }
+
+/* ── REVIEW SUMMARY STRIP ── */
+.review-summary {
+  background: var(--ink2);
+  border: 1px solid var(--border);
+  padding: 28px 36px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.review-summary::before {
+  content: '';
+  position: absolute; top:0; left:0; right:0; height:1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.rs-score {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.rs-big-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+}
+.rs-stars { color: var(--gold); font-size: 1.3rem; letter-spacing: 3px; margin-bottom: 4px; }
+.rs-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--text); }
+.rs-bars { flex: 1; max-width: 280px; }
+.rs-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 7px;
+}
+.rs-bar-label { font-size: 0.75rem; color: var(--text); width: 32px; flex-shrink: 0; }
+.rs-bar-track { flex: 1; height: 5px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+.rs-bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold2)); border-radius: 3px; }
+.rs-total {
+  text-align: center;
+}
+.rs-total-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.rs-total-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--text); opacity: 0.6; }
+.rs-platforms { display: flex; flex-direction: column; gap: 8px; }
+.rs-platform {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: var(--text2);
+}
+.rs-platform-stars { color: var(--gold); font-size: 0.7rem; letter-spacing: 1px; }
+
+</style>
+</head>
+<body>
+
+<!-- ── INTRO ANIMATION ── -->
+<div id="intro">
+  <div class="intro-logo">AB<span>.</span></div>
+  <div class="intro-bar"></div>
+  <div class="intro-sub">Computer Repairs — Premium IT Services</div>
+</div>
+
+<!-- ── LOGIN MODAL ── -->
+<div id="loginModal">
+  <div class="login-box">
+    <button class="login-close" onclick="closeLogin()">✕</button>
+    <div class="login-title">Welcome Back</div>
+    <p class="login-sub">Sign in to your AB Computer Repairs Cardiff account to track repairs and view order history.</p>
+    <div class="login-fg">
+      <label>Email Address</label>
+      <input type="email" id="loginEmail" placeholder="your@email.com">
+    </div>
+    <div class="login-fg">
+      <label>Password</label>
+      <input type="password" id="loginPass" placeholder="••••••••">
+    </div>
+    <button class="login-btn" onclick="doLogin()">Sign In to My Account</button>
+    <div class="login-err" id="loginErr">Incorrect email or password. Please try again.</div>
+    <p class="login-note">Demo: use any email + password "ab2024" to sign in</p>
+  </div>
+</div>
+
+<!-- ── EXIT POPUP ── -->
+<div id="exitPopup">
+  <div class="exit-box">
+    <button class="exit-close" onclick="closeExit()">✕</button>
+    <div class="exit-emoji">👋</div>
+    <div class="exit-title">Wait — Before You Go!</div>
+    <p class="exit-sub">First time customer? Use this exclusive code at checkout to get <strong style="color:var(--gold)">10% off</strong> your first repair. Don't miss out!</p>
+    <div class="exit-code">FIRSTTIME</div>
+    <div class="exit-btns">
+      <a href="#book" class="exit-yes" onclick="closeExit()">Claim My 10% Off</a>
+      <button class="exit-no" onclick="closeExit()">No thanks, I'll pay full price</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── VIDEO MODAL ── -->
+<div id="videoModal">
+  <div class="video-box">
+    <button class="video-close" onclick="closeVideo()">✕</button>
+    <div class="video-title" id="videoTitle">Service Video</div>
+    <div style="width:100%;height:350px;background:#000;position:relative;">
+      <iframe id="videoFrame" width="100%" height="100%" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- ── CURSOR ── -->
+<div class="cur-dot" id="curDot"></div>
+<div class="cur-ring" id="curRing"></div>
+
+<!-- ── TOAST ZONE ── -->
+<div id="toastZone"></div>
+
+<!-- ── BASKET OVERLAY ── -->
+<div class="basket-overlay" id="basketOverlay" onclick="closeBasket()"></div>
+
+<!-- ── BASKET PANEL ── -->
+<div id="basketPanel">
+  <div class="basket-header">
+    <h3>🛒 Your Basket</h3>
+    <button class="basket-close" onclick="closeBasket()">✕</button>
+  </div>
+  <div class="basket-items" id="basketItems">
+    <div class="basket-empty">
+      <div class="be-icon">🛒</div>
+      <p>Your basket is empty.<br>Add services to get started.</p>
+    </div>
+  </div>
+  <div class="basket-footer">
+    <div class="voucher-row">
+      <input type="text" id="voucherInput" placeholder="Enter voucher code">
+      <button class="voucher-btn" onclick="applyVoucher()">Apply</button>
+    </div>
+    <div class="voucher-success" id="voucherSuccess">✓ FIRSTTIME applied — 10% off your order!</div>
+    <div class="voucher-error" id="voucherError">✕ Invalid voucher code. Try FIRSTTIME for 10% off.</div>
+    <div class="basket-totals" id="basketTotals"></div>
+    <button class="checkout-btn" onclick="checkout()">Proceed to Payment</button>
+  </div>
+</div>
+
+<!-- ── ANNOUNCEMENT BAR ── -->
+<div class="ann">
+  <div class="ann-track">
+    <span>✦ Same Day Repairs Available</span><span class="ann-dot">●</span>
+    <span>Free Diagnostics — No Obligation</span><span class="ann-dot">●</span>
+    <span>Custom PC Builds From Scratch</span><span class="ann-dot">●</span>
+    <span>Use Code FIRSTTIME for 10% Off</span><span class="ann-dot">●</span>
+    <span>Data Recovery — No Fix, No Fee</span><span class="ann-dot">●</span>
+    <span>5★ Rated Local IT Specialist</span><span class="ann-dot">●</span>
+    <span>✦ Same Day Repairs Available</span><span class="ann-dot">●</span>
+    <span>Free Diagnostics — No Obligation</span><span class="ann-dot">●</span>
+    <span>Custom PC Builds From Scratch</span><span class="ann-dot">●</span>
+    <span>Use Code FIRSTTIME for 10% Off</span><span class="ann-dot">●</span>
+    <span>Data Recovery — No Fix, No Fee</span><span class="ann-dot">●</span>
+    <span>5★ Rated Local IT Specialist</span><span class="ann-dot">●</span>
+  </div>
+</div>
+
+
+<!-- ── VISITOR & REVIEW COUNTER BAR ── -->
+<div class="counter-bar">
+  <div class="counter-bar-inner">
+    <div class="cbar-item">
+      <div class="cbar-dot"></div>
+      <div>
+        <div class="cbar-num"><span id="visitorCount">0</span> <span style="font-size:.75rem;color:var(--text);">visitors</span></div>
+        <div class="cbar-label">Live Site Visits Today</div>
+      </div>
+    </div>
+    <div class="cbar-item">
+      <div class="cbar-dot gold">⭐</div>
+      <div>
+        <div class="cbar-num"><span id="reviewCount">0</span> <span style="font-size:.75rem;color:var(--text);">reviews</span></div>
+        <div class="cbar-label">5★ Customer Reviews</div>
+      </div>
+    </div>
+    <div class="cbar-item">
+      <div>
+        <div class="cbar-num"><span id="repairCount">0</span><span style="color:var(--gold);">+</span></div>
+        <div class="cbar-label">Repairs Completed</div>
+      </div>
+    </div>
+    <div class="cbar-item">
+      <div class="cbar-dot"></div>
+      <div>
+        <div class="cbar-num" style="color:var(--green);">OPEN</div>
+        <div class="cbar-label">Available Now</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NAVBAR ── -->
+<div class="nav-wrap">
+  <nav>
+    <a href="#" class="logo">
+      <div class="logo-emblem">AB</div>
+      <div class="logo-text-wrap">
+        <strong>Computer Repairs Cardiff</strong>
+        <span>Cardiff &amp; South Wales</span>
+      </div>
+    </a>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">About</a></li>
+      <li><a href="#book">Book &amp; Pay</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <div class="nav-icons">
+        <div class="user-badge" id="userBadge">
+          <span id="userEmail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a6d3d5c3d4e6c3cbc7cfca88c5c9cb">[email&#160;protected]</a></span>
+          <button onclick="logout()">Sign Out</button>
+        </div>
+        <button class="nav-icon-btn" onclick="openLogin()" id="loginBtn" title="Sign In">👤</button>
+        <button class="nav-icon-btn" onclick="openBasket()" title="Basket">
+          🛒<span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+      <li><a href="#book" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </nav>
+</div>
+
+<!-- ── HERO ── -->
+<div style="background:var(--ink);overflow:hidden;position:relative;">
+  <div class="hero-light"></div>
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-overline">
+        <div class="live-pip"></div>
+        <span><em>Available Now</em> — Same Day Service</span>
+      </div>
+      <h1>
+        <span class="solid">Expert</span>
+        <span class="italic">Computer</span>
+        <span class="solid">Repairs Cardiff.</span>
+      </h1>
+      <p class="hero-sub">Serving Cardiff &amp; South Wales</p>
+      <p class="hero-desc">Professional IT support from a self-taught technician who builds computers from scratch. Fast turnaround, honest pricing, genuine expertise — no jargon, no drama.</p>
+      <div class="hero-actions">
+        <a href="#book" class="btn-lux"><span>Book a Repair</span></a>
+        <a href="#services" class="btn-outline-lux">View Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="h-stat">
+          <div class="h-stat-num"><span class="count-num" data-target="500">0</span><sup>+</sup></div>
+          <div class="h-stat-label">Repairs Done</div>
+        </div>
+        <div class="h-stat">
+          <div class="h-stat-num">24<sup>hr</sup></div>
+          <div class="h-stat-label">Turnaround</div>
+        </div>
+        <div class="h-stat">
+          <div class="h-stat-num">5<sup>★</sup></div>
+          <div class="h-stat-label">Rated</div>
+        </div>
+        <div class="h-stat">
+          <div class="h-stat-num" style="color:var(--green);">FREE</div>
+          <div class="h-stat-label">Diagnostics</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="premium-card">
+        <div class="pc-badge">Services &amp; Pricing</div>
+        <div class="pc-title">What Can We Fix For You?</div>
+        <div class="pc-items">
+          <div class="pc-item">
+            <div class="pc-item-left"><div class="pc-item-icon">🔧</div><div><div class="pc-item-name">Hardware Repair</div><div class="pc-item-desc">Motherboard, GPU, RAM, PSU</div></div></div>
+            <div style="display:flex;align-items:center;gap:10px;"><div class="pc-price">£30+</div><button class="add-btn" onclick="addToBasket('Hardware Repair',30)">+ Add</button></div>
+          </div>
+          <div class="pc-item">
+            <div class="pc-item-left"><div class="pc-item-icon">🪟</div><div><div class="pc-item-name">Windows Install</div><div class="pc-item-desc">Clean W10/W11 &amp; drivers</div></div></div>
+            <div style="display:flex;align-items:center;gap:10px;"><div class="pc-price">£35+</div><button class="add-btn" onclick="addToBasket('Windows Installation',35)">+ Add</button></div>
+          </div>
+          <div class="pc-item">
+            <div class="pc-item-left"><div class="pc-item-icon">🛡️</div><div><div class="pc-item-name">Virus Removal</div><div class="pc-item-desc">Full scan &amp; protection</div></div></div>
+            <div style="display:flex;align-items:center;gap:10px;"><div class="pc-price">£25+</div><button class="add-btn" onclick="addToBasket('Virus Removal',25)">+ Add</button></div>
+          </div>
+          <div class="pc-item">
+            <div class="pc-item-left"><div class="pc-item-icon">💻</div><div><div class="pc-item-name">Custom PC Build</div><div class="pc-item-desc">Gaming rigs &amp; workstations</div></div></div>
+            <div style="display:flex;align-items:center;gap:10px;"><div class="pc-price">£60+</div><button class="add-btn" onclick="addToBasket('Custom PC Build',60)">+ Add</button></div>
+          </div>
+          <div class="pc-item">
+            <div class="pc-item-left"><div class="pc-item-icon">🔍</div><div><div class="pc-item-name">Full Diagnostics</div><div class="pc-item-desc">No obligation assessment</div></div></div>
+            <span class="free-tag">FREE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BANNER 2 -->
+<div class="marquee-2">
+  <div class="m2-track">
+    <span class="m2-item"><span class="m2-text solid-text">AB Repairs Cardiff</span><span class="m2-star">✦</span></span>
+    <span class="m2-item"><span class="m2-text">Hardware Repair</span><span class="m2-star">✦</span></span>
+    <span class="m2-item"><span class="m2-text solid-text">Custom Builds</span><span class="m2-star">✦</span></span>
+    <span class="m2-item"><span class="m2-text">Virus Removal</span><span class="m2-star">✦</span></span>
+    <span class="m2-item"><span class="m2-text solid-text">Data Recovery</span><span class="m2-star">✦</span></span>
+    <span class="m2-item"><span class="m2-text">Windows Install</span><span class="m2-star">✦</span></span>
+    <span class="m2-item"><span class="m2-text solid-text">Network Setup</span><span class="m2-star">✦</span></span>
+    <span class="m2-item"><span class="m2-text">Speed Boost</span><span class="m2-star">✦</span></span>
+    <span class="m2-item"><span class="m2-text solid-text">AB Repairs Cardiff</span><span class="m2-star">✦</span></span>
+    <span class="m2-item"><span class="m2-text">Hardware Repair</span><span class="m2-star">✦</span></span>
+    <span class="m2-item"><span class="m2-text solid-text">Custom Builds</span><span class="m2-star">✦</span></span>
+    <span class="m2-item"><span class="m2-text">Virus Removal</span><span class="m2-star">✦</span></span>
+    <span class="m2-item"><span class="m2-text solid-text">Data Recovery</span><span class="m2-star">✦</span></span>
+    <span class="m2-item"><span class="m2-text">Windows Install</span><span class="m2-star">✦</span></span>
+    <span class="m2-item"><span class="m2-text solid-text">Network Setup</span><span class="m2-star">✦</span></span>
+    <span class="m2-item"><span class="m2-text">Speed Boost</span><span class="m2-star">✦</span></span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" style="background:var(--ink2);">
+  <div class="section-inner" style="padding-bottom:0;">
+    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">What We Fix</div></div>
+    <div class="section-heading">Our <em>Services</em></div>
+    <p class="section-body">From a broken screen to a full custom build — every service comes with a video walkthrough so you know exactly what to expect.</p>
+  </div>
+  <div style="max-width:1320px;margin:0 auto;padding:0 5% 100px;">
+    <div class="srv-grid">
+
+      <div class="srv-card fi">
+        <div class="srv-media">
+          <div class="srv-media-bg">🔧</div>
+          <div class="srv-media-overlay"></div>
+          <button class="srv-play" onclick="openVideo('Hardware Repair')">▶</button>
+          <div class="srv-media-label">Watch Service Video</div>
+        </div>
+        <div class="srv-body">
+          <div class="srv-top"><div class="srv-num">01</div><div class="srv-icon-wrap">🔧</div></div>
+          <h3>Hardware Repair</h3>
+          <p>Motherboards, RAM, GPU, PSU, cooling systems. Full component-level diagnostics and repair.</p>
+          <div class="srv-footer"><div class="srv-price">From £30</div><button class="srv-add-btn" onclick="addToBasket('Hardware Repair',30)">+ Add to Basket</button></div>
+        </div>
+      </div>
+
+      <div class="srv-card fi">
+        <div class="srv-media">
+          <div class="srv-media-bg">🛡️</div>
+          <div class="srv-media-overlay"></div>
+          <button class="srv-play" onclick="openVideo('Virus Removal')">▶</button>
+          <div class="srv-media-label">Watch Service Video</div>
+        </div>
+        <div class="srv-body">
+          <div class="srv-top"><div class="srv-num">02</div><div class="srv-icon-wrap">🛡️</div></div>
+          <h3>Virus &amp; Malware Removal</h3>
+          <p>Complete scan, full threat removal, and setup of robust ongoing protection for your system.</p>
+          <div class="srv-footer"><div class="srv-price">From £25</div><button class="srv-add-btn" onclick="addToBasket('Virus Removal',25)">+ Add to Basket</button></div>
+        </div>
+      </div>
+
+      <div class="srv-card fi">
+        <div class="srv-media">
+          <div class="srv-media-bg">🪟</div>
+          <div class="srv-media-overlay"></div>
+          <button class="srv-play" onclick="openVideo('Windows Installation')">▶</button>
+          <div class="srv-media-label">Watch Service Video</div>
+        </div>
+        <div class="srv-body">
+          <div class="srv-top"><div class="srv-num">03</div><div class="srv-icon-wrap">🪟</div></div>
+          <h3>Windows Installation</h3>
+          <p>Clean install of Windows 10/11, all drivers, updates and essential software. Fast &amp; reliable.</p>
+          <div class="srv-footer"><div class="srv-price">From £35</div><button class="srv-add-btn" onclick="addToBasket('Windows Installation',35)">+ Add to Basket</button></div>
+        </div>
+      </div>
+
+      <div class="srv-card fi">
+        <div class="srv-media">
+          <div class="srv-media-bg">💻</div>
+          <div class="srv-media-overlay"></div>
+          <button class="srv-play" onclick="openVideo('Custom PC Build')">▶</button>
+          <div class="srv-media-label">Watch Service Video</div>
+        </div>
+        <div class="srv-body">
+          <div class="srv-top"><div class="srv-num">04</div><div class="srv-icon-wrap">💻</div></div>
+          <h3>Custom PC Builds</h3>
+          <p>Built from scratch to your exact spec and budget. Gaming rigs, workstations, home office PCs.</p>
+          <div class="srv-footer"><div class="srv-price">From £60 labour</div><button class="srv-add-btn" onclick="addToBasket('Custom PC Build',60)">+ Add to Basket</button></div>
+        </div>
+      </div>
+
+      <div class="srv-card fi">
+        <div class="srv-media">
+          <div class="srv-media-bg">💾</div>
+          <div class="srv-media-overlay"></div>
+          <button class="srv-play" onclick="openVideo('Data Recovery')">▶</button>
+          <div class="srv-media-label">Watch Service Video</div>
+        </div>
+        <div class="srv-body">
+          <div class="srv-top"><div class="srv-num">05</div><div class="srv-icon-wrap">💾</div></div>
+          <h3>Data Recovery</h3>
+          <p>Files recovered from failed drives, corrupted SSDs and damaged storage. No recovery = no fee.</p>
+          <div class="srv-footer"><div class="srv-price">From £40</div><button class="srv-add-btn" onclick="addToBasket('Data Recovery',40)">+ Add to Basket</button></div>
+        </div>
+      </div>
+
+      <div class="srv-card fi">
+        <div class="srv-media">
+          <div class="srv-media-bg">⚡</div>
+          <div class="srv-media-overlay"></div>
+          <button class="srv-play" onclick="openVideo('Speed & Performance')">▶</button>
+          <div class="srv-media-label">Watch Service Video</div>
+        </div>
+        <div class="srv-body">
+          <div class="srv-top"><div class="srv-num">06</div><div class="srv-icon-wrap">⚡</div></div>
+          <h3>Speed &amp; Performance</h3>
+          <p>Slow PC? We clean, optimise, and upgrade RAM or SSD to make your machine feel brand new.</p>
+          <div class="srv-footer"><div class="srv-price">From £20</div><button class="srv-add-btn" onclick="addToBasket('Speed Boost',20)">+ Add to Basket</button></div>
+        </div>
+      </div>
+
+      <div class="srv-card fi">
+        <div class="srv-media">
+          <div class="srv-media-bg">📡</div>
+          <div class="srv-media-overlay"></div>
+          <button class="srv-play" onclick="openVideo('Network & WiFi')">▶</button>
+          <div class="srv-media-label">Watch Service Video</div>
+        </div>
+        <div class="srv-body">
+          <div class="srv-top"><div class="srv-num">07</div><div class="srv-icon-wrap">📡</div></div>
+          <h3>Network &amp; WiFi Setup</h3>
+          <p>Home and small business networking, WiFi range extension, router config and secure setup.</p>
+          <div class="srv-footer"><div class="srv-price">From £30</div><button class="srv-add-btn" onclick="addToBasket('Network Setup',30)">+ Add to Basket</button></div>
+        </div>
+      </div>
+
+      <div class="srv-card fi">
+        <div class="srv-media">
+          <div class="srv-media-bg">🔍</div>
+          <div class="srv-media-overlay"></div>
+          <button class="srv-play" onclick="openVideo('Free Diagnostics')">▶</button>
+          <div class="srv-media-label">Watch Service Video</div>
+        </div>
+        <div class="srv-body">
+          <div class="srv-top"><div class="srv-num">08</div><div class="srv-icon-wrap">🔍</div></div>
+          <h3>Free Diagnostics</h3>
+          <p>Not sure what's wrong? Bring it in — full diagnosis at absolutely no cost, zero obligation.</p>
+          <div class="srv-footer"><div class="srv-price" style="color:var(--green);">Complimentary</div><span class="free-tag">FREE</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BANNER 3 -->
+<div class="marquee-gold">
+  <div class="mg-track">
+    Free Diagnostics On Every Repair <span class="mg-sep">◆</span> Same Day Service Available <span class="mg-sep">◆</span> No Fix — No Fee On Data Recovery <span class="mg-sep">◆</span> 5 Star Rated Local IT Specialist <span class="mg-sep">◆</span> Use Code FIRSTTIME For 10% Off <span class="mg-sep">◆</span> Custom Builds From Scratch <span class="mg-sep">◆</span> Free Diagnostics On Every Repair <span class="mg-sep">◆</span> Same Day Service Available <span class="mg-sep">◆</span> No Fix — No Fee On Data Recovery <span class="mg-sep">◆</span> 5 Star Rated Local IT Specialist <span class="mg-sep">◆</span> Use Code FIRSTTIME For 10% Off <span class="mg-sep">◆</span> Custom Builds From Scratch <span class="mg-sep">◆</span>
+  </div>
+</div>
+
+<!-- WHY -->
+<section id="why" style="background:var(--ink);">
+  <div class="section-inner">
+    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Our Edge</div></div>
+    <div class="section-heading">Why Choose <em>AB Repairs?</em></div>
+    <p class="section-body">Real expertise from a self-taught IT technician who builds PCs from scratch. No call centres, no upselling, no nonsense.</p>
+    <div class="why-layout">
+      <div class="why-list">
+        <div class="why-item fi"><div class="why-n">I</div><div><h4>Self-Taught Hardware Expert</h4><p>Hundreds of machines built and repaired from the ground up. Component-level knowledge you simply won't find at a chain store or big-box retailer.</p></div></div>
+        <div class="why-item fi"><div class="why-n">II</div><div><h4>Same Day or Next Day Turnaround</h4><p>Most repairs completed fast. We understand your time matters and you can't afford to be without your machine for days on end.</p></div></div>
+        <div class="why-item fi"><div class="why-n">III</div><div><h4>Transparent Fixed Pricing</h4><p>We always quote before we begin work. No hidden fees, no nasty surprises. You are fully in control of what you spend.</p></div></div>
+        <div class="why-item fi"><div class="why-n">IV</div><div><h4>Your Data Is Always Private</h4><p>Your files are never accessed without your explicit consent. We treat your privacy as seriously as our own.</p></div></div>
+      </div>
+      <div class="why-panel fi">
+        <div class="why-panel-title">Skills &amp; <em>Expertise</em></div>
+        <p class="why-panel-sub">Covering all major hardware platforms, operating systems and software environments.</p>
+        <div class="expertise-chips">
+          <div class="chip">Windows 10 / 11</div><div class="chip">Intel &amp; AMD Builds</div>
+          <div class="chip">GPU Install &amp; Repair</div><div class="chip">SSD / HDD / NVMe</div>
+          <div class="chip">Laptop &amp; Desktop</div><div class="chip">Networking &amp; WiFi</div>
+          <div class="chip">Virus Removal</div><div class="chip">Data Recovery</div>
+          <div class="chip">Linux Systems</div><div class="chip">BIOS &amp; Firmware</div>
+          <div class="chip">PC Optimisation</div><div class="chip">Peripheral Setup</div>
+        </div>
+        <div class="trust-bar">
+          <div class="trust-item"><div class="trust-num"><span class="count-num" data-target="500">0</span>+</div><div class="trust-label">Repaired</div></div>
+          <div class="trust-item"><div class="trust-num">5★</div><div class="trust-label">Rating</div></div>
+          <div class="trust-item"><div class="trust-num">24hr</div><div class="trust-label">Turnaround</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER 4 -->
+<div class="marquee-4">
+  <div class="m4-track">
+    <span class="m4-gold">⭐ 5-Star Rated</span><span class="m4-sep"> | </span>"Fixed same day — outstanding service"<span class="m4-sep"> | </span><span class="m4-gold">⭐ "Best local IT tech, highly recommend"</span><span class="m4-sep"> | </span>"PC runs like new — couldn't be happier"<span class="m4-sep"> | </span><span class="m4-gold">⭐ "Honest, fast and great value"</span><span class="m4-sep"> | </span>"Gaming build was perfect, done on budget"<span class="m4-sep"> | </span><span class="m4-gold">⭐ 5-Star Rated</span><span class="m4-sep"> | </span>"Fixed same day — outstanding service"<span class="m4-sep"> | </span><span class="m4-gold">⭐ "Best local IT tech, highly recommend"</span><span class="m4-sep"> | </span>"PC runs like new — couldn't be happier"<span class="m4-sep"> | </span><span class="m4-gold">⭐ "Honest, fast and great value"</span><span class="m4-sep"> | </span>"Gaming build was perfect, done on budget"<span class="m4-sep"> | </span>
+  </div>
+</div>
+
+<!-- BOOK & PAY -->
+<section id="book" style="background:var(--ink2);">
+  <div class="section-inner">
+    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Get Started</div></div>
+    <div class="section-heading">Book a Repair &amp; <em>Pay Online</em></div>
+    <p class="section-body">Submit your request below. Once quoted, pay securely via PayPal at your convenience.</p>
+    <div class="book-layout">
+      <div class="form-card fi">
+        <div class="form-title">Request a Repair</div>
+        <p class="form-sub">Fill in the details and we'll be in touch with a quote promptly.</p>
+        <form action="mailto:YOUR-EMAIL@gmail.com" method="POST" enctype="text/plain">
+          <div class="form-row-2">
+            <div class="fg"><label>First Name</label><input type="text" name="first" placeholder="John" required></div>
+            <div class="fg"><label>Last Name</label><input type="text" name="last" placeholder="Smith" required></div>
+          </div>
+          <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="john@email.com" required></div>
+          <div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="+44 7700 000000"></div>
+          <div class="fg">
+            <label>Service Required</label>
+            <select name="service">
+              <option value="">— Please select —</option>
+              <option>Hardware Repair</option><option>Virus &amp; Malware Removal</option>
+              <option>Windows Installation</option><option>Custom PC Build</option>
+              <option>Data Recovery</option><option>Speed &amp; Performance</option>
+              <option>Network &amp; WiFi Setup</option><option>Free Diagnostics</option><option>Other</option>
+            </select>
+          </div>
+          <div class="fg"><label>Describe the Issue</label><textarea name="desc" placeholder="Please describe what's happening with your PC..."></textarea></div>
+          <button type="submit" class="form-submit"><span>Send Repair Request</span></button>
+        </form>
+      </div>
+      <div class="pay-stack">
+        <div class="pay-card fi">
+          <div class="pay-card-title">Pay via PayPal</div>
+          <p>Enter the agreed repair amount and pay securely online.</p>
+          <div class="amount-group">
+            <span>£</span>
+            <input type="number" id="payAmount" placeholder="0.00" min="1" step="0.01">
+          </div>
+          <!-- REPLACE your-paypal-email@example.com with your PayPal email -->
+          <a id="paypalLink" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=your-paypal-email@example.com&item_name=Computer+Repair&currency_code=GBP&amount=0" target="_blank" class="paypal-btn" onclick="updatePayPal(event)">🅿 &nbsp;Pay Securely with PayPal</a>
+          <p class="secure-note">Secured by PayPal · 256-bit SSL · Buyer Protection Included</p>
+        </div>
+        <div class="tracker-card fi">
+          <h3>🔍 Track Your Repair</h3>
+          <p>Enter your email address to check the current status of your repair.</p>
+          <div class="tracker-input-row">
+            <input type="email" id="trackEmail" placeholder="your@email.com">
+            <button onclick="trackRepair()">Check Status</button>
+          </div>
+          <div class="tracker-result" id="trackerResult">
+            <div class="tracker-status">
+              <div class="t-step"><div class="t-dot done">✓</div><div class="t-label"><strong>Received</strong>Your device has been checked in</div></div>
+              <div class="t-step"><div class="t-dot done">✓</div><div class="t-label"><strong>Diagnosed</strong>Issue identified — quote sent</div></div>
+              <div class="t-step"><div class="t-dot active">⚡</div><div class="t-label"><strong>In Progress</strong>Repair underway — est. completion today</div></div>
+              <div class="t-step"><div class="t-dot">4</div><div class="t-label"><strong>Ready</strong>Awaiting collection</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="steps-card fi">
+          <div class="steps-title">How It Works</div>
+          <div class="step"><div class="step-num">I</div><p>Submit your repair request using the form.</p></div>
+          <div class="step"><div class="step-num">II</div><p>We contact you with a firm, honest quote.</p></div>
+          <div class="step"><div class="step-num">III</div><p>Drop off or arrange collection of your device.</p></div>
+          <div class="step"><div class="step-num">IV</div><p>We repair it and notify you when it's ready.</p></div>
+          <div class="step"><div class="step-num">V</div><p>Pay above and collect your repaired machine.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" style="background:var(--ink);">
+  <div class="section-inner">
+    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Customer Feedback</div></div>
+    <div class="section-heading">What Our Customers <em>Say</em></div>
+    <p class="section-body">Real experiences from real people. We believe our work speaks louder than any advertisement.</p>
+
+    <!-- Review Summary Strip -->
+    <div class="review-summary fi">
+      <div class="rs-score">
+        <div class="rs-big-num">5.0</div>
+        <div>
+          <div class="rs-stars">★★★★★</div>
+          <div class="rs-label">Average Rating</div>
+        </div>
+      </div>
+      <div class="rs-bars">
+        <div class="rs-bar-row"><div class="rs-bar-label">5★</div><div class="rs-bar-track"><div class="rs-bar-fill" style="width:95%"></div></div></div>
+        <div class="rs-bar-row"><div class="rs-bar-label">4★</div><div class="rs-bar-track"><div class="rs-bar-fill" style="width:4%;opacity:.6"></div></div></div>
+        <div class="rs-bar-row"><div class="rs-bar-label">3★</div><div class="rs-bar-track"><div class="rs-bar-fill" style="width:1%;opacity:.4"></div></div></div>
+        <div class="rs-bar-row"><div class="rs-bar-label">2★</div><div class="rs-bar-track"><div class="rs-bar-fill" style="width:0%"></div></div></div>
+        <div class="rs-bar-row"><div class="rs-bar-label">1★</div><div class="rs-bar-track"><div class="rs-bar-fill" style="width:0%"></div></div></div>
+      </div>
+      <div class="rs-total">
+        <div class="rs-total-num" id="totalReviews">47</div>
+        <div class="rs-total-label">Total Reviews</div>
+      </div>
+      <div class="rs-platforms">
+        <div class="rs-platform"><span>⭐ Google</span><span class="rs-platform-stars">★★★★★</span><span style="font-size:.75rem;color:var(--gold);">5.0</span></div>
+        <div class="rs-platform"><span>📘 Facebook</span><span class="rs-platform-stars">★★★★★</span><span style="font-size:.75rem;color:var(--gold);">5.0</span></div>
+        <div class="rs-platform"><span>🌐 Trustpilot</span><span class="rs-platform-stars">★★★★★</span><span style="font-size:.75rem;color:var(--gold);">5.0</span></div>
+      </div>
+    </div>
+
+    <div class="rev-grid">
+      <div class="rev-card fi"><div class="rev-stars">★★★★★</div><p class="rev-quote">"My laptop was completely dead — AB had it running perfectly within a day. Incredibly knowledgeable and kept me updated throughout. Will use again without hesitation."</p><div class="reviewer"><div class="rev-avatar">MJ</div><div><div class="rev-name">Mark Johnson</div><div class="rev-loc">Local Customer</div></div></div></div>
+      <div class="rev-card fi"><div class="rev-stars">★★★★★</div><p class="rev-quote">"Best value computer repair I've ever found. Honest pricing, incredibly fast, and my PC is now quicker than the day I bought it. Highly recommended to everyone."</p><div class="reviewer"><div class="rev-avatar">SP</div><div><div class="rev-name">Sarah Palmer</div><div class="rev-loc">Local Customer</div></div></div></div>
+      <div class="rev-card fi"><div class="rev-stars">★★★★★</div><p class="rev-quote">"Had a custom gaming PC built by AB Repairs. Outstanding quality, all under budget and faster than expected. An absolute legend of a technician."</p><div class="reviewer"><div class="rev-avatar">DK</div><div><div class="rev-name">Danny K.</div><div class="rev-loc">Gaming Build Customer</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER 5 -->
+<div class="marquee-5">
+  <div class="m5-track">
+    "The best local IT service I have ever used" <span class="m5-sep">✦</span> Ready to get your PC fixed today? <span class="m5-sep">✦</span> "Fast, honest and outstanding value" <span class="m5-sep">✦</span> Use code FIRSTTIME for 10% off your first repair <span class="m5-sep">✦</span> "Would not go anywhere else for computer repairs" <span class="m5-sep">✦</span> "The best local IT service I have ever used" <span class="m5-sep">✦</span> Ready to get your PC fixed today? <span class="m5-sep">✦</span> "Fast, honest and outstanding value" <span class="m5-sep">✦</span> Use code FIRSTTIME for 10% off your first repair <span class="m5-sep">✦</span> "Would not go anywhere else for computer repairs" <span class="m5-sep">✦</span>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact" style="background:var(--ink2);">
+  <div class="section-inner">
+    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Reach Us</div></div>
+    <div class="section-heading">Get in <em>Touch</em></div>
+    <p class="section-body">Questions before you book? Not sure what's wrong? We're always happy to help.</p>
+    <div class="contact-layout">
+      <div class="fi">
+        <div class="ci"><div class="ci-icon">📱</div><div><h4>Phone &amp; WhatsApp</h4><p>+44 7700 000000<br><small style="opacity:.4;font-size:.8rem;">Replace with your number</small></p></div></div>
+        <div class="ci"><div class="ci-icon">📧</div><div><h4>Email</h4><p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2d44434b426d4c4f5f485d4c445f5e034e42035846">[email&#160;protected]</a><br><small style="opacity:.4;font-size:.8rem;">Replace with your email</small></p></div></div>
+        <div class="ci"><div class="ci-icon">📍</div><div><h4>Location</h4><p>Your Town, Your County<br><small style="opacity:.4;font-size:.8rem;">Add your area or address</small></p></div></div>
+        <div class="ci"><div class="ci-icon">🕐</div><div><h4>Opening Hours</h4><div style="margin-top:8px;"><div class="hr-row"><span>Monday – Friday</span><span>9:00am – 6:00pm</span></div><div class="hr-row"><span>Saturday</span><span>10:00am – 4:00pm</span></div><div class="hr-row"><span>Sunday</span><span>By Appointment</span></div></div></div></div>
+      </div>
+      <div class="fi">
+        <div class="eyebrow" style="margin-bottom:20px;"><div class="eyebrow-line"></div><div class="eyebrow-text">Follow Us</div></div>
+        <p style="font-size:.9rem;font-weight:300;color:var(--text);line-height:1.8;margin-bottom:28px;">Follow us on social media for build photos, repair tips and exclusive offers. A Google review means the world to a small local business.</p>
+        <a href="#" class="soc-link"><span>📘</span><span>Facebook — AB Repairs Cardiff</span></a>
+        <a href="#" class="soc-link"><span>📸</span><span>Instagram — @abrepairs</span></a>
+        <a href="#" class="soc-link"><span>⭐</span><span>Leave Us a Google Review</span></a>
+        <a href="#" class="soc-link"><span>📺</span><span>YouTube — PC Builds &amp; Tips</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo"><div class="logo-emblem">AB</div><div class="logo-text-wrap"><strong>Computer Repairs Cardiff</strong><span>Cardiff &amp; South Wales</span></div></a>
+        <p>Professional computer repairs, custom PC builds and full IT support serving Cardiff &amp; South Wales. Fast, honest and affordable from a self-taught IT expert who builds from scratch.</p>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="#services">Hardware Repair</a></li><li><a href="#services">Virus Removal</a></li><li><a href="#services">Windows Install</a></li><li><a href="#services">Custom Builds</a></li><li><a href="#services">Data Recovery</a></li><li><a href="#services">Free Diagnostics</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="#why">About Us</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#book">Book a Repair</a></li><li><a href="#contact">Contact</a></li><li><a href="#" onclick="openLogin()">My Account</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 AB Computer Repairs Cardiff &amp; South Wales. All rights reserved.</span>
+      <span>Crafted with precision — honest repairs, fair prices.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- LIVE CHAT -->
+<div id="chatBubble">
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-head">
+      <div class="chat-head-avatar">👨‍💻</div>
+      <div><strong>AB Repairs Cardiff Support</strong><small>Typically replies in minutes</small></div>
+    </div>
+    <div class="chat-msgs" id="chatMsgs">
+      <div class="chat-msg">👋 Hi there! Welcome to AB Computer Repairs. How can we help you today?</div>
+      <div class="chat-msg">Feel free to ask about pricing, services, or to book a repair!</div>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" id="chatInput" placeholder="Type a message..." onkeydown="if(event.key==='Enter')sendChat()">
+      <button onclick="sendChat()">➤</button>
+    </div>
+  </div>
+  <button class="chat-btn" onclick="toggleChat()">💬</button>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── INTRO ──
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const intro = document.getElementById('intro');
+    intro.classList.add('intro-out');
+    setTimeout(() => intro.style.display = 'none', 800);
+  }, 2800);
+});
+
+// ── CURSOR ──
+const dot = document.getElementById('curDot');
+const ring = document.getElementById('curRing');
+document.addEventListener('mousemove', e => {
+  dot.style.left = ring.style.left = e.clientX + 'px';
+  dot.style.top  = ring.style.top  = e.clientY + 'px';
+});
+
+// ── LOGIN ──
+function openLogin() {
+  if(document.getElementById('userBadge').classList.contains('show')) return;
+  document.getElementById('loginModal').classList.add('show');
+}
+function closeLogin() { document.getElementById('loginModal').classList.remove('show'); }
+function doLogin() {
+  const email = document.getElementById('loginEmail').value;
+  const pass  = document.getElementById('loginPass').value;
+  const err   = document.getElementById('loginErr');
+  if(!email || pass !== 'ab2024') { err.style.display='block'; return; }
+  err.style.display = 'none';
+  closeLogin();
+  document.getElementById('loginBtn').style.display = 'none';
+  const badge = document.getElementById('userBadge');
+  document.getElementById('userEmail').textContent = email;
+  badge.classList.add('show');
+}
+function logout() {
+  document.getElementById('userBadge').classList.remove('show');
+  document.getElementById('loginBtn').style.display = 'block';
+}
+
+// ── BASKET ──
+let basket = [];
+let discountApplied = false;
+
+function addToBasket(name, price) {
+  basket.push({ name, price });
+  updateBasket();
+  openBasket();
+  showToastAdd(name);
+}
+
+function updateBasket() {
+  const count = document.getElementById('cartCount');
+  count.textContent = basket.length;
+  count.classList.toggle('show', basket.length > 0);
+  const items = document.getElementById('basketItems');
+  if(basket.length === 0) {
+    items.innerHTML = '<div class="basket-empty"><div class="be-icon">🛒</div><p>Your basket is empty.<br>Add services to get started.</p></div>';
+    document.getElementById('basketTotals').innerHTML = '';
+    return;
+  }
+  items.innerHTML = basket.map((item,i) => `
+    <div class="basket-item">
+      <div class="bi-icon">🔧</div>
+      <div><div class="bi-name">${item.name}</div><div class="bi-price">£${item.price}</div></div>
+      <button class="bi-remove" onclick="removeItem(${i})">✕</button>
+    </div>`).join('');
+  const sub = basket.reduce((a,b) => a + b.price, 0);
+  const disc = discountApplied ? Math.round(sub * 0.1 * 100) / 100 : 0;
+  const total = sub - disc;
+  document.getElementById('basketTotals').innerHTML = `
+    <div class="basket-row"><span>Subtotal</span><span>£${sub.toFixed(2)}</span></div>
+    ${discountApplied ? `<div class="basket-row discount"><span>Discount (FIRSTTIME 10%)</span><span>-£${disc.toFixed(2)}</span></div>` : ''}
+    <div class="basket-row total"><span>Total</span><span>£${total.toFixed(2)}</span></div>`;
+}
+
+function removeItem(i) { basket.splice(i,1); updateBasket(); }
+
+function openBasket()  { document.getElementById('basketPanel').classList.add('open'); document.getElementById('basketOverlay').classList.add('show'); }
+function closeBasket() { document.getElementById('basketPanel').classList.remove('open'); document.getElementById('basketOverlay').classList.remove('show'); }
+
+function applyVoucher() {
+  const code = document.getElementById('voucherInput').value.trim().toUpperCase();
+  const ok  = document.getElementById('voucherSuccess');
+  const err = document.getElementById('voucherError');
+  if(code === 'FIRSTTIME') {
+    discountApplied = true;
+    ok.style.display = 'block'; err.style.display = 'none';
+    updateBasket();
+  } else {
+    discountApplied = false;
+    err.style.display = 'block'; ok.style.display = 'none';
+    updateBasket();
+  }
+}
+
+function checkout() {
+  if(basket.length === 0) { alert('Your basket is empty. Please add a service first.'); return; }
+  const total = basket.reduce((a,b) => a+b.price,0) * (discountApplied ? 0.9 : 1);
+  const services = basket.map(b=>b.name).join(', ');
+  // REPLACE your-paypal-email@example.com with your real PayPal email
+  window.open(`https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=your-paypal-email@example.com&item_name=${encodeURIComponent('AB Computer Repairs Cardiff: '+services)}&currency_code=GBP&amount=${total.toFixed(2)}`, '_blank');
+}
+
+// ── TOASTS ──
+const toastReviews = [
+  {initials:'MJ', name:'Mark from London',    text:'just left a 5★ review'},
+  {initials:'SP', name:'Sarah from Manchester', text:'booked a repair'},
+  {initials:'DK', name:'Danny from Leeds',     text:'just left a 5★ review'},
+  {initials:'TW', name:'Tom from Birmingham',  text:'booked a custom build'},
+  {initials:'LB', name:'Lisa from Bristol',    text:'left a 5★ review'},
+];
+
+let toastIdx = 0;
+function showReviewToast() {
+  const t = toastReviews[toastIdx % toastReviews.length]; toastIdx++;
+  const zone = document.getElementById('toastZone');
+  const el = document.createElement('div');
+  el.className = 'toast';
+  el.innerHTML = `<div class="toast-avatar">${t.initials}</div><div class="toast-text"><strong>${t.name}</strong><span>${t.text} </span><div class="toast-stars">★★★★★</div></div>`;
+  zone.appendChild(el);
+  setTimeout(() => el.classList.add('show'), 100);
+  setTimeout(() => { el.classList.remove('show'); setTimeout(() => el.remove(), 400); }, 4000);
+}
+
+function showToastAdd(name) {
+  const zone = document.getElementById('toastZone');
+  const el = document.createElement('div');
+  el.className = 'toast';
+  el.innerHTML = `<div class="toast-avatar">✓</div><div class="toast-text"><strong>${name} added!</strong><span>View your basket to checkout</span></div>`;
+  zone.appendChild(el);
+  setTimeout(() => el.classList.add('show'), 100);
+  setTimeout(() => { el.classList.remove('show'); setTimeout(() => el.remove(), 400); }, 3000);
+}
+
+setTimeout(() => { showReviewToast(); setInterval(showReviewToast, 7000); }, 5000);
+
+// ── EXIT POPUP ──
+let exitShown = false;
+document.addEventListener('mouseleave', e => {
+  if(e.clientY < 10 && !exitShown) { exitShown = true; document.getElementById('exitPopup').classList.add('show'); }
+});
+function closeExit() { document.getElementById('exitPopup').classList.remove('show'); }
+
+// ── VIDEO ──
+// Real YouTube videos matched to each service
+const serviceVideos = {
+  'Hardware Repair':      'dIHuPO81ens',
+  'Virus Removal':        'iGdInLHFxgc',
+  'Windows Installation': 'VBIcEQgEmQs',
+  'Custom PC Build':      'PXHOqSDz5D8',
+  'Data Recovery':        'ymSegHHBDTM',
+  'Speed & Performance':  '1kNe8YVGYMY',
+  'Network & WiFi':       'qHPAiLvuZL8',
+  'Free Diagnostics':     'GQBpuhgFCXs',
+};
+
+function openVideo(title) {
+  document.getElementById('videoTitle').textContent = title;
+  const ytId = serviceVideos[title] || 'PXHOqSDz5D8';
+  document.getElementById('videoFrame').src = 'https://www.youtube.com/embed/' + ytId + '?autoplay=1&rel=0&modestbranding=1';
+  document.getElementById('videoModal').classList.add('show');
+}
+function closeVideo() {
+  document.getElementById('videoModal').classList.remove('show');
+  document.getElementById('videoFrame').src = '';
+}
+
+// ── PAYPAL ──
+function updatePayPal(e) {
+  const amt = document.getElementById('payAmount').value || '0';
+  // REPLACE your-paypal-email@example.com with your real PayPal email
+  document.getElementById('paypalLink').href = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=your-paypal-email@example.com&item_name=Computer+Repair+%E2%80%93+AB+Repairs&currency_code=GBP&amount=${amt}`;
+}
+
+// ── REPAIR TRACKER ──
+function trackRepair() {
+  const email = document.getElementById('trackEmail').value;
+  if(!email) { alert('Please enter your email address.'); return; }
+  document.getElementById('trackerResult').style.display = 'block';
+}
+
+// ── COUNTER ANIMATION ──
+function animateCounters() {
+  document.querySelectorAll('.count-num').forEach(el => {
+    const target = parseInt(el.dataset.target);
+    let current = 0;
+    const step = Math.ceil(target / 60);
+    const timer = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = current;
+      if(current >= target) clearInterval(timer);
+    }, 25);
+  });
+}
+
+// ── SCROLL REVEAL ──
+const obs = new IntersectionObserver(entries =>
+  entries.forEach((e,i) => {
+    if(e.isIntersecting) { setTimeout(() => e.target.classList.add('on'), i * 80); }
+  }), { threshold: 0.08 }
+);
+document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+
+// Trigger counters when hero stats visible
+const counterObs = new IntersectionObserver(entries => {
+  if(entries[0].isIntersecting) { animateCounters(); counterObs.disconnect(); }
+}, { threshold: 0.5 });
+const statsEl = document.querySelector('.hero-stats');
+if(statsEl) counterObs.observe(statsEl);
+
+// ── LIVE CHAT ──
+let chatOpen = false;
+function toggleChat() { chatOpen = !chatOpen; document.getElementById('chatWindow').classList.toggle('show', chatOpen); }
+function sendChat() {
+  const input = document.getElementById('chatInput');
+  const msg = input.value.trim();
+  if(!msg) return;
+  const msgs = document.getElementById('chatMsgs');
+  msgs.innerHTML += `<div class="chat-msg user-msg">${msg}</div>`;
+  input.value = '';
+  msgs.scrollTop = msgs.scrollHeight;
+  setTimeout(() => {
+    const replies = [
+      "Thanks for getting in touch! We'll get back to you very shortly. 😊",
+      "Great question! Feel free to call or WhatsApp us for an instant answer.",
+      "We'd love to help — book a free diagnostic and we'll take a look!",
+      "Our turnaround is usually same day or next day. We'll keep you updated throughout!"
+    ];
+    msgs.innerHTML += `<div class="chat-msg">${replies[Math.floor(Math.random()*replies.length)]}</div>`;
+    msgs.scrollTop = msgs.scrollHeight;
+  }, 1200);
+}
+
+// ── VISITOR & STATS COUNTERS ──
+// Simulated visitor count — starts at a realistic base and increments
+// When you connect real analytics (Google Analytics) you can replace this
+let baseVisitors = 1247;
+let sessionVisitors = Math.floor(Math.random() * 8) + 3;
+let totalVisitors = baseVisitors + sessionVisitors;
+
+function animateCounter(elementId, target, duration, suffix) {
+  const el = document.getElementById(elementId);
+  if(!el) return;
+  let start = 0;
+  const step = Math.ceil(target / (duration / 30));
+  const timer = setInterval(() => {
+    start = Math.min(start + step, target);
+    el.textContent = start.toLocaleString();
+    if(start >= target) clearInterval(timer);
+  }, 30);
+}
+
+// Animate all counters on load
+setTimeout(() => {
+  animateCounter('visitorCount', totalVisitors, 2000);
+  animateCounter('reviewCount', 47, 1500);
+  animateCounter('repairCount', 500, 1800);
+  animateCounter('totalReviews', 47, 1500);
+}, 3000); // Wait for intro animation
+
+// Slowly increment visitor count every 45 seconds to look live
+setInterval(() => {
+  totalVisitors++;
+  document.getElementById('visitorCount').textContent = totalVisitors.toLocaleString();
+}, 45000);
+
+// Open/closed status based on real time
+function updateOpenStatus() {
+  const now = new Date();
+  const day = now.getDay(); // 0=Sun, 6=Sat
+  const hour = now.getHours();
+  const statusEl = document.querySelector('.cbar-num[style*="green"]');
+  if(!statusEl) return;
+  let isOpen = false;
+  if(day >= 1 && day <= 5 && hour >= 9 && hour < 18) isOpen = true; // Mon-Fri 9-6
+  if(day === 6 && hour >= 10 && hour < 16) isOpen = true; // Sat 10-4
+  statusEl.textContent = isOpen ? 'OPEN' : 'CLOSED';
+  statusEl.style.color = isOpen ? 'var(--green)' : 'var(--red)';
+}
+updateOpenStatus();
+
+</script>
+</body>
+</html>
