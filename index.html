@@ -454,26 +454,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
   <div class="intro-sub">Computer Repairs — Premium IT Services</div>
 </div>
 
-<!-- ── LOGIN MODAL ── -->
-<div id="loginModal">
-  <div class="login-box">
-    <button class="login-close" onclick="closeLogin()">✕</button>
-    <div class="login-title">Welcome Back</div>
-    <p class="login-sub">Sign in to your AB Repairs account to track repairs and view order history.</p>
-    <div class="login-fg">
-      <label>Email Address</label>
-      <input type="email" id="loginEmail" placeholder="your@email.com">
-    </div>
-    <div class="login-fg">
-      <label>Password</label>
-      <input type="password" id="loginPass" placeholder="••••••••">
-    </div>
-    <button class="login-btn" onclick="doLogin()">Sign In to My Account</button>
-    <div class="login-err" id="loginErr">Incorrect email or password. Please try again.</div>
-    <p class="login-note">Demo: use any email + password "ab8477" to sign in</p>
-  </div>
-</div>
-
 <!-- ── EXIT POPUP ── -->
 <div id="exitPopup">
   <div class="exit-box">
@@ -575,7 +555,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
           <span id="userEmail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bdc8ced8cffdd8d0dcd4d193ded2d0">[email&#160;protected]</a></span>
           <button onclick="logout()">Sign Out</button>
         </div>
-        <button class="nav-icon-btn" onclick="openLogin()" id="loginBtn" title="Sign In">👤</button>
+        <a href="#book" class="nav-icon-btn" title="Track My Repair" style="text-decoration:none;">🔍</a>
         <button class="nav-icon-btn" onclick="openBasket()" title="Basket">
           🛒<span class="cart-count" id="cartCount">0</span>
         </button>
@@ -901,6 +881,31 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
           <!-- REPLACE anthonybrown_@hotmail.co.uk with your PayPal email -->
           <a id="paypalLink" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=anthonybrown_@hotmail.co.uk&item_name=Computer+Repair&currency_code=GBP&amount=0" target="_blank" class="paypal-btn" onclick="updatePayPal(event)">🅿 &nbsp;Pay Securely with PayPal</a>
           <p class="secure-note">Secured by PayPal · 256-bit SSL · Buyer Protection Included</p>
+
+          <!-- Other payment methods -->
+          <div style="margin-top:20px;border-top:1px solid var(--border);padding-top:20px;">
+            <p style="font-size:.78rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Other Payment Methods</p>
+
+            <div style="background:var(--ink2);border:1px solid var(--border);padding:16px;margin-bottom:12px;position:relative;">
+              <p style="font-size:.85rem;font-weight:600;color:var(--white);margin-bottom:8px;">🏦 Bank Transfer</p>
+              <p style="font-size:.82rem;color:var(--text);line-height:1.9;">
+                Bank: <span style="color:var(--white);">Santander</span><br>
+                Sort Code: <span style="color:var(--white);">09-01-28</span><br>
+                Account No: <span style="color:var(--white);">43823089</span><br>
+                Reference: <span style="color:var(--gold);">Your name + phone number</span>
+              </p>
+            </div>
+
+            <div style="background:var(--ink2);border:1px solid var(--border);padding:16px;margin-bottom:12px;">
+              <p style="font-size:.85rem;font-weight:600;color:var(--white);margin-bottom:6px;">💵 Cash on Collection</p>
+              <p style="font-size:.82rem;color:var(--text);">Pay in cash when you collect your repaired device from us. Always welcome!</p>
+            </div>
+
+            <div style="background:var(--ink2);border:1px solid var(--border);padding:16px;">
+              <p style="font-size:.85rem;font-weight:600;color:var(--white);margin-bottom:6px;">💳 Card Payment</p>
+              <p style="font-size:.82rem;color:var(--text);">We accept card payments in person via our mobile card reader. Contact us to arrange.</p>
+            </div>
+          </div>
         </div>
         <div class="tracker-card fi">
           <h3>🔍 Track Your Repair</h3>
@@ -961,7 +966,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
     <div class="contact-layout">
       <div class="fi">
         <div class="ci"><div class="ci-icon">📱</div><div><h4>Phone &amp; WhatsApp</h4><p>+44 7444 171553<br><small style="opacity:.4;font-size:.8rem;">Call or WhatsApp anytime</small></p></div></div>
-        <div class="ci"><div class="ci-icon">📧</div><div><h4>Email</h4><p>anthony.brown@abrepairscardiff.co.uk<br><small style="opacity:.4;font-size:.8rem;">Reply within 1 hour</small></p></div></div>
+        <div class="ci"><div class="ci-icon">📧</div><div><h4>Email</h4><p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7e1f100a16111007501c0c1109103e1f1c0c1b0e1f170c0d1d1f0c1a171818501d11500b15">[email&#160;protected]</a><br><small style="opacity:.4;font-size:.8rem;">Reply within 1 hour</small></p></div></div>
         <div class="ci"><div class="ci-icon">📍</div><div><h4>Location</h4><p>57 Handley Road, Pengam Green, Cardiff CF24 2HF<br><small style="opacity:.4;font-size:.8rem;">Pengam Green, Cardiff CF24 2HF</small></p></div></div>
         <div class="ci"><div class="ci-icon">🕐</div><div><h4>Opening Hours</h4><div style="margin-top:8px;"><div class="hr-row"><span>Monday – Friday</span><span>9:00am – 6:00pm</span></div><div class="hr-row"><span>Saturday</span><span>10:00am – 4:00pm</span></div><div class="hr-row"><span>Sunday</span><span>By Appointment</span></div></div></div></div>
       </div>
@@ -1014,7 +1019,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
   <button class="chat-btn" onclick="toggleChat()">💬</button>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── INTRO ──
 window.addEventListener('load', () => {
   setTimeout(() => {
