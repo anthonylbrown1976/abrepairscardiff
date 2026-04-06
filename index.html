@@ -1,9 +1,25 @@
 <!DOCTYPE html>
+<!-- NewBuild 1775519671 -->
+<!-- OldBuild 1775519598 -->
+<!-- NewBuild 1775519671 -->
+<!-- OldBuild 1775504036 -->
+<!-- NewBuild 1775519671 -->
+<!-- OldBuild 1775492921 -->
+<!-- OldBuild 1775492175 -->
 <html lang="en">
 <head>
+<!-- AB Computer Repairs Cardiff | Build 1775492162 -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-17KLRH8PPK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-17KLRH8PPK');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AB Computer Repairs — Premium IT Services</title>
+<title>AB Computer Repairs Cardiff &amp; South Wales | Expert PC Repair</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
 <style>
@@ -454,26 +470,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
   <div class="intro-sub">Computer Repairs — Premium IT Services</div>
 </div>
 
-<!-- ── LOGIN MODAL ── -->
-<div id="loginModal">
-  <div class="login-box">
-    <button class="login-close" onclick="closeLogin()">✕</button>
-    <div class="login-title">Welcome Back</div>
-    <p class="login-sub">Sign in to your AB Repairs account to track repairs and view order history.</p>
-    <div class="login-fg">
-      <label>Email Address</label>
-      <input type="email" id="loginEmail" placeholder="your@email.com">
-    </div>
-    <div class="login-fg">
-      <label>Password</label>
-      <input type="password" id="loginPass" placeholder="••••••••">
-    </div>
-    <button class="login-btn" onclick="doLogin()">Sign In to My Account</button>
-    <div class="login-err" id="loginErr">Incorrect email or password. Please try again.</div>
-    <p class="login-note">Demo: use any email + password "ab8477" to sign in</p>
-  </div>
-</div>
-
 <!-- ── EXIT POPUP ── -->
 <div id="exitPopup">
   <div class="exit-box">
@@ -561,7 +557,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
       <div class="logo-emblem">AB</div>
       <div class="logo-text-wrap">
         <strong>Computer Repairs</strong>
-        <span>Premium IT Services</span>
+        <span>Cardiff &amp; South Wales</span>
       </div>
     </a>
     <ul>
@@ -572,10 +568,10 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
       <li><a href="#contact">Contact</a></li>
       <div class="nav-icons">
         <div class="user-badge" id="userBadge">
-          anthony.brown@abrepairscardiff.co.uk
+          <span id="userEmail">anthony.brown@abrepairscardiff.co.uk</span>
           <button onclick="logout()">Sign Out</button>
         </div>
-        <button class="nav-icon-btn" onclick="openLogin()" id="loginBtn" title="Sign In">👤</button>
+        <a href="#book" class="nav-icon-btn" title="Track My Repair" style="text-decoration:none;">🔍</a>
         <button class="nav-icon-btn" onclick="openBasket()" title="Basket">
           🛒<span class="cart-count" id="cartCount">0</span>
         </button>
@@ -867,69 +863,97 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
     <p class="section-body">Submit your request below. Once quoted, pay securely via PayPal at your convenience.</p>
     <div class="book-layout">
       <div class="form-card fi">
-        <div class="form-title">Request a Repair</div>
-        <p class="form-sub">Fill in the details and we'll be in touch with a quote promptly.</p>
-        <form action="mailto:anthony.brown@abrepairscardiff.co.uk" method="POST" enctype="text/plain">
-          <div class="form-row-2">
-            <div class="fg"><label>First Name</label><input type="text" name="first" placeholder="John" required></div>
-            <div class="fg"><label>Last Name</label><input type="text" name="last" placeholder="Smith" required></div>
-          </div>
-          <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="john@email.com" required></div>
-          <div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="+44 7444 171553"></div>
-          <div class="fg">
-            <label>Service Required</label>
-            <select name="service">
-              <option value="">— Please select —</option>
-              <option>Hardware Repair</option><option>Virus &amp; Malware Removal</option>
-              <option>Windows Installation</option><option>Custom PC Build</option>
-              <option>Data Recovery</option><option>Speed &amp; Performance</option>
-              <option>Network &amp; WiFi Setup</option><option>Free Diagnostics</option><option>Other</option>
-            </select>
-          </div>
-          <div class="fg"><label>Describe the Issue</label><textarea name="desc" placeholder="Please describe what's happening with your PC..."></textarea></div>
-          <button type="submit" class="form-submit"><span>Send Repair Request</span></button>
-        </form>
-      </div>
-      <div class="pay-stack">
-        <div class="pay-card fi">
-          <div class="pay-card-title">Pay via PayPal</div>
-          <p>Enter the agreed repair amount and pay securely online.</p>
-          <div class="amount-group">
-            <span>£</span>
-            <input type="number" id="payAmount" placeholder="0.00" min="1" step="0.01">
-          </div>
-          <!-- REPLACE anthonybrown_@hotmail.co.uk with your PayPal email -->
-          <a id="paypalLink" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=anthonybrown_@hotmail.co.uk&item_name=Computer+Repair&currency_code=GBP&amount=0" target="_blank" class="paypal-btn" onclick="updatePayPal(event)">🅿 &nbsp;Pay Securely with PayPal</a>
-          <p class="secure-note">Secured by PayPal · 256-bit SSL · Buyer Protection Included</p>
-        </div>
-        <div class="tracker-card fi">
-          <h3>🔍 Track Your Repair</h3>
-          <p>Enter your email address to check the current status of your repair.</p>
-          <div class="tracker-input-row">
-            <input type="email" id="trackEmail" placeholder="your@email.com">
-            <button onclick="trackRepair()">Check Status</button>
-          </div>
-          <div class="tracker-result" id="trackerResult">
-            <div class="tracker-status">
-              <div class="t-step"><div class="t-dot done">✓</div><div class="t-label"><strong>Received</strong>Your device has been checked in</div></div>
-              <div class="t-step"><div class="t-dot done">✓</div><div class="t-label"><strong>Diagnosed</strong>Issue identified — quote sent</div></div>
-              <div class="t-step"><div class="t-dot active">⚡</div><div class="t-label"><strong>In Progress</strong>Repair underway — est. completion today</div></div>
-              <div class="t-step"><div class="t-dot">4</div><div class="t-label"><strong>Ready</strong>Awaiting collection</div></div>
+          <div class="form-title">Request a Repair</div>
+          <p class="form-sub">Fill in your details and we'll contact you with a quote promptly.</p>
+          <div id="repairForm">
+            <div class="form-row-2">
+              <div class="fg"><label>First Name</label><input type="text" id="fname" placeholder="John"></div>
+              <div class="fg"><label>Last Name</label><input type="text" id="lname" placeholder="Smith"></div>
             </div>
+            <div class="fg"><label>Phone Number</label><input type="tel" id="fphone" placeholder="07700 000000"></div>
+            <div class="fg"><label>Service Required</label>
+              <select id="fservice">
+                <option value="">Select a service...</option>
+                <option>Hardware Repair</option>
+                <option>Virus &amp; Malware Removal</option>
+                <option>Windows Installation</option>
+                <option>Custom PC Build</option>
+                <option>Data Recovery</option>
+                <option>PC Speed Boost</option>
+                <option>Network &amp; WiFi Setup</option>
+                <option>Free Diagnostic</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="fg"><label>Describe the Problem</label><textarea id="fmsg" placeholder="Please describe the issue..." rows="4"></textarea></div>
+            <button onclick="sendToWhatsApp()" class="form-btn" style="background:linear-gradient(135deg,#25d366,#128c7e);border:none;color:white;padding:16px;width:100%;font-size:.9rem;font-weight:700;letter-spacing:2px;cursor:pointer;margin-top:10px;">💬 SEND VIA WHATSAPP</button>
+            <button onclick="callUs()" class="form-btn" style="background:var(--gold);border:none;color:var(--ink);padding:16px;width:100%;font-size:.9rem;font-weight:700;letter-spacing:2px;cursor:pointer;margin-top:10px;">📞 CALL US NOW</button>
+          </div>
+          <div id="formDone" style="display:none;text-align:center;padding:40px 20px;">
+            <div style="font-size:3rem;">✅</div>
+            <h3 style="color:var(--gold);margin:16px 0 8px;">Request Sent!</h3>
+            <p style="color:var(--text);">Opening WhatsApp with your details...</p>
+            <p style="color:var(--text);margin-top:12px;">Or call us: <a href="tel:+447444171553" style="color:var(--gold);">07444 171553</a></p>
           </div>
         </div>
-        <div class="steps-card fi">
-          <div class="steps-title">How It Works</div>
-          <div class="step"><div class="step-num">I</div><p>Submit your repair request using the form.</p></div>
-          <div class="step"><div class="step-num">II</div><p>We contact you with a firm, honest quote.</p></div>
-          <div class="step"><div class="step-num">III</div><p>Drop off or arrange collection of your device.</p></div>
-          <div class="step"><div class="step-num">IV</div><p>We repair it and notify you when it's ready.</p></div>
-          <div class="step"><div class="step-num">V</div><p>Pay above and collect your repaired machine.</p></div>
+
+        <!-- Payment Card -->
+        <div class="form-card" style="height:fit-content;">
+          <div class="pay-card-title">💳 Pay for Your Repair</div>
+          <p style="font-size:.85rem;color:var(--text);margin-bottom:20px;">Once quoted enter the amount and pay securely online.</p>
+
+          <div class="amount-group" style="display:flex;border:1px solid rgba(201,168,76,0.2);overflow:hidden;margin-bottom:14px;">
+            <span style="background:rgba(201,168,76,0.08);color:var(--gold);padding:13px 18px;font-size:1.2rem;font-weight:700;border-right:1px solid rgba(201,168,76,0.2);">£</span>
+            <input type="number" id="payAmount" placeholder="Enter amount" min="1" style="flex:1;border:none;background:var(--ink2);padding:13px 16px;font-size:.92rem;color:var(--white);outline:none;">
+          </div>
+
+          <!-- PayPal Button -->
+          <a id="paypalLink" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=anthonybrown_@hotmail.co.uk&item_name=Computer+Repair&currency_code=GBP&amount=0" target="_blank" class="paypal-btn" onclick="updatePayPal(event)" style="display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#0070ba,#005ea6);color:white;border:none;padding:15px 20px;font-size:.88rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;text-decoration:none;width:100%;box-sizing:border-box;">
+            🅿 &nbsp;Pay Securely with PayPal
+          </a>
+          <p class="secure-note" style="font-size:.7rem;opacity:.35;text-align:center;margin-top:10px;">Secured by PayPal · 256-bit SSL · Buyer Protection Included</p>
+
+          <!-- SumUp Button -->
+          <a href="https://pay.sumup.com/b2c/QPKUFTJ8" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#1a1a2e,#16213e);border:1px solid var(--gold);color:var(--gold);padding:15px 20px;font-size:.88rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;width:100%;box-sizing:border-box;margin-top:10px;">
+            💳 &nbsp;Pay by Card via SumUp
+          </a>
+          <p style="font-size:.7rem;opacity:.35;text-align:center;margin-top:6px;">Visa · Mastercard · Amex · Apple Pay · Google Pay</p>
+
+          <!-- Payment Logos -->
+          <div style="margin-top:20px;border-top:1px solid var(--border);padding-top:20px;">
+            <p style="font-size:.78rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">We Accept</p>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+              <div style="background:#fff;padding:6px 12px;border-radius:4px;height:36px;display:flex;align-items:center;">
+                <span style="font-size:1rem;font-weight:900;font-style:italic;color:#1a1f71;font-family:Arial,sans-serif;">VISA</span>
+              </div>
+              <div style="background:#fff;padding:6px 10px;border-radius:4px;height:36px;display:flex;align-items:center;">
+                <span style="display:inline-flex;align-items:center;">
+                  <span style="width:20px;height:20px;background:#eb001b;border-radius:50%;display:inline-block;"></span>
+                  <span style="width:20px;height:20px;background:#f79e1b;border-radius:50%;display:inline-block;margin-left:-8px;"></span>
+                </span>
+              </div>
+              <div style="background:#016fd0;padding:6px 10px;border-radius:4px;height:36px;display:flex;align-items:center;">
+                <span style="font-size:.6rem;font-weight:900;color:#fff;font-family:Arial,sans-serif;text-align:center;line-height:1.2;">AMERICAN<br>EXPRESS</span>
+              </div>
+              <div style="background:#fff;padding:6px 12px;border-radius:4px;height:36px;display:flex;align-items:center;">
+                <span style="font-size:.85rem;font-weight:900;color:#003087;font-family:Arial,sans-serif;">Pay<span style="color:#009cde;">Pal</span></span>
+              </div>
+              <div style="background:#000;padding:6px 12px;border-radius:4px;height:36px;display:flex;align-items:center;">
+                <span style="font-size:.75rem;font-weight:600;color:#fff;font-family:-apple-system,sans-serif;"> Pay</span>
+              </div>
+              <div style="background:#fff;padding:6px 10px;border-radius:4px;height:36px;display:flex;align-items:center;">
+                <span style="font-size:.78rem;font-weight:700;font-family:Arial,sans-serif;"><span style="color:#4285f4;">G</span><span style="color:#ea4335;">o</span><span style="color:#fbbc05;">o</span><span style="color:#4285f4;">g</span><span style="color:#34a853;">l</span><span style="color:#ea4335;">e</span> <span style="color:#5f6368;">Pay</span></span>
+              </div>
+              <div style="background:#fff;padding:6px 12px;border-radius:4px;height:36px;display:flex;align-items:center;">
+                <span style="font-size:.75rem;font-weight:700;color:#2d7a22;font-family:Arial,sans-serif;">💵 Cash</span>
+              </div>
+            </div>
+            <p style="font-size:.7rem;opacity:.45;text-align:center;margin-top:12px;">Online payments via PayPal or SumUp · In-person payments at collection</p>
+          </div>
         </div>
+
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 <!-- REVIEWS -->
 <section id="reviews" style="background:var(--ink);">
@@ -960,18 +984,18 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
     <p class="section-body">Questions before you book? Not sure what's wrong? We're always happy to help.</p>
     <div class="contact-layout">
       <div class="fi">
-        <div class="ci"><div class="ci-icon">📱</div><div><h4>Phone &amp; WhatsApp</h4><p>+44 7444 171553<br><small style="opacity:.4;font-size:.8rem;">Replace with your number</small></p></div></div>
-        anthony.brown@abrepairscardiff.co.uk
+        <div class="ci"><div class="ci-icon">📱</div><div><h4>Phone &amp; WhatsApp</h4><p>+44 7444 171553<br><small style="opacity:.4;font-size:.8rem;">Call or WhatsApp anytime</small></p></div></div>
+        <div class="ci"><div class="ci-icon">💬</div><div><h4>WhatsApp Us</h4><p><a href="https://wa.me/447444171553" target="_blank" style="color:var(--gold);">Message us on WhatsApp</a><br><small style="opacity:.4;font-size:.8rem;">Reply within 1 hour</small></p></div></div>
         <div class="ci"><div class="ci-icon">📍</div><div><h4>Location</h4><p>57 Handley Road, Pengam Green, Cardiff CF24 2HF<br><small style="opacity:.4;font-size:.8rem;">Pengam Green, Cardiff CF24 2HF</small></p></div></div>
         <div class="ci"><div class="ci-icon">🕐</div><div><h4>Opening Hours</h4><div style="margin-top:8px;"><div class="hr-row"><span>Monday – Friday</span><span>9:00am – 6:00pm</span></div><div class="hr-row"><span>Saturday</span><span>10:00am – 4:00pm</span></div><div class="hr-row"><span>Sunday</span><span>By Appointment</span></div></div></div></div>
       </div>
       <div class="fi">
         <div class="eyebrow" style="margin-bottom:20px;"><div class="eyebrow-line"></div><div class="eyebrow-text">Follow Us</div></div>
         <p style="font-size:.9rem;font-weight:300;color:var(--text);line-height:1.8;margin-bottom:28px;">Follow us on social media for build photos, repair tips and exclusive offers. A Google review means the world to a small local business.</p>
-        <a href="#" class="soc-link"><span>📘</span><span>Facebook — AB Computer Repairs</span></a>
-        <a href="#" class="soc-link"><span>📸</span><span>Instagram — @abrepairs</span></a>
-        <a href="#" class="soc-link"><span>⭐</span><span>Leave Us a Google Review</span></a>
-        <a href="#" class="soc-link"><span>📺</span><span>YouTube — PC Builds &amp; Tips</span></a>
+        <a href="https://www.facebook.com/profile.php?id=61575739385660" target="_blank" class="soc-link"><span>📘</span><span>Facebook — AB Computer Repairs Cardiff</span></a>
+        <a href="https://www.instagram.com/abrepairscardiff" target="_blank" class="soc-link"><span>📸</span><span>Instagram — @abrepairscardiff</span></a>
+        <a href="https://search.google.com/local/writereview?placeid=abrepairscardiff" target="_blank" class="soc-link"><span>⭐</span><span>Leave Us a Google Review</span></a>
+        <a href="https://www.youtube.com/@abrepairscardiff" target="_blank" class="soc-link"><span>📺</span><span>YouTube — PC Builds &amp; Tips</span></a>
       </div>
     </div>
   </div>
@@ -982,7 +1006,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="#" class="logo"><div class="logo-emblem">AB</div><div class="logo-text-wrap"><strong>Computer Repairs</strong><span>Premium IT Services</span></div></a>
+        <a href="#" class="logo"><div class="logo-emblem">AB</div><div class="logo-text-wrap"><strong>Computer Repairs</strong><span>Cardiff &amp; South Wales</span></div></a>
         <p>Professional computer repairs, custom PC builds and full IT support. Fast, honest and affordable from a self-taught IT expert who builds from scratch.</p>
       </div>
       <div class="footer-col"><h4>Services</h4><ul><li><a href="#services">Hardware Repair</a></li><li><a href="#services">Virus Removal</a></li><li><a href="#services">Windows Install</a></li><li><a href="#services">Custom Builds</a></li><li><a href="#services">Data Recovery</a></li><li><a href="#services">Free Diagnostics</a></li></ul></div>
@@ -1014,7 +1038,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
   <button class="chat-btn" onclick="toggleChat()">💬</button>
 </div>
 
- <script>
+<script>
 // ── INTRO ──
 window.addEventListener('load', () => {
   setTimeout(() => {
@@ -1121,11 +1145,13 @@ function checkout() {
 
 // ── TOASTS ──
 const toastReviews = [
-  {initials:'MJ', name:'Mark from London',    text:'just left a 5★ review'},
-  {initials:'SP', name:'Sarah from Manchester', text:'booked a repair'},
-  {initials:'DK', name:'Danny from Leeds',     text:'just left a 5★ review'},
-  {initials:'TW', name:'Tom from Birmingham',  text:'booked a custom build'},
-  {initials:'LB', name:'Lisa from Bristol',    text:'left a 5★ review'},
+  {initials:'MJ', name:'Mark from Cardiff',    text:'just left a 5★ review'},
+  {initials:'SP', name:'Sarah from Penarth',   text:'booked a repair'},
+  {initials:'DK', name:'Danny from Canton',    text:'just left a 5★ review'},
+  {initials:'TW', name:'Tom from Roath',       text:'booked a custom PC build'},
+  {initials:'LB', name:'Lisa from Barry',      text:'left a 5★ review'},
+  {initials:'RJ', name:'Rob from Newport',     text:'booked a virus removal'},
+  {initials:'CW', name:'Claire from Pontypridd', text:'just left a 5★ review'},
 ];
 
 let toastIdx = 0;
@@ -1150,7 +1176,7 @@ function showToastAdd(name) {
   setTimeout(() => { el.classList.remove('show'); setTimeout(() => el.remove(), 400); }, 3000);
 }
 
-setTimeout(() => { showReviewToast(); setInterval(showReviewToast, 7000); }, 5000);
+setTimeout(() => { showReviewToast(); setInterval(showReviewToast, 12000); }, 8000);
 
 // ── EXIT POPUP ──
 let exitShown = false;
@@ -1209,30 +1235,7 @@ const counterObs = new IntersectionObserver(entries => {
   if(entries[0].isIntersecting) { animateCounters(); counterObs.disconnect(); }
 }, { threshold: 0.5 });
 const statsEl = document.querySelector('.hero-stats');
-if(statsEl) counterObs.observe(statsEl);
-
-// ── LIVE CHAT ──
-let chatOpen = false;
-function toggleChat() { chatOpen = !chatOpen; document.getElementById('chatWindow').classList.toggle('show', chatOpen); }
-function sendChat() {
-  const input = document.getElementById('chatInput');
-  const msg = input.value.trim();
-  if(!msg) return;
-  const msgs = document.getElementById('chatMsgs');
-  msgs.innerHTML += `<div class="chat-msg user-msg">${msg}</div>`;
-  input.value = '';
-  msgs.scrollTop = msgs.scrollHeight;
-  setTimeout(() => {
-    const replies = [
-      "Thanks for getting in touch! We'll get back to you very shortly. 😊",
-      "Great question! Feel free to call or WhatsApp us for an instant answer.",
-      "We'd love to help — book a free diagnostic and we'll take a look!",
-      "Our turnaround is usually same day or next day. We'll keep you updated throughout!"
-    ];
-    msgs.innerHTML += `<div class="chat-msg">${replies[Math.floor(Math.random()*replies.length)]}</div>`;
-    msgs.scrollTop = msgs.scrollHeight;
-  }, 1200);
-}
+if(statsEl) counterObs.o
 </script>
 </body>
 </html>
