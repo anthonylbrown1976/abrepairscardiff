@@ -1,18 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- AB Computer Repairs Cardiff | Updated 2026-04-06 13:33 -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-17KLRH8PPK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-17KLRH8PPK');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AB Computer Repairs Cardiff &amp; South Wales | Expert PC Repair</title>
+<title>AB Computer Repairs — Premium IT Services</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
 <style>
@@ -463,6 +454,26 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
   <div class="intro-sub">Computer Repairs — Premium IT Services</div>
 </div>
 
+<!-- ── LOGIN MODAL ── -->
+<div id="loginModal">
+  <div class="login-box">
+    <button class="login-close" onclick="closeLogin()">✕</button>
+    <div class="login-title">Welcome Back</div>
+    <p class="login-sub">Sign in to your AB Repairs account to track repairs and view order history.</p>
+    <div class="login-fg">
+      <label>Email Address</label>
+      <input type="email" id="loginEmail" placeholder="your@email.com">
+    </div>
+    <div class="login-fg">
+      <label>Password</label>
+      <input type="password" id="loginPass" placeholder="••••••••">
+    </div>
+    <button class="login-btn" onclick="doLogin()">Sign In to My Account</button>
+    <div class="login-err" id="loginErr">Incorrect email or password. Please try again.</div>
+    <p class="login-note">Demo: use any email + password "ab8477" to sign in</p>
+  </div>
+</div>
+
 <!-- ── EXIT POPUP ── -->
 <div id="exitPopup">
   <div class="exit-box">
@@ -550,7 +561,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
       <div class="logo-emblem">AB</div>
       <div class="logo-text-wrap">
         <strong>Computer Repairs</strong>
-        <span>Cardiff &amp; South Wales</span>
+        <span>Premium IT Services</span>
       </div>
     </a>
     <ul>
@@ -561,10 +572,10 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
       <li><a href="#contact">Contact</a></li>
       <div class="nav-icons">
         <div class="user-badge" id="userBadge">
-          <span id="userEmail"><a href="/cdn-cgi/l/email-protection#7819160c10171601561a0a170f1638191a0a1d0819110a0b1b190a1c111e1e561b17560d13" style="color:var(--gold);"><span class="__cf_email__" data-cfemail="0e6f607a66616077206c7c6179604e6f6c7c6b7e6f677c7d6d6f7c6a676868206d61207b65">[email&#160;protected]</span></a></span>
+          <span id="userEmail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bdc8ced8cffdd8d0dcd4d193ded2d0">[email&#160;protected]</a></span>
           <button onclick="logout()">Sign Out</button>
         </div>
-        <a href="#book" class="nav-icon-btn" title="Track My Repair" style="text-decoration:none;">🔍</a>
+        <button class="nav-icon-btn" onclick="openLogin()" id="loginBtn" title="Sign In">👤</button>
         <button class="nav-icon-btn" onclick="openBasket()" title="Basket">
           🛒<span class="cart-count" id="cartCount">0</span>
         </button>
@@ -890,59 +901,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
           <!-- REPLACE anthonybrown_@hotmail.co.uk with your PayPal email -->
           <a id="paypalLink" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=anthonybrown_@hotmail.co.uk&item_name=Computer+Repair&currency_code=GBP&amount=0" target="_blank" class="paypal-btn" onclick="updatePayPal(event)">🅿 &nbsp;Pay Securely with PayPal</a>
           <p class="secure-note">Secured by PayPal · 256-bit SSL · Buyer Protection Included</p>
-
-          <!-- SumUp Payment Button -->
-          <a href="https://pay.sumup.com/b2c/QPKUFTJ8" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#1a1a2e,#16213e);border:1px solid var(--gold);color:var(--gold);padding:15px 20px;font-family:'Outfit',sans-serif;font-size:.88rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;width:100%;transition:all .25s;margin-top:10px;">
-            💳 &nbsp;Pay by Card via SumUp
-          </a>
-          <p class="secure-note" style="margin-top:6px;">Visa · Mastercard · Amex · Apple Pay · Google Pay</p>
-
-          <!-- Payment Methods - Professional Logo Style -->
-          <div style="margin-top:20px;border-top:1px solid var(--border);padding-top:20px;">
-            <p style="font-size:.78rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">We Accept</p>
-            <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px;">
-
-              <!-- VISA -->
-              <div style="background:#fff;padding:6px 12px;border-radius:4px;display:flex;align-items:center;justify-content:center;min-width:64px;height:36px;">
-                <span style="font-size:1rem;font-weight:900;font-style:italic;color:#1a1f71;letter-spacing:-1px;font-family:Arial,sans-serif;">VISA</span>
-              </div>
-
-              <!-- Mastercard -->
-              <div style="background:#fff;padding:6px 10px;border-radius:4px;display:flex;align-items:center;justify-content:center;min-width:48px;height:36px;">
-                <span style="display:inline-flex;align-items:center;">
-                  <span style="width:20px;height:20px;background:#eb001b;border-radius:50%;display:inline-block;"></span>
-                  <span style="width:20px;height:20px;background:#f79e1b;border-radius:50%;display:inline-block;margin-left:-8px;opacity:.9;"></span>
-                </span>
-              </div>
-
-              <!-- Amex -->
-              <div style="background:#016fd0;padding:6px 10px;border-radius:4px;display:flex;align-items:center;justify-content:center;min-width:64px;height:36px;">
-                <span style="font-size:.6rem;font-weight:900;color:#fff;letter-spacing:1px;font-family:Arial,sans-serif;text-align:center;line-height:1.2;">AMERICAN<br>EXPRESS</span>
-              </div>
-
-              <!-- PayPal -->
-              <div style="background:#fff;padding:6px 12px;border-radius:4px;display:flex;align-items:center;justify-content:center;min-width:64px;height:36px;">
-                <span style="font-size:.85rem;font-weight:900;color:#003087;font-family:Arial,sans-serif;">Pay<span style="color:#009cde;">Pal</span></span>
-              </div>
-
-              <!-- Apple Pay -->
-              <div style="background:#000;padding:6px 12px;border-radius:4px;display:flex;align-items:center;justify-content:center;min-width:64px;height:36px;">
-                <span style="font-size:.75rem;font-weight:600;color:#fff;font-family:-apple-system,sans-serif;"> Pay</span>
-              </div>
-
-              <!-- Google Pay -->
-              <div style="background:#fff;padding:6px 10px;border-radius:4px;display:flex;align-items:center;justify-content:center;min-width:64px;height:36px;">
-                <span style="font-size:.78rem;font-weight:700;font-family:Arial,sans-serif;"><span style="color:#4285f4;">G</span><span style="color:#ea4335;">o</span><span style="color:#fbbc05;">o</span><span style="color:#4285f4;">g</span><span style="color:#34a853;">l</span><span style="color:#ea4335;">e</span> <span style="color:#5f6368;">Pay</span></span>
-              </div>
-
-              <!-- Cash -->
-              <div style="background:#fff;padding:6px 12px;border-radius:4px;display:flex;align-items:center;justify-content:center;min-width:64px;height:36px;">
-                <span style="font-size:.75rem;font-weight:700;color:#2d7a22;font-family:Arial,sans-serif;">💵 Cash</span>
-              </div>
-
-            </div>
-            <p style="font-size:.7rem;color:var(--text);opacity:.45;text-align:center;">Online payments via PayPal · In-person payments accepted at collection</p>
-          </div>
         </div>
         <div class="tracker-card fi">
           <h3>🔍 Track Your Repair</h3>
@@ -1002,18 +960,18 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
     <p class="section-body">Questions before you book? Not sure what's wrong? We're always happy to help.</p>
     <div class="contact-layout">
       <div class="fi">
-        <div class="ci"><div class="ci-icon">📱</div><div><h4>Phone &amp; WhatsApp</h4><p>+44 7444 171553<br><small style="opacity:.4;font-size:.8rem;">Call or WhatsApp anytime</small></p></div></div>
-        <div class="ci"><div class="ci-icon">📧</div><div><h4>Email</h4><p><a href="/cdn-cgi/l/email-protection#7918170d11161700571b0b160e1739181b0b1c0918100b0a1a180b1d101f1f571a16570c12" style="color:var(--gold);"><span class="__cf_email__" data-cfemail="ff9e918b97909186d19d8d908891bf9e9d8d9a8f9e968d8c9c9e8d9b969999d19c90d18a94">[email&#160;protected]</span></a><br><small style="opacity:.4;font-size:.8rem;">Reply within 1 hour</small></p></div></div>
+        <div class="ci"><div class="ci-icon">📱</div><div><h4>Phone &amp; WhatsApp</h4><p>+44 7444 171553<br><small style="opacity:.4;font-size:.8rem;">Replace with your number</small></p></div></div>
+        <div class="ci"><div class="ci-icon">📧</div><div><h4>Email</h4><p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="afc6c1c9c0efcecdddcadfcec6dddc81ccc081dac4">[email&#160;protected]</a><br><small style="opacity:.4;font-size:.8rem;">Replace with your email</small></p></div></div>
         <div class="ci"><div class="ci-icon">📍</div><div><h4>Location</h4><p>57 Handley Road, Pengam Green, Cardiff CF24 2HF<br><small style="opacity:.4;font-size:.8rem;">Pengam Green, Cardiff CF24 2HF</small></p></div></div>
         <div class="ci"><div class="ci-icon">🕐</div><div><h4>Opening Hours</h4><div style="margin-top:8px;"><div class="hr-row"><span>Monday – Friday</span><span>9:00am – 6:00pm</span></div><div class="hr-row"><span>Saturday</span><span>10:00am – 4:00pm</span></div><div class="hr-row"><span>Sunday</span><span>By Appointment</span></div></div></div></div>
       </div>
       <div class="fi">
         <div class="eyebrow" style="margin-bottom:20px;"><div class="eyebrow-line"></div><div class="eyebrow-text">Follow Us</div></div>
         <p style="font-size:.9rem;font-weight:300;color:var(--text);line-height:1.8;margin-bottom:28px;">Follow us on social media for build photos, repair tips and exclusive offers. A Google review means the world to a small local business.</p>
-        <a href="https://www.facebook.com/profile.php?id=61575739385660" target="_blank" class="soc-link"><span>📘</span><span>Facebook — AB Computer Repairs Cardiff</span></a>
-        <a href="https://www.instagram.com/abrepairscardiff" target="_blank" class="soc-link"><span>📸</span><span>Instagram — @abrepairscardiff</span></a>
-        <a href="https://search.google.com/local/writereview?placeid=abrepairscardiff" target="_blank" class="soc-link"><span>⭐</span><span>Leave Us a Google Review</span></a>
-        <a href="https://www.youtube.com/@abrepairscardiff" target="_blank" class="soc-link"><span>📺</span><span>YouTube — PC Builds &amp; Tips</span></a>
+        <a href="#" class="soc-link"><span>📘</span><span>Facebook — AB Computer Repairs</span></a>
+        <a href="#" class="soc-link"><span>📸</span><span>Instagram — @abrepairs</span></a>
+        <a href="#" class="soc-link"><span>⭐</span><span>Leave Us a Google Review</span></a>
+        <a href="#" class="soc-link"><span>📺</span><span>YouTube — PC Builds &amp; Tips</span></a>
       </div>
     </div>
   </div>
@@ -1024,7 +982,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="#" class="logo"><div class="logo-emblem">AB</div><div class="logo-text-wrap"><strong>Computer Repairs</strong><span>Cardiff &amp; South Wales</span></div></a>
+        <a href="#" class="logo"><div class="logo-emblem">AB</div><div class="logo-text-wrap"><strong>Computer Repairs</strong><span>Premium IT Services</span></div></a>
         <p>Professional computer repairs, custom PC builds and full IT support. Fast, honest and affordable from a self-taught IT expert who builds from scratch.</p>
       </div>
       <div class="footer-col"><h4>Services</h4><ul><li><a href="#services">Hardware Repair</a></li><li><a href="#services">Virus Removal</a></li><li><a href="#services">Windows Install</a></li><li><a href="#services">Custom Builds</a></li><li><a href="#services">Data Recovery</a></li><li><a href="#services">Free Diagnostics</a></li></ul></div>
@@ -1056,7 +1014,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
   <button class="chat-btn" onclick="toggleChat()">💬</button>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── INTRO ──
 window.addEventListener('load', () => {
   setTimeout(() => {
@@ -1163,13 +1121,11 @@ function checkout() {
 
 // ── TOASTS ──
 const toastReviews = [
-  {initials:'MJ', name:'Mark from Cardiff',    text:'just left a 5★ review'},
-  {initials:'SP', name:'Sarah from Penarth',   text:'booked a repair'},
-  {initials:'DK', name:'Danny from Canton',    text:'just left a 5★ review'},
-  {initials:'TW', name:'Tom from Roath',       text:'booked a custom PC build'},
-  {initials:'LB', name:'Lisa from Barry',      text:'left a 5★ review'},
-  {initials:'RJ', name:'Rob from Newport',     text:'booked a virus removal'},
-  {initials:'CW', name:'Claire from Pontypridd', text:'just left a 5★ review'},
+  {initials:'MJ', name:'Mark from London',    text:'just left a 5★ review'},
+  {initials:'SP', name:'Sarah from Manchester', text:'booked a repair'},
+  {initials:'DK', name:'Danny from Leeds',     text:'just left a 5★ review'},
+  {initials:'TW', name:'Tom from Birmingham',  text:'booked a custom build'},
+  {initials:'LB', name:'Lisa from Bristol',    text:'left a 5★ review'},
 ];
 
 let toastIdx = 0;
@@ -1194,7 +1150,7 @@ function showToastAdd(name) {
   setTimeout(() => { el.classList.remove('show'); setTimeout(() => el.remove(), 400); }, 3000);
 }
 
-setTimeout(() => { showReviewToast(); setInterval(showReviewToast, 12000); }, 8000);
+setTimeout(() => { showReviewToast(); setInterval(showReviewToast, 7000); }, 5000);
 
 // ── EXIT POPUP ──
 let exitShown = false;
