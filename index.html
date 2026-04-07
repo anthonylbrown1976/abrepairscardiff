@@ -1,9 +1,65 @@
 <!DOCTYPE html>
+<!-- Build 1775604179 -->
+<!-- Build 1775532612 -->
+<!-- Build1775532391 -->
+<!-- OldBuild1775532103 -->
+<!-- OldBuild1775532095 -->
+<!-- OldBuild1775531742 -->
+<!-- OldBuild 1775531445 -->
+<!-- Build1775532391 -->
+<!-- OldBuild1775532103 -->
+<!-- OldBuild1775532095 -->
+<!-- OldBuild1775531742 -->
+<!-- OldBuild1775524802 -->
+<!-- OldBuild1775524483 -->
+<!-- OldBuild1775524020 -->
+<!-- OldBuild1775522688 -->
+<!-- OldBuild1775521927 -->
+<!-- OldBuild1775521220 -->
+<!-- PrevBuild1775520253 -->
+<!-- OldBuild 1775519671 -->
+<!-- OldBuild 1775519598 -->
+<!-- Build1775532391 -->
+<!-- OldBuild1775532103 -->
+<!-- OldBuild1775532095 -->
+<!-- OldBuild1775531742 -->
+<!-- OldBuild1775524802 -->
+<!-- OldBuild1775524483 -->
+<!-- OldBuild1775524020 -->
+<!-- OldBuild1775522688 -->
+<!-- OldBuild1775521927 -->
+<!-- OldBuild1775521220 -->
+<!-- PrevBuild1775520253 -->
+<!-- OldBuild 1775519671 -->
+<!-- OldBuild 1775504036 -->
+<!-- Build1775532391 -->
+<!-- OldBuild1775532103 -->
+<!-- OldBuild1775532095 -->
+<!-- OldBuild1775531742 -->
+<!-- OldBuild1775524802 -->
+<!-- OldBuild1775524483 -->
+<!-- OldBuild1775524020 -->
+<!-- OldBuild1775522688 -->
+<!-- OldBuild1775521927 -->
+<!-- OldBuild1775521220 -->
+<!-- PrevBuild1775520253 -->
+<!-- OldBuild 1775519671 -->
+<!-- OldBuild 1775492921 -->
+<!-- OldBuild 1775492175 -->
 <html lang="en">
 <head>
+<!-- AB Computer Repairs Cardiff | Build 1775492162 -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-17KLRH8PPK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-17KLRH8PPK');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AB Computer Repairs — Premium IT Services</title>
+<title>AB Computer Repairs Cardiff &amp; South Wales | Expert PC Repair</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
 <style>
@@ -443,6 +499,356 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
 @media(max-width:1080px){.hero{grid-template-columns:1fr;}.hero-right,.hero-light{display:none;}}
 @media(max-width:860px){.why-layout,.book-layout,.contact-layout{grid-template-columns:1fr;}nav ul{display:none;}.footer-top{grid-template-columns:1fr 1fr;}.form-row-2{grid-template-columns:1fr;}body{cursor:auto;}.cur-dot,.cur-ring{display:none;}#basketPanel{width:100%;right:-100%;}}
 @media(max-width:520px){.footer-top{grid-template-columns:1fr;}}
+
+
+
+
+/* Presentation Button */
+
+
+
+
+/* ── PRESENTATION POPUP ── */
+#presPopup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #080808;
+  z-index: 99999;
+}
+#presPopup.open { display: block; }
+#presClose {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 100000;
+  background: rgba(212,175,55,0.15);
+  border: 1px solid rgba(212,175,55,0.5);
+  color: #d4af37;
+  width: 44px;
+  height: 44px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+#presPopup.open ~ #presClose,
+#presClose.visible { display: flex; }
+.pres-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #b49120, #f0d25a);
+  color: #080808;
+  padding: 16px 36px;
+  font-family: Outfit, sans-serif;
+  font-size: .88rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: all .3s;
+  margin: 24px auto;
+}
+.pres-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(212,175,55,.5);
+}
+
+</style>
+<style>
+
+  :root {
+    --gold: #d4af37;
+    --gold2: #f0d25a;
+    --gold3: #a07820;
+    --ink: #080808;
+    --ink2: #111114;
+    --ink3: #1a1a20;
+    --white: #ffffff;
+    --grey: #9a9fb0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ink); font-family: 'Outfit', sans-serif; }
+  .slideshow { width: 100vw; height: 100vh; position: relative; }
+  .slide { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.8s ease; overflow: hidden; }
+  .slide.active { opacity: 1; }
+  .grain { position: fixed; inset: 0; pointer-events: none; z-index: 999; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-size: 128px; }
+  .progress-bar { position: fixed; bottom: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--gold3), var(--gold), var(--gold2)); z-index: 1000; transition: width 0.1s linear; box-shadow: 0 0 12px var(--gold); }
+  .dots { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 1000; }
+  .dot { width: 8px; height: 8px; background: var(--gold3); transform: rotate(45deg); cursor: pointer; transition: all 0.3s; }
+  .dot.active { background: var(--gold); transform: rotate(45deg) scale(1.5); box-shadow: 0 0 8px var(--gold); }
+  .slide-num { position: fixed; top: 24px; right: 30px; font-family: 'Playfair Display', serif; font-size: 0.75rem; color: var(--gold3); letter-spacing: 3px; z-index: 1000; }
+  .nav-btn { position: fixed; top: 50%; transform: translateY(-50%); background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.3); color: var(--gold); width: 52px; height: 52px; cursor: pointer; font-size: 1.4rem; display: flex; align-items: center; justify-content: center; z-index: 1000; transition: all 0.3s; }
+  .nav-btn:hover { background: rgba(212,175,55,0.2); }
+  .nav-prev { left: 16px; }
+  .nav-next { right: 16px; }
+
+  @keyframes fadeUp { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeDown { from { opacity:0; transform:translateY(-40px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes scaleIn { from { opacity:0; transform:scale(0.8); } to { opacity:1; transform:scale(1); } }
+  @keyframes slideLeft { from { opacity:0; transform:translateX(60px); } to { opacity:1; transform:translateX(0); } }
+  @keyframes slideRight { from { opacity:0; transform:translateX(-60px); } to { opacity:1; transform:translateX(0); } }
+  @keyframes goldPulse { 0%,100% { box-shadow:0 0 20px rgba(212,175,55,0.3); } 50% { box-shadow:0 0 50px rgba(212,175,55,0.7); } }
+  @keyframes shimmer { 0% { background-position:-200% center; } 100% { background-position:200% center; } }
+  @keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-12px); } }
+
+  .slide.active .a1 { animation: fadeUp 0.7s ease 0.1s both; }
+  .slide.active .a2 { animation: fadeUp 0.7s ease 0.3s both; }
+  .slide.active .a3 { animation: fadeUp 0.7s ease 0.5s both; }
+  .slide.active .a4 { animation: fadeUp 0.7s ease 0.7s both; }
+  .slide.active .a5 { animation: fadeUp 0.7s ease 0.9s both; }
+  .slide.active .a6 { animation: fadeUp 0.7s ease 1.1s both; }
+  .slide.active .aL { animation: slideRight 0.7s ease 0.2s both; }
+  .slide.active .aR { animation: slideLeft 0.7s ease 0.4s both; }
+  .slide.active .aS { animation: scaleIn 0.7s ease 0.2s both; }
+  .slide.active .aD { animation: fadeDown 0.7s ease 0.1s both; }
+
+  .shimmer { background: linear-gradient(90deg, var(--gold3), var(--gold2), var(--gold), var(--gold2), var(--gold3)); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: shimmer 3s linear infinite; }
+  .gold-line { height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 auto; }
+  .gold-line-thin { height: 1px; background: linear-gradient(90deg, transparent, var(--gold3), transparent); margin: 0 auto; }
+
+  .corner-tl, .corner-tr, .corner-bl, .corner-br { position: absolute; width: 60px; height: 60px; border-color: var(--gold); border-style: solid; opacity: 0.5; }
+  .corner-tl { top:20px; left:20px; border-width:2px 0 0 2px; }
+  .corner-tr { top:20px; right:20px; border-width:2px 2px 0 0; }
+  .corner-bl { bottom:20px; left:20px; border-width:0 0 2px 2px; }
+  .corner-br { bottom:20px; right:20px; border-width:0 2px 2px 0; }
+
+  /* SLIDE 1 */
+  #s1 { background: radial-gradient(ellipse at 50% 30%, #1a1610 0%, #080808 70%); }
+  .s1-box { display:inline-block; background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2)); padding:24px 60px; margin-bottom:40px; animation:goldPulse 3s ease infinite; }
+  .s1-ab { font-family:'Playfair Display',serif; font-size:clamp(80px,12vw,140px); font-weight:900; color:var(--ink); line-height:1; letter-spacing:-4px; }
+  .s1-title { font-family:'Playfair Display',serif; font-size:clamp(32px,5vw,72px); color:var(--white); font-weight:700; letter-spacing:-1px; margin-bottom:12px; }
+  .s1-sub { font-size:clamp(12px,1.8vw,20px); color:var(--gold); letter-spacing:8px; text-transform:uppercase; font-weight:300; margin-bottom:40px; }
+  .s1-tags { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:32px; }
+  .s1-tag { border:1px solid var(--gold3); padding:8px 20px; font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:600; }
+
+  /* SLIDE 2 */
+  #s2 { background: radial-gradient(ellipse at 30% 60%, #141008 0%, #080808 65%); }
+  .s2-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; max-width:1100px; width:90%; align-items:center; }
+  .s2-icon { width:160px; height:160px; border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; font-size:80px; margin-bottom:32px; animation:float 3s ease infinite; background:var(--ink2); box-shadow:0 0 40px rgba(212,175,55,0.15); }
+  .s2-tag { font-size:11px; letter-spacing:5px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; font-weight:600; }
+  .s2-h { font-family:'Playfair Display',serif; font-size:clamp(42px,6vw,90px); color:var(--white); line-height:0.95; margin-bottom:8px; }
+  .s2-h em { font-style:italic; color:var(--gold); }
+  .s2-body { font-size:16px; color:var(--grey); line-height:1.8; margin-top:24px; }
+  .s2-points { display:flex; flex-direction:column; gap:16px; }
+  .s2-pt { display:flex; align-items:center; gap:20px; background:var(--ink2); border:1px solid rgba(212,175,55,0.15); border-left:3px solid var(--gold); padding:20px 24px; }
+  .s2-pt-icon { font-size:28px; }
+  .s2-pt-t { color:var(--white); font-size:16px; font-weight:600; }
+  .s2-pt-s { color:var(--grey); font-size:13px; margin-top:4px; }
+
+  /* SLIDE 3 */
+  #s3 { background: radial-gradient(ellipse at 70% 30%, #101418 0%, #080808 65%); }
+  .s3-wrap { max-width:1200px; width:92%; text-align:center; }
+  .s3-eye { font-size:11px; letter-spacing:6px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; font-weight:600; }
+  .s3-title { font-family:'Playfair Display',serif; font-size:clamp(30px,4vw,58px); color:var(--white); margin-bottom:8px; }
+  .s3-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:32px; }
+  .s3-card { background:var(--ink2); border:1px solid rgba(212,175,55,0.12); padding:28px 16px; text-align:center; position:relative; overflow:hidden; }
+  .s3-card::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
+  .s3-icon { font-size:36px; margin-bottom:12px; display:block; }
+  .s3-name { font-size:14px; font-weight:700; color:var(--white); margin-bottom:6px; }
+  .s3-price { font-size:13px; color:var(--gold); font-weight:600; }
+  .s3-card.free { border-color:rgba(212,175,55,0.4); }
+
+  /* SLIDE 4 */
+  #s4 { background: radial-gradient(ellipse at 50% 50%, #0e0e08 0%, #080808 70%); }
+  .s4-wrap { text-align:center; max-width:800px; padding:40px; }
+  .s4-icon { font-size:100px; display:block; margin-bottom:24px; animation:float 2.5s ease infinite; }
+  .s4-label { font-size:11px; letter-spacing:8px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
+  .s4-h { font-family:'Playfair Display',serif; font-size:clamp(56px,8vw,130px); color:var(--white); line-height:0.9; margin-bottom:8px; }
+  .s4-h .g { color:var(--gold); }
+  .s4-sub { font-size:clamp(16px,2.5vw,26px); color:var(--grey); margin:24px 0 40px; font-weight:300; }
+  .s4-stats { display:flex; gap:32px; justify-content:center; flex-wrap:wrap; margin-top:32px; }
+  .s4-stat { text-align:center; border:1px solid rgba(212,175,55,0.2); padding:24px 32px; background:var(--ink2); position:relative; }
+  .s4-stat::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
+  .s4-num { font-family:'Playfair Display',serif; font-size:48px; color:var(--gold); font-weight:900; display:block; }
+  .s4-lbl { font-size:12px; color:var(--grey); letter-spacing:2px; text-transform:uppercase; }
+
+  /* SLIDE 5 */
+  #s5 { background: radial-gradient(ellipse at 20% 70%, #0a0e14 0%, #080808 65%); }
+  .s5-wrap { max-width:1000px; width:90%; text-align:center; }
+  .s5-title { font-family:'Playfair Display',serif; font-size:clamp(36px,5vw,72px); color:var(--white); margin-bottom:8px; }
+  .s5-sub { color:var(--gold); font-size:16px; letter-spacing:4px; text-transform:uppercase; margin-bottom:48px; }
+  .s5-pays { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:48px; }
+  .s5-pay { background:var(--ink2); border:1px solid rgba(212,175,55,0.2); padding:16px 24px; display:flex; align-items:center; gap:10px; font-size:14px; font-weight:700; color:var(--white); min-width:140px; justify-content:center; }
+  .s5-trusts { display:flex; gap:24px; justify-content:center; flex-wrap:wrap; }
+  .s5-trust { text-align:center; padding:24px 20px; background:var(--ink2); border:1px solid rgba(212,175,55,0.12); min-width:160px; position:relative; }
+  .s5-trust::before { content:''; position:absolute; bottom:0;left:0;right:0; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
+  .s5-t-icon { font-size:36px; margin-bottom:10px; display:block; }
+  .s5-t-text { font-size:13px; color:var(--white); font-weight:700; }
+  .s5-t-sub { font-size:11px; color:var(--grey); margin-top:4px; }
+
+  /* SLIDE 6 */
+  #s6 { background: radial-gradient(ellipse at 50% 50%, #181408 0%, #080808 70%); }
+  .s6-wrap { text-align:center; max-width:800px; padding:40px; }
+  .s6-stars { font-size:40px; letter-spacing:10px; color:var(--gold); margin-bottom:32px; animation:float 3s ease infinite; display:block; }
+  .s6-h { font-family:'Playfair Display',serif; font-size:clamp(36px,5vw,80px); color:var(--white); line-height:1.1; margin-bottom:16px; }
+  .s6-h em { font-style:italic; color:var(--gold); }
+  .s6-body { font-size:18px; color:var(--grey); margin-bottom:48px; line-height:1.8; }
+  .s6-btns { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-bottom:40px; }
+  .s6-btn1 { background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2)); color:var(--ink); padding:18px 48px; font-size:14px; font-weight:700; letter-spacing:4px; text-transform:uppercase; text-decoration:none; display:inline-block; animation:goldPulse 3s ease infinite; }
+  .s6-btn2 { background:transparent; border:1px solid var(--gold); color:var(--gold); padding:18px 48px; font-size:14px; font-weight:700; letter-spacing:4px; text-transform:uppercase; text-decoration:none; display:inline-block; }
+  .s6-contacts { display:flex; gap:48px; justify-content:center; flex-wrap:wrap; }
+  .s6-c-label { font-size:10px; letter-spacing:4px; color:var(--gold3); text-transform:uppercase; margin-bottom:6px; }
+  .s6-c-value { font-family:'Playfair Display',serif; font-size:22px; color:var(--white); }
+
+  @media(max-width:768px) {
+    .s2-grid { grid-template-columns:1fr; gap:30px; }
+    .s3-grid { grid-template-columns:repeat(2,1fr); }
+    .s4-stats { gap:12px; }
+    .s4-stat { padding:12px 16px; }
+    .s4-num { font-size:32px; }
+    .corner-tl,.corner-tr,.corner-bl,.corner-br { width:30px; height:30px; }
+  }
+
+</style>
+<style id="pres-styles">
+
+  :root {
+    --gold: #d4af37;
+    --gold2: #f0d25a;
+    --gold3: #a07820;
+    --ink: #080808;
+    --ink2: #111114;
+    --ink3: #1a1a20;
+    --white: #ffffff;
+    --grey: #9a9fb0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ink); font-family: 'Outfit', sans-serif; }
+  .slideshow { width: 100vw; height: 100vh; position: relative; }
+  .slide { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.8s ease; overflow: hidden; }
+  .slide.active { opacity: 1; }
+  .grain { position: fixed; inset: 0; pointer-events: none; z-index: 999; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-size: 128px; }
+  .progress-bar { position: fixed; bottom: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--gold3), var(--gold), var(--gold2)); z-index: 1000; transition: width 0.1s linear; box-shadow: 0 0 12px var(--gold); }
+  .dots { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 1000; }
+  .dot { width: 8px; height: 8px; background: var(--gold3); transform: rotate(45deg); cursor: pointer; transition: all 0.3s; }
+  .dot.active { background: var(--gold); transform: rotate(45deg) scale(1.5); box-shadow: 0 0 8px var(--gold); }
+  .slide-num { position: fixed; top: 24px; right: 30px; font-family: 'Playfair Display', serif; font-size: 0.75rem; color: var(--gold3); letter-spacing: 3px; z-index: 1000; }
+  .nav-btn { position: fixed; top: 50%; transform: translateY(-50%); background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.3); color: var(--gold); width: 52px; height: 52px; cursor: pointer; font-size: 1.4rem; display: flex; align-items: center; justify-content: center; z-index: 1000; transition: all 0.3s; }
+  .nav-btn:hover { background: rgba(212,175,55,0.2); }
+  .nav-prev { left: 16px; }
+  .nav-next { right: 16px; }
+
+  @keyframes fadeUp { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeDown { from { opacity:0; transform:translateY(-40px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes scaleIn { from { opacity:0; transform:scale(0.8); } to { opacity:1; transform:scale(1); } }
+  @keyframes slideLeft { from { opacity:0; transform:translateX(60px); } to { opacity:1; transform:translateX(0); } }
+  @keyframes slideRight { from { opacity:0; transform:translateX(-60px); } to { opacity:1; transform:translateX(0); } }
+  @keyframes goldPulse { 0%,100% { box-shadow:0 0 20px rgba(212,175,55,0.3); } 50% { box-shadow:0 0 50px rgba(212,175,55,0.7); } }
+  @keyframes shimmer { 0% { background-position:-200% center; } 100% { background-position:200% center; } }
+  @keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-12px); } }
+
+  .slide.active .a1 { animation: fadeUp 0.7s ease 0.1s both; }
+  .slide.active .a2 { animation: fadeUp 0.7s ease 0.3s both; }
+  .slide.active .a3 { animation: fadeUp 0.7s ease 0.5s both; }
+  .slide.active .a4 { animation: fadeUp 0.7s ease 0.7s both; }
+  .slide.active .a5 { animation: fadeUp 0.7s ease 0.9s both; }
+  .slide.active .a6 { animation: fadeUp 0.7s ease 1.1s both; }
+  .slide.active .aL { animation: slideRight 0.7s ease 0.2s both; }
+  .slide.active .aR { animation: slideLeft 0.7s ease 0.4s both; }
+  .slide.active .aS { animation: scaleIn 0.7s ease 0.2s both; }
+  .slide.active .aD { animation: fadeDown 0.7s ease 0.1s both; }
+
+  .shimmer { background: linear-gradient(90deg, var(--gold3), var(--gold2), var(--gold), var(--gold2), var(--gold3)); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: shimmer 3s linear infinite; }
+  .gold-line { height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 auto; }
+  .gold-line-thin { height: 1px; background: linear-gradient(90deg, transparent, var(--gold3), transparent); margin: 0 auto; }
+
+  .corner-tl, .corner-tr, .corner-bl, .corner-br { position: absolute; width: 60px; height: 60px; border-color: var(--gold); border-style: solid; opacity: 0.5; }
+  .corner-tl { top:20px; left:20px; border-width:2px 0 0 2px; }
+  .corner-tr { top:20px; right:20px; border-width:2px 2px 0 0; }
+  .corner-bl { bottom:20px; left:20px; border-width:0 0 2px 2px; }
+  .corner-br { bottom:20px; right:20px; border-width:0 2px 2px 0; }
+
+  /* SLIDE 1 */
+  #s1 { background: radial-gradient(ellipse at 50% 30%, #1a1610 0%, #080808 70%); }
+  .s1-box { display:inline-block; background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2)); padding:24px 60px; margin-bottom:40px; animation:goldPulse 3s ease infinite; }
+  .s1-ab { font-family:'Playfair Display',serif; font-size:clamp(80px,12vw,140px); font-weight:900; color:var(--ink); line-height:1; letter-spacing:-4px; }
+  .s1-title { font-family:'Playfair Display',serif; font-size:clamp(32px,5vw,72px); color:var(--white); font-weight:700; letter-spacing:-1px; margin-bottom:12px; }
+  .s1-sub { font-size:clamp(12px,1.8vw,20px); color:var(--gold); letter-spacing:8px; text-transform:uppercase; font-weight:300; margin-bottom:40px; }
+  .s1-tags { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:32px; }
+  .s1-tag { border:1px solid var(--gold3); padding:8px 20px; font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:600; }
+
+  /* SLIDE 2 */
+  #s2 { background: radial-gradient(ellipse at 30% 60%, #141008 0%, #080808 65%); }
+  .s2-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; max-width:1100px; width:90%; align-items:center; }
+  .s2-icon { width:160px; height:160px; border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; font-size:80px; margin-bottom:32px; animation:float 3s ease infinite; background:var(--ink2); box-shadow:0 0 40px rgba(212,175,55,0.15); }
+  .s2-tag { font-size:11px; letter-spacing:5px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; font-weight:600; }
+  .s2-h { font-family:'Playfair Display',serif; font-size:clamp(42px,6vw,90px); color:var(--white); line-height:0.95; margin-bottom:8px; }
+  .s2-h em { font-style:italic; color:var(--gold); }
+  .s2-body { font-size:16px; color:var(--grey); line-height:1.8; margin-top:24px; }
+  .s2-points { display:flex; flex-direction:column; gap:16px; }
+  .s2-pt { display:flex; align-items:center; gap:20px; background:var(--ink2); border:1px solid rgba(212,175,55,0.15); border-left:3px solid var(--gold); padding:20px 24px; }
+  .s2-pt-icon { font-size:28px; }
+  .s2-pt-t { color:var(--white); font-size:16px; font-weight:600; }
+  .s2-pt-s { color:var(--grey); font-size:13px; margin-top:4px; }
+
+  /* SLIDE 3 */
+  #s3 { background: radial-gradient(ellipse at 70% 30%, #101418 0%, #080808 65%); }
+  .s3-wrap { max-width:1200px; width:92%; text-align:center; }
+  .s3-eye { font-size:11px; letter-spacing:6px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; font-weight:600; }
+  .s3-title { font-family:'Playfair Display',serif; font-size:clamp(30px,4vw,58px); color:var(--white); margin-bottom:8px; }
+  .s3-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:32px; }
+  .s3-card { background:var(--ink2); border:1px solid rgba(212,175,55,0.12); padding:28px 16px; text-align:center; position:relative; overflow:hidden; }
+  .s3-card::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
+  .s3-icon { font-size:36px; margin-bottom:12px; display:block; }
+  .s3-name { font-size:14px; font-weight:700; color:var(--white); margin-bottom:6px; }
+  .s3-price { font-size:13px; color:var(--gold); font-weight:600; }
+  .s3-card.free { border-color:rgba(212,175,55,0.4); }
+
+  /* SLIDE 4 */
+  #s4 { background: radial-gradient(ellipse at 50% 50%, #0e0e08 0%, #080808 70%); }
+  .s4-wrap { text-align:center; max-width:800px; padding:40px; }
+  .s4-icon { font-size:100px; display:block; margin-bottom:24px; animation:float 2.5s ease infinite; }
+  .s4-label { font-size:11px; letter-spacing:8px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
+  .s4-h { font-family:'Playfair Display',serif; font-size:clamp(56px,8vw,130px); color:var(--white); line-height:0.9; margin-bottom:8px; }
+  .s4-h .g { color:var(--gold); }
+  .s4-sub { font-size:clamp(16px,2.5vw,26px); color:var(--grey); margin:24px 0 40px; font-weight:300; }
+  .s4-stats { display:flex; gap:32px; justify-content:center; flex-wrap:wrap; margin-top:32px; }
+  .s4-stat { text-align:center; border:1px solid rgba(212,175,55,0.2); padding:24px 32px; background:var(--ink2); position:relative; }
+  .s4-stat::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
+  .s4-num { font-family:'Playfair Display',serif; font-size:48px; color:var(--gold); font-weight:900; display:block; }
+  .s4-lbl { font-size:12px; color:var(--grey); letter-spacing:2px; text-transform:uppercase; }
+
+  /* SLIDE 5 */
+  #s5 { background: radial-gradient(ellipse at 20% 70%, #0a0e14 0%, #080808 65%); }
+  .s5-wrap { max-width:1000px; width:90%; text-align:center; }
+  .s5-title { font-family:'Playfair Display',serif; font-size:clamp(36px,5vw,72px); color:var(--white); margin-bottom:8px; }
+  .s5-sub { color:var(--gold); font-size:16px; letter-spacing:4px; text-transform:uppercase; margin-bottom:48px; }
+  .s5-pays { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:48px; }
+  .s5-pay { background:var(--ink2); border:1px solid rgba(212,175,55,0.2); padding:16px 24px; display:flex; align-items:center; gap:10px; font-size:14px; font-weight:700; color:var(--white); min-width:140px; justify-content:center; }
+  .s5-trusts { display:flex; gap:24px; justify-content:center; flex-wrap:wrap; }
+  .s5-trust { text-align:center; padding:24px 20px; background:var(--ink2); border:1px solid rgba(212,175,55,0.12); min-width:160px; position:relative; }
+  .s5-trust::before { content:''; position:absolute; bottom:0;left:0;right:0; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
+  .s5-t-icon { font-size:36px; margin-bottom:10px; display:block; }
+  .s5-t-text { font-size:13px; color:var(--white); font-weight:700; }
+  .s5-t-sub { font-size:11px; color:var(--grey); margin-top:4px; }
+
+  /* SLIDE 6 */
+  #s6 { background: radial-gradient(ellipse at 50% 50%, #181408 0%, #080808 70%); }
+  .s6-wrap { text-align:center; max-width:800px; padding:40px; }
+  .s6-stars { font-size:40px; letter-spacing:10px; color:var(--gold); margin-bottom:32px; animation:float 3s ease infinite; display:block; }
+  .s6-h { font-family:'Playfair Display',serif; font-size:clamp(36px,5vw,80px); color:var(--white); line-height:1.1; margin-bottom:16px; }
+  .s6-h em { font-style:italic; color:var(--gold); }
+  .s6-body { font-size:18px; color:var(--grey); margin-bottom:48px; line-height:1.8; }
+  .s6-btns { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-bottom:40px; }
+  .s6-btn1 { background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2)); color:var(--ink); padding:18px 48px; font-size:14px; font-weight:700; letter-spacing:4px; text-transform:uppercase; text-decoration:none; display:inline-block; animation:goldPulse 3s ease infinite; }
+  .s6-btn2 { background:transparent; border:1px solid var(--gold); color:var(--gold); padding:18px 48px; font-size:14px; font-weight:700; letter-spacing:4px; text-transform:uppercase; text-decoration:none; display:inline-block; }
+  .s6-contacts { display:flex; gap:48px; justify-content:center; flex-wrap:wrap; }
+  .s6-c-label { font-size:10px; letter-spacing:4px; color:var(--gold3); text-transform:uppercase; margin-bottom:6px; }
+  .s6-c-value { font-family:'Playfair Display',serif; font-size:22px; color:var(--white); }
+
+  @media(max-width:768px) {
+    .s2-grid { grid-template-columns:1fr; gap:30px; }
+    .s3-grid { grid-template-columns:repeat(2,1fr); }
+    .s4-stats { gap:12px; }
+    .s4-stat { padding:12px 16px; }
+    .s4-num { font-size:32px; }
+    .corner-tl,.corner-tr,.corner-bl,.corner-br { width:30px; height:30px; }
+  }
+
 </style>
 </head>
 <body>
@@ -452,26 +858,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
   <div class="intro-logo">AB<span>.</span></div>
   <div class="intro-bar"></div>
   <div class="intro-sub">Computer Repairs — Premium IT Services</div>
-</div>
-
-<!-- ── LOGIN MODAL ── -->
-<div id="loginModal">
-  <div class="login-box">
-    <button class="login-close" onclick="closeLogin()">✕</button>
-    <div class="login-title">Welcome Back</div>
-    <p class="login-sub">Sign in to your AB Repairs account to track repairs and view order history.</p>
-    <div class="login-fg">
-      <label>Email Address</label>
-      <input type="email" id="loginEmail" placeholder="your@email.com">
-    </div>
-    <div class="login-fg">
-      <label>Password</label>
-      <input type="password" id="loginPass" placeholder="••••••••">
-    </div>
-    <button class="login-btn" onclick="doLogin()">Sign In to My Account</button>
-    <div class="login-err" id="loginErr">Incorrect email or password. Please try again.</div>
-    <p class="login-note">Demo: use any email + password "ab8477" to sign in</p>
-  </div>
 </div>
 
 <!-- ── EXIT POPUP ── -->
@@ -494,17 +880,16 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
   <div class="video-box">
     <button class="video-close" onclick="closeVideo()">✕</button>
     <div class="video-title" id="videoTitle">Service Video</div>
-    <div class="video-placeholder">
-      <div class="big-icon" id="videoIcon">🔧</div>
-      <p id="videoDesc">Upload your own video to this section by replacing the placeholder with a YouTube embed or your own video file.</p>
-      <small>📹 Add your video URL in the code — look for: VIDEO_URL_HERE</small>
+    <div style="width:100%;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+      <iframe id="videoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
     </div>
+    <p id="videoDesc" style="font-size:.85rem;color:var(--text);margin-top:16px;line-height:1.6;"></p>
   </div>
 </div>
 
 <!-- ── CURSOR ── -->
-<div class="cur-dot" id="curDot"></div>
-<div class="cur-ring" id="curRing"></div>
+<div class="cur-dot" id="curDot" style="pointer-events:none;"></div>
+<div class="cur-ring" id="curRing" style="pointer-events:none;"></div>
 
 <!-- ── TOAST ZONE ── -->
 <div id="toastZone"></div>
@@ -561,7 +946,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
       <div class="logo-emblem">AB</div>
       <div class="logo-text-wrap">
         <strong>Computer Repairs</strong>
-        <span>Premium IT Services</span>
+        <span>Cardiff &amp; South Wales</span>
       </div>
     </a>
     <ul>
@@ -572,10 +957,10 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
       <li><a href="#contact">Contact</a></li>
       <div class="nav-icons">
         <div class="user-badge" id="userBadge">
-          <span id="userEmail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bdc8ced8cffdd8d0dcd4d193ded2d0">[email&#160;protected]</a></span>
+          <span id="userEmail">anthony.brown@abrepairscardiff.co.uk</span>
           <button onclick="logout()">Sign Out</button>
         </div>
-        <button class="nav-icon-btn" onclick="openLogin()" id="loginBtn" title="Sign In">👤</button>
+        <a href="#book" class="nav-icon-btn" title="Track My Repair" style="text-decoration:none;">🔍</a>
         <button class="nav-icon-btn" onclick="openBasket()" title="Basket">
           🛒<span class="cart-count" id="cartCount">0</span>
         </button>
@@ -867,69 +1252,142 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
     <p class="section-body">Submit your request below. Once quoted, pay securely via PayPal at your convenience.</p>
     <div class="book-layout">
       <div class="form-card fi">
-        <div class="form-title">Request a Repair</div>
-        <p class="form-sub">Fill in the details and we'll be in touch with a quote promptly.</p>
-        <form action="mailto:anthony.brown@abrepairscardiff.co.uk" method="POST" enctype="text/plain">
-          <div class="form-row-2">
-            <div class="fg"><label>First Name</label><input type="text" name="first" placeholder="John" required></div>
-            <div class="fg"><label>Last Name</label><input type="text" name="last" placeholder="Smith" required></div>
-          </div>
-          <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="john@email.com" required></div>
-          <div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="+44 7444 171553"></div>
-          <div class="fg">
-            <label>Service Required</label>
-            <select name="service">
-              <option value="">— Please select —</option>
-              <option>Hardware Repair</option><option>Virus &amp; Malware Removal</option>
-              <option>Windows Installation</option><option>Custom PC Build</option>
-              <option>Data Recovery</option><option>Speed &amp; Performance</option>
-              <option>Network &amp; WiFi Setup</option><option>Free Diagnostics</option><option>Other</option>
-            </select>
-          </div>
-          <div class="fg"><label>Describe the Issue</label><textarea name="desc" placeholder="Please describe what's happening with your PC..."></textarea></div>
-          <button type="submit" class="form-submit"><span>Send Repair Request</span></button>
-        </form>
-      </div>
-      <div class="pay-stack">
-        <div class="pay-card fi">
-          <div class="pay-card-title">Pay via PayPal</div>
-          <p>Enter the agreed repair amount and pay securely online.</p>
-          <div class="amount-group">
-            <span>£</span>
-            <input type="number" id="payAmount" placeholder="0.00" min="1" step="0.01">
-          </div>
-          <!-- REPLACE anthonybrown_@hotmail.co.uk with your PayPal email -->
-          <a id="paypalLink" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=anthonybrown_@hotmail.co.uk&item_name=Computer+Repair&currency_code=GBP&amount=0" target="_blank" class="paypal-btn" onclick="updatePayPal(event)">🅿 &nbsp;Pay Securely with PayPal</a>
-          <p class="secure-note">Secured by PayPal · 256-bit SSL · Buyer Protection Included</p>
-        </div>
-        <div class="tracker-card fi">
-          <h3>🔍 Track Your Repair</h3>
-          <p>Enter your email address to check the current status of your repair.</p>
-          <div class="tracker-input-row">
-            <input type="email" id="trackEmail" placeholder="your@email.com">
-            <button onclick="trackRepair()">Check Status</button>
-          </div>
-          <div class="tracker-result" id="trackerResult">
-            <div class="tracker-status">
-              <div class="t-step"><div class="t-dot done">✓</div><div class="t-label"><strong>Received</strong>Your device has been checked in</div></div>
-              <div class="t-step"><div class="t-dot done">✓</div><div class="t-label"><strong>Diagnosed</strong>Issue identified — quote sent</div></div>
-              <div class="t-step"><div class="t-dot active">⚡</div><div class="t-label"><strong>In Progress</strong>Repair underway — est. completion today</div></div>
-              <div class="t-step"><div class="t-dot">4</div><div class="t-label"><strong>Ready</strong>Awaiting collection</div></div>
+          <div class="form-title">Request a Repair</div>
+          <p class="form-sub">Fill in your details and we'll contact you with a quote promptly.</p>
+          <div id="repairForm">
+            <div class="form-row-2">
+              <div class="fg"><label>First Name</label><input type="text" id="fname" placeholder="John"></div>
+              <div class="fg"><label>Last Name</label><input type="text" id="lname" placeholder="Smith"></div>
             </div>
+            <div class="fg"><label>Phone Number</label><input type="tel" id="fphone" placeholder="07700 000000"></div>
+            <div class="fg"><label>Service Required</label>
+              <select id="fservice">
+                <option value="">Select a service...</option>
+                <option>Hardware Repair</option>
+                <option>Virus &amp; Malware Removal</option>
+                <option>Windows Installation</option>
+                <option>Custom PC Build</option>
+                <option>Data Recovery</option>
+                <option>PC Speed Boost</option>
+                <option>Network &amp; WiFi Setup</option>
+                <option>Free Diagnostic</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="fg"><label>Describe the Problem</label><textarea id="fmsg" placeholder="Please describe the issue..." rows="4"></textarea></div>
+            <button onclick="sendToWhatsApp()" class="form-btn" style="background:linear-gradient(135deg,#25d366,#128c7e);border:none;color:white;padding:16px;width:100%;font-size:.9rem;font-weight:700;letter-spacing:2px;cursor:pointer;margin-top:10px;">💬 SEND VIA WHATSAPP</button>
+            <button onclick="callUs()" class="form-btn" style="background:var(--gold);border:none;color:var(--ink);padding:16px;width:100%;font-size:.9rem;font-weight:700;letter-spacing:2px;cursor:pointer;margin-top:10px;">📞 CALL US NOW</button>
+          </div>
+          <div id="formDone" style="display:none;text-align:center;padding:40px 20px;">
+            <div style="font-size:3rem;">✅</div>
+            <h3 style="color:var(--gold);margin:16px 0 8px;">Request Sent!</h3>
+            <p style="color:var(--text);">Opening WhatsApp with your details...</p>
+            <p style="color:var(--text);margin-top:12px;">Or call us: <a href="tel:+447444171553" style="color:var(--gold);">07444 171553</a></p>
           </div>
         </div>
-        <div class="steps-card fi">
-          <div class="steps-title">How It Works</div>
-          <div class="step"><div class="step-num">I</div><p>Submit your repair request using the form.</p></div>
-          <div class="step"><div class="step-num">II</div><p>We contact you with a firm, honest quote.</p></div>
-          <div class="step"><div class="step-num">III</div><p>Drop off or arrange collection of your device.</p></div>
-          <div class="step"><div class="step-num">IV</div><p>We repair it and notify you when it's ready.</p></div>
-          <div class="step"><div class="step-num">V</div><p>Pay above and collect your repaired machine.</p></div>
+
+        <!-- Payment Card -->
+        <div class="form-card" style="height:fit-content;">
+          <div class="pay-card-title">💳 Pay for Your Repair</div>
+          <p style="font-size:.85rem;color:var(--text);margin-bottom:20px;">Once quoted enter the amount and pay securely online.</p>
+
+          <div class="amount-group" style="display:flex;border:1px solid rgba(201,168,76,0.2);overflow:hidden;margin-bottom:14px;">
+            <span style="background:rgba(201,168,76,0.08);color:var(--gold);padding:13px 18px;font-size:1.2rem;font-weight:700;border-right:1px solid rgba(201,168,76,0.2);">£</span>
+            <input type="number" id="payAmount" placeholder="Enter amount" min="1" style="flex:1;border:none;background:var(--ink2);padding:13px 16px;font-size:.92rem;color:var(--white);outline:none;">
+          </div>
+
+          <!-- PayPal Button -->
+          <a id="paypalLink" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=anthonybrown_@hotmail.co.uk&item_name=Computer+Repair&currency_code=GBP&amount=0" target="_blank" class="paypal-btn" onclick="updatePayPal(event)" style="display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#0070ba,#005ea6);color:white;border:none;padding:15px 20px;font-size:.88rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;text-decoration:none;width:100%;box-sizing:border-box;">
+            🅿 &nbsp;Pay Securely with PayPal
+          </a>
+          <p class="secure-note" style="font-size:.7rem;opacity:.35;text-align:center;margin-top:10px;">Secured by PayPal · 256-bit SSL · Buyer Protection Included</p>
+
+          <!-- SumUp Button -->
+          <a href="https://pay.sumup.com/b2c/QPKUFTJ8" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#1a1a2e,#16213e);border:1px solid var(--gold);color:var(--gold);padding:15px 20px;font-size:.88rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;width:100%;box-sizing:border-box;margin-top:10px;">
+            💳 &nbsp;Pay by Card via SumUp
+          </a>
+          <p style="font-size:.7rem;opacity:.35;text-align:center;margin-top:6px;">Visa · Mastercard · Amex · Apple Pay · Google Pay</p>
+
+          <!-- Payment Logos -->
+          <div style="margin-top:20px;border-top:1px solid var(--border);padding-top:20px;">
+            <p style="font-size:.78rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">We Accept</p>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+              <div style="background:#fff;padding:6px 12px;border-radius:4px;height:36px;display:flex;align-items:center;">
+                <span style="font-size:1rem;font-weight:900;font-style:italic;color:#1a1f71;font-family:Arial,sans-serif;">VISA</span>
+              </div>
+              <div style="background:#fff;padding:6px 10px;border-radius:4px;height:36px;display:flex;align-items:center;">
+                <span style="display:inline-flex;align-items:center;">
+                  <span style="width:20px;height:20px;background:#eb001b;border-radius:50%;display:inline-block;"></span>
+                  <span style="width:20px;height:20px;background:#f79e1b;border-radius:50%;display:inline-block;margin-left:-8px;"></span>
+                </span>
+              </div>
+              <div style="background:#016fd0;padding:6px 10px;border-radius:4px;height:36px;display:flex;align-items:center;">
+                <span style="font-size:.6rem;font-weight:900;color:#fff;font-family:Arial,sans-serif;text-align:center;line-height:1.2;">AMERICAN<br>EXPRESS</span>
+              </div>
+              <div style="background:#fff;padding:6px 12px;border-radius:4px;height:36px;display:flex;align-items:center;">
+                <span style="font-size:.85rem;font-weight:900;color:#003087;font-family:Arial,sans-serif;">Pay<span style="color:#009cde;">Pal</span></span>
+              </div>
+              <div style="background:#000;padding:6px 12px;border-radius:4px;height:36px;display:flex;align-items:center;">
+                <span style="font-size:.75rem;font-weight:600;color:#fff;font-family:-apple-system,sans-serif;"> Pay</span>
+              </div>
+              <div style="background:#fff;padding:6px 10px;border-radius:4px;height:36px;display:flex;align-items:center;">
+                <span style="font-size:.78rem;font-weight:700;font-family:Arial,sans-serif;"><span style="color:#4285f4;">G</span><span style="color:#ea4335;">o</span><span style="color:#fbbc05;">o</span><span style="color:#4285f4;">g</span><span style="color:#34a853;">l</span><span style="color:#ea4335;">e</span> <span style="color:#5f6368;">Pay</span></span>
+              </div>
+              <div style="background:#fff;padding:6px 12px;border-radius:4px;height:36px;display:flex;align-items:center;">
+                <span style="font-size:.75rem;font-weight:700;color:#2d7a22;font-family:Arial,sans-serif;">💵 Cash</span>
+              </div>
+            </div>
+            <p style="font-size:.7rem;opacity:.45;text-align:center;margin-top:12px;">Online payments via PayPal or SumUp · In-person payments at collection</p>
+          </div>
         </div>
+
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+
+
+
+
+
+<!-- PRESENTATION BUTTON -->
+<div style="text-align:center;padding:30px 20px;background:var(--ink);">
+  <button class="pres-btn" onclick="openPres()">🎬 &nbsp;View Our Presentation</button>
+  <p style="font-size:.72rem;color:var(--text);letter-spacing:2px;opacity:.5;margin-top:8px;">8 SLIDES · FULL SCREEN</p>
+</div>
+
+<!-- PRESENTATION POPUP -->
+<div id="presPopup"></div>
+<button id="presClose" onclick="closePres()">✕</button>
+
+<script>
+var presIframe = null;
+
+function openPres() {
+  var popup = document.getElementById('presPopup');
+  popup.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  
+  if(!presIframe) {
+    presIframe = document.createElement('iframe');
+    presIframe.src = 'https://anthonylbrown1976.github.io/abrepairscardiff/slideshow.html';
+    presIframe.style.cssText = 'width:100%;height:100vh;border:none;display:block;';
+    popup.appendChild(presIframe);
+  }
+  
+  document.getElementById('presClose').classList.add('visible');
+}
+
+function closePres() {
+  document.getElementById('presPopup').classList.remove('open');
+  document.getElementById('presClose').classList.remove('visible');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if(e.key === 'Escape' && document.getElementById('presPopup').classList.contains('open')) {
+    closePres();
+  }
+});
+</script>
 
 <!-- REVIEWS -->
 <section id="reviews" style="background:var(--ink);">
@@ -960,18 +1418,26 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
     <p class="section-body">Questions before you book? Not sure what's wrong? We're always happy to help.</p>
     <div class="contact-layout">
       <div class="fi">
-        <div class="ci"><div class="ci-icon">📱</div><div><h4>Phone &amp; WhatsApp</h4><p>+44 7444 171553<br><small style="opacity:.4;font-size:.8rem;">Replace with your number</small></p></div></div>
-        <div class="ci"><div class="ci-icon">📧</div><div><h4>Email</h4><p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="afc6c1c9c0efcecdddcadfcec6dddc81ccc081dac4">[email&#160;protected]</a><br><small style="opacity:.4;font-size:.8rem;">Replace with your email</small></p></div></div>
+        <div class="ci"><div class="ci-icon">📱</div><div><h4>Phone &amp; WhatsApp</h4><p><a href="tel:+447444171553" style="color:var(--white);text-decoration:none;">+44 7444 171553</a><br><small style="opacity:.4;font-size:.8rem;">Call or WhatsApp anytime</small></p></div></div>
+
+          <!-- WhatsApp Button -->
+          <div style="margin-top:12px;">
+            <a href="https://wa.me/447444171553?text=Hi%20AB%20Computer%20Repairs%20Cardiff!%20I%20would%20like%20to%20enquire%20about%20a%20repair." target="_blank" rel="noopener noreferrer" style="display:block;background:#25d366;color:#fff;text-align:center;padding:14px 20px;font-family:Outfit,sans-serif;font-size:.9rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;cursor:pointer;position:relative;z-index:999;">
+              💬 &nbsp;WHATSAPP US NOW
+            </a>
+          </div>
+
+        <div class="ci"><div class="ci-icon">💬</div><div><h4>WhatsApp Us</h4><p><a href="https://wa.me/447444171553" target="_blank" style="color:var(--gold);">Message us on WhatsApp</a><br><small style="opacity:.4;font-size:.8rem;">Reply within 1 hour</small></p></div></div>
         <div class="ci"><div class="ci-icon">📍</div><div><h4>Location</h4><p>57 Handley Road, Pengam Green, Cardiff CF24 2HF<br><small style="opacity:.4;font-size:.8rem;">Pengam Green, Cardiff CF24 2HF</small></p></div></div>
         <div class="ci"><div class="ci-icon">🕐</div><div><h4>Opening Hours</h4><div style="margin-top:8px;"><div class="hr-row"><span>Monday – Friday</span><span>9:00am – 6:00pm</span></div><div class="hr-row"><span>Saturday</span><span>10:00am – 4:00pm</span></div><div class="hr-row"><span>Sunday</span><span>By Appointment</span></div></div></div></div>
       </div>
       <div class="fi">
         <div class="eyebrow" style="margin-bottom:20px;"><div class="eyebrow-line"></div><div class="eyebrow-text">Follow Us</div></div>
         <p style="font-size:.9rem;font-weight:300;color:var(--text);line-height:1.8;margin-bottom:28px;">Follow us on social media for build photos, repair tips and exclusive offers. A Google review means the world to a small local business.</p>
-        <a href="#" class="soc-link"><span>📘</span><span>Facebook — AB Computer Repairs</span></a>
-        <a href="#" class="soc-link"><span>📸</span><span>Instagram — @abrepairs</span></a>
-        <a href="#" class="soc-link"><span>⭐</span><span>Leave Us a Google Review</span></a>
-        <a href="#" class="soc-link"><span>📺</span><span>YouTube — PC Builds &amp; Tips</span></a>
+        <a href="https://www.facebook.com/profile.php?id=61575739385660" target="_blank" class="soc-link"><span>📘</span><span>Facebook — AB Computer Repairs Cardiff</span></a>
+        <a href="https://www.instagram.com/abrepairscardiff" target="_blank" class="soc-link"><span>📸</span><span>Instagram — @abrepairscardiff</span></a>
+        <a href="https://search.google.com/local/writereview?placeid=abrepairscardiff" target="_blank" class="soc-link"><span>⭐</span><span>Leave Us a Google Review</span></a>
+        <a href="https://www.youtube.com/@abrepairscardiff" target="_blank" class="soc-link"><span>📺</span><span>YouTube — PC Builds &amp; Tips</span></a>
       </div>
     </div>
   </div>
@@ -982,7 +1448,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="#" class="logo"><div class="logo-emblem">AB</div><div class="logo-text-wrap"><strong>Computer Repairs</strong><span>Premium IT Services</span></div></a>
+        <a href="#" class="logo"><div class="logo-emblem">AB</div><div class="logo-text-wrap"><strong>Computer Repairs</strong><span>Cardiff &amp; South Wales</span></div></a>
         <p>Professional computer repairs, custom PC builds and full IT support. Fast, honest and affordable from a self-taught IT expert who builds from scratch.</p>
       </div>
       <div class="footer-col"><h4>Services</h4><ul><li><a href="#services">Hardware Repair</a></li><li><a href="#services">Virus Removal</a></li><li><a href="#services">Windows Install</a></li><li><a href="#services">Custom Builds</a></li><li><a href="#services">Data Recovery</a></li><li><a href="#services">Free Diagnostics</a></li></ul></div>
@@ -1014,7 +1480,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
   <button class="chat-btn" onclick="toggleChat()">💬</button>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // ── INTRO ──
 window.addEventListener('load', () => {
   setTimeout(() => {
@@ -1121,11 +1587,13 @@ function checkout() {
 
 // ── TOASTS ──
 const toastReviews = [
-  {initials:'MJ', name:'Mark from London',    text:'just left a 5★ review'},
-  {initials:'SP', name:'Sarah from Manchester', text:'booked a repair'},
-  {initials:'DK', name:'Danny from Leeds',     text:'just left a 5★ review'},
-  {initials:'TW', name:'Tom from Birmingham',  text:'booked a custom build'},
-  {initials:'LB', name:'Lisa from Bristol',    text:'left a 5★ review'},
+  {initials:'MJ', name:'Mark from Cardiff',    text:'just left a 5★ review'},
+  {initials:'SP', name:'Sarah from Penarth',   text:'booked a repair'},
+  {initials:'DK', name:'Danny from Canton',    text:'just left a 5★ review'},
+  {initials:'TW', name:'Tom from Roath',       text:'booked a custom PC build'},
+  {initials:'LB', name:'Lisa from Barry',      text:'left a 5★ review'},
+  {initials:'RJ', name:'Rob from Newport',     text:'booked a virus removal'},
+  {initials:'CW', name:'Claire from Pontypridd', text:'just left a 5★ review'},
 ];
 
 let toastIdx = 0;
@@ -1150,7 +1618,7 @@ function showToastAdd(name) {
   setTimeout(() => { el.classList.remove('show'); setTimeout(() => el.remove(), 400); }, 3000);
 }
 
-setTimeout(() => { showReviewToast(); setInterval(showReviewToast, 7000); }, 5000);
+setTimeout(() => { showReviewToast(); setInterval(showReviewToast, 12000); }, 8000);
 
 // ── EXIT POPUP ──
 let exitShown = false;
@@ -1160,13 +1628,28 @@ document.addEventListener('mouseleave', e => {
 function closeExit() { document.getElementById('exitPopup').classList.remove('show'); }
 
 // ── VIDEO ──
+const videoMap = {
+  "Hardware Repair": "https://www.youtube.com/embed/dX1NKLaL-eA",
+  "Virus & Malware Removal": "https://www.youtube.com/embed/nCDHGKMeHbY",
+  "Windows Installation": "https://www.youtube.com/embed/vPCMVCTkTOo",
+  "Custom PC Build": "https://www.youtube.com/embed/BL4DCEkMbj8",
+  "Data Recovery": "https://www.youtube.com/embed/wIhJWr7CTUA",
+  "PC Speed Boost": "https://www.youtube.com/embed/E7gWyqNRR7U",
+  "Network & WiFi Setup": "https://www.youtube.com/embed/Blt3GKfqbJQ",
+  "Free Diagnostics": "https://www.youtube.com/embed/dX1NKLaL-eA",
+};
+
 function openVideo(title, icon, desc) {
   document.getElementById('videoTitle').textContent = title;
-  document.getElementById('videoIcon').textContent = icon;
   document.getElementById('videoDesc').textContent = desc;
+  const videoUrl = videoMap[title] || videoMap[title.trim()] || '';
+  document.getElementById('videoFrame').src = videoUrl + '?autoplay=1&rel=0';
   document.getElementById('videoModal').classList.add('show');
 }
-function closeVideo() { document.getElementById('videoModal').classList.remove('show'); }
+function closeVideo() {
+  document.getElementById('videoModal').classList.remove('show');
+  document.getElementById('videoFrame').src = '';
+}
 
 // ── PAYPAL ──
 function updatePayPal(e) {
@@ -1206,33 +1689,154 @@ document.querySelectorAll('.fi').forEach(el => obs.observe(el));
 
 // Trigger counters when hero stats visible
 const counterObs = new IntersectionObserver(entries => {
-  if(entries[0].isIntersecting) { animateCounters(); counterObs.disconnect(); }
+  entries.forEach(e => {
+    if(e.isIntersecting) animateCounters();
+  });
 }, { threshold: 0.5 });
-const statsEl = document.querySelector('.hero-stats');
-if(statsEl) counterObs.observe(statsEl);
+document.querySelectorAll('.hero-stats').forEach(el => counterObs.observe(el));
+</script>
 
-// ── LIVE CHAT ──
-let chatOpen = false;
-function toggleChat() { chatOpen = !chatOpen; document.getElementById('chatWindow').classList.toggle('show', chatOpen); }
-function sendChat() {
-  const input = document.getElementById('chatInput');
-  const msg = input.value.trim();
-  if(!msg) return;
-  const msgs = document.getElementById('chatMsgs');
-  msgs.innerHTML += `<div class="chat-msg user-msg">${msg}</div>`;
-  input.value = '';
-  msgs.scrollTop = msgs.scrollHeight;
-  setTimeout(() => {
-    const replies = [
-      "Thanks for getting in touch! We'll get back to you very shortly. 😊",
-      "Great question! Feel free to call or WhatsApp us for an instant answer.",
-      "We'd love to help — book a free diagnostic and we'll take a look!",
-      "Our turnaround is usually same day or next day. We'll keep you updated throughout!"
-    ];
-    msgs.innerHTML += `<div class="chat-msg">${replies[Math.floor(Math.random()*replies.length)]}</div>`;
-    msgs.scrollTop = msgs.scrollHeight;
-  }, 1200);
+<script>
+function sendToWhatsApp() {
+  const name = ((document.getElementById('fname') ? document.getElementById('fname').value : '') + ' ' + (document.getElementById('lname') ? document.getElementById('lname').value : '')).trim() || 'Not provided';
+  const phone = document.getElementById('fphone') ? document.getElementById('fphone').value : 'Not provided';
+  const service = document.getElementById('fservice') ? document.getElementById('fservice').value : 'Not specified';
+  const msg = document.getElementById('fmsg') ? document.getElementById('fmsg').value : 'No details';
+  const waText = encodeURIComponent('Hi AB Computer Repairs Cardiff!\n\nNew Repair Request:\nName: ' + name + '\nPhone: ' + phone + '\nService: ' + service + '\nDetails: ' + msg + '\n\nPlease contact me with a quote. Thank you!');
+  if(document.getElementById('repairForm')) document.getElementById('repairForm').style.display = 'none';
+  if(document.getElementById('formDone')) document.getElementById('formDone').style.display = 'block';
+  window.open('https://wa.me/447444171553?text=' + waText, '_blank');
 }
+
+function callUs() {
+  window.location.href = 'tel:+447444171553';
+}
+
+function updatePayPal(e) {
+  const amt = document.getElementById('payAmount') ? document.getElementById('payAmount').value : '0';
+  if(!amt || amt <= 0) { e.preventDefault(); alert('Please enter the repair amount first!'); return; }
+  document.getElementById('paypalLink').href = 'https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=anthonybrown_@hotmail.co.uk&item_name=Computer+Repair+-+AB+Repairs+Cardiff&currency_code=GBP&amount=' + amt;
+}
+</script>
+
+
+
+<!-- SLIDE 2 — FREE DIAGNOSTIC -->
+<div class="slide" id="s2">
+  <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+  <div class="s2-grid">
+    <div class="aL">
+      <div class="s2-icon">&#128269;</div>
+      <p class="s2-tag">Our Promise</p>
+      <h2 class="s2-h">Completely<br><em>Free</em><br>Diagnostic</h2>
+      <div class="gold-line-thin" style="width:200px;margin:20px 0;"></div>
+      <p class="s2-body">Not sure what's wrong with your PC or laptop? Bring it in and we'll diagnose the problem completely free — no obligation, no hidden charges.</p>
+    </div>
+    <div class="s2-points aR">
+      <div class="s2-pt a1"><div class="s2-pt-icon">&#9989;</div><div><div class="s2-pt-t">No Obligation</div><div class="s2-pt-s">Free — no pressure to proceed</div></div></div>
+      <div class="s2-pt a2"><div class="s2-pt-icon">&#128269;</div><div><div class="s2-pt-t">Expert Diagnosis</div><div class="s2-pt-s">Years of experience identifying issues</div></div></div>
+      <div class="s2-pt a3"><div class="s2-pt-icon">&#9889;</div><div><div class="s2-pt-t">Same Day Available</div><div class="s2-pt-s">Drop off and pick up same day</div></div></div>
+      <div class="s2-pt a4"><div class="s2-pt-icon">&#128176;</div><div><div class="s2-pt-t">No Fix, No Fee</div><div class="s2-pt-s">On data recovery — guaranteed</div></div></div>
+      <div class="s2-pt a5"><div class="s2-pt-icon">&#128205;</div><div><div class="s2-pt-t">Cardiff Based</div><div class="s2-pt-s">Serving Cardiff &amp; South Wales</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3 — SERVICES -->
+<div class="slide" id="s3">
+  <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+  <div class="s3-wrap">
+    <p class="s3-eye a1">What We Fix</p>
+    <h2 class="s3-title a2">Our <em style="font-style:italic;color:var(--gold);">Services</em></h2>
+    <div class="gold-line a3" style="width:300px;margin-bottom:0;"></div>
+    <div class="s3-grid">
+      <div class="s3-card a1"><span class="s3-icon">&#128295;</span><div class="s3-name">Hardware Repair</div><div class="s3-price">From £45</div></div>
+      <div class="s3-card a2"><span class="s3-icon">&#129440;</span><div class="s3-name">Virus Removal</div><div class="s3-price">From £40</div></div>
+      <div class="s3-card a3"><span class="s3-icon">&#128191;</span><div class="s3-name">Windows Install</div><div class="s3-price">From £50</div></div>
+      <div class="s3-card a4"><span class="s3-icon">&#128421;</span><div class="s3-name">Custom PC Build</div><div class="s3-price">From £80</div></div>
+      <div class="s3-card a5"><span class="s3-icon">&#128190;</span><div class="s3-name">Data Recovery</div><div class="s3-price">From £60</div></div>
+      <div class="s3-card a6"><span class="s3-icon">&#9889;</span><div class="s3-name">Speed Boost</div><div class="s3-price">From £35</div></div>
+      <div class="s3-card a1"><span class="s3-icon">&#128246;</span><div class="s3-name">Network Setup</div><div class="s3-price">From £45</div></div>
+      <div class="s3-card free a2"><span class="s3-icon">&#128269;</span><div class="s3-name">Free Diagnostic</div><div class="s3-price shimmer">FREE!</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4 — SAME DAY -->
+<div class="slide" id="s4">
+  <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+  <div class="s4-wrap">
+    <span class="s4-icon aS">&#9889;</span>
+    <p class="s4-label a1">Cardiff's Fastest</p>
+    <h2 class="s4-h a2"><span class="g">Same</span><br>Day</h2>
+    <h3 class="a3" style="font-family:'Playfair Display',serif;font-size:clamp(18px,3vw,40px);color:var(--white);font-weight:400;letter-spacing:6px;text-transform:uppercase;margin-top:8px;">Service</h3>
+    <div class="gold-line a4" style="width:300px;margin:24px auto;"></div>
+    <p class="s4-sub a4">Drop off in the morning — pick up the same day</p>
+    <div class="s4-stats a5">
+      <div class="s4-stat"><span class="s4-num shimmer">1hr</span><span class="s4-lbl">Response Time</span></div>
+      <div class="s4-stat"><span class="s4-num shimmer">£0</span><span class="s4-lbl">Diagnostic Fee</span></div>
+      <div class="s4-stat"><span class="s4-num shimmer">★5</span><span class="s4-lbl">Star Rating</span></div>
+      <div class="s4-stat"><span class="s4-num shimmer">100%</span><span class="s4-lbl">Satisfaction</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5 — PAYMENT -->
+<div class="slide" id="s5">
+  <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+  <div class="s5-wrap">
+    <p class="aD" style="font-size:11px;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:12px;">Trusted &amp; Secure</p>
+    <h2 class="s5-title a1">We <em style="font-style:italic;color:var(--gold);">Accept</em></h2>
+    <div class="gold-line a2" style="width:200px;margin-bottom:16px;"></div>
+    <p class="s5-sub a3">All Major Payment Methods</p>
+    <div class="s5-pays">
+      <div class="s5-pay a1"><span style="font-size:20px;font-weight:900;font-style:italic;color:#1a1f71;background:#fff;padding:2px 8px;">VISA</span></div>
+      <div class="s5-pay a2"><span style="display:inline-flex;align-items:center;"><span style="width:20px;height:20px;background:#eb001b;border-radius:50%;display:inline-block;"></span><span style="width:20px;height:20px;background:#f79e1b;border-radius:50%;display:inline-block;margin-left:-8px;"></span></span> Mastercard</div>
+      <div class="s5-pay a3" style="background:#016fd0;"><span style="font-size:10px;font-weight:900;color:#fff;line-height:1.2;text-align:center;">AMERICAN<br>EXPRESS</span></div>
+      <div class="s5-pay a4"><span style="font-weight:900;color:#003087;">Pay<span style="color:#009cde;">Pal</span></span></div>
+      <div class="s5-pay a5" style="background:#000;color:#fff;"> Pay</div>
+      <div class="s5-pay a6"><span style="font-weight:700;font-size:12px;"><span style="color:#4285f4;">G</span><span style="color:#ea4335;">o</span><span style="color:#fbbc05;">o</span><span style="color:#4285f4;">g</span><span style="color:#34a853;">l</span><span style="color:#ea4335;">e</span> Pay</span></div>
+      <div class="s5-pay a1" style="color:#2d7a22;">&#128181; Cash</div>
+    </div>
+    <div class="gold-line a3" style="width:600px;max-width:90%;margin-bottom:32px;"></div>
+    <div class="s5-trusts">
+      <div class="s5-trust a1"><span class="s5-t-icon">&#128274;</span><div class="s5-t-text">256-bit SSL</div><div class="s5-t-sub">Fully Secure</div></div>
+      <div class="s5-trust a2"><span class="s5-t-icon">&#9889;</span><div class="s5-t-text">Same Day</div><div class="s5-t-sub">Fast Service</div></div>
+      <div class="s5-trust a3"><span class="s5-t-icon">&#11088;&#11088;&#11088;&#11088;&#11088;</span><div class="s5-t-text">5 Star Rated</div><div class="s5-t-sub">Cardiff's Best</div></div>
+      <div class="s5-trust a4"><span class="s5-t-icon">&#128737;</span><div class="s5-t-text">No Fix No Fee</div><div class="s5-t-sub">Data Recovery</div></div>
+      <div class="s5-trust a5"><span class="s5-t-icon">&#128205;</span><div class="s5-t-text">Cardiff Based</div><div class="s5-t-sub">South Wales</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6 — CTA -->
+<div class="slide" id="s6">
+  <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+  <div class="s6-wrap">
+    <span class="s6-stars aS">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+    <h2 class="s6-h a1">Ready to <em>Fix</em><br>Your PC?</h2>
+    <div class="gold-line a2" style="width:300px;margin:24px auto;"></div>
+    <p class="s6-body a3">Cardiff's most trusted computer repair service.<br>Fast &middot; Honest &middot; Affordable &middot; Professional</p>
+    <div class="s6-btns a4">
+      <a href="tel:+447444171553" class="s6-btn1">&#128222; Call Now</a>
+      <a href="https://wa.me/447444171553" class="s6-btn2">&#128172; WhatsApp</a>
+    </div>
+    <div class="gold-line-thin a5" style="width:400px;margin-bottom:32px;"></div>
+    <div class="s6-contacts a6">
+      <div><div class="s6-c-label">Phone</div><div class="s6-c-value">07444 171553</div></div>
+      <div><div class="s6-c-label">Website</div><div class="s6-c-value">abrepairscardiff.co.uk</div></div>
+      <div><div class="s6-c-label">Location</div><div class="s6-c-value">Cardiff, CF24</div></div>
+    </div>
+  </div>
+</div>
+
+
+
+  </div>
+</div>
+
+<script>
+
 </script>
 </body>
 </html>
