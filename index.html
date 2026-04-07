@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<!-- Build1775521927 -->
+<!-- Build1775522688 -->
+<!-- OldBuild1775521927 -->
 <!-- OldBuild1775521220 -->
 <!-- PrevBuild1775520253 -->
 <!-- OldBuild 1775519671 -->
 <!-- OldBuild 1775519598 -->
-<!-- Build1775521927 -->
+<!-- Build1775522688 -->
+<!-- OldBuild1775521927 -->
 <!-- OldBuild1775521220 -->
 <!-- PrevBuild1775520253 -->
 <!-- OldBuild 1775519671 -->
 <!-- OldBuild 1775504036 -->
-<!-- Build1775521927 -->
+<!-- Build1775522688 -->
+<!-- OldBuild1775521927 -->
 <!-- OldBuild1775521220 -->
 <!-- PrevBuild1775520253 -->
 <!-- OldBuild 1775519671 -->
@@ -1254,6 +1257,29 @@ const counterObs = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.5 });
 document.querySelectorAll('.hero-stats').forEach(el => counterObs.observe(el));
+</script>
+
+<script>
+function sendToWhatsApp() {
+  const name = ((document.getElementById('fname') ? document.getElementById('fname').value : '') + ' ' + (document.getElementById('lname') ? document.getElementById('lname').value : '')).trim() || 'Not provided';
+  const phone = document.getElementById('fphone') ? document.getElementById('fphone').value : 'Not provided';
+  const service = document.getElementById('fservice') ? document.getElementById('fservice').value : 'Not specified';
+  const msg = document.getElementById('fmsg') ? document.getElementById('fmsg').value : 'No details';
+  const waText = encodeURIComponent('Hi AB Computer Repairs Cardiff!\n\nNew Repair Request:\nName: ' + name + '\nPhone: ' + phone + '\nService: ' + service + '\nDetails: ' + msg + '\n\nPlease contact me with a quote. Thank you!');
+  if(document.getElementById('repairForm')) document.getElementById('repairForm').style.display = 'none';
+  if(document.getElementById('formDone')) document.getElementById('formDone').style.display = 'block';
+  window.open('https://wa.me/447444171553?text=' + waText, '_blank');
+}
+
+function callUs() {
+  window.location.href = 'tel:+447444171553';
+}
+
+function updatePayPal(e) {
+  const amt = document.getElementById('payAmount') ? document.getElementById('payAmount').value : '0';
+  if(!amt || amt <= 0) { e.preventDefault(); alert('Please enter the repair amount first!'); return; }
+  document.getElementById('paypalLink').href = 'https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=anthonybrown_@hotmail.co.uk&item_name=Computer+Repair+-+AB+Repairs+Cardiff&currency_code=GBP&amount=' + amt;
+}
 </script>
 </body>
 </html>
