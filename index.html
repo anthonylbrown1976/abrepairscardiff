@@ -1,17 +1,31 @@
 <!DOCTYPE html>
-<!-- Build1775522688 -->
+<!-- Build1775531742 -->
+<!-- OldBuild 1775531445 -->
+<!-- Build1775531742 -->
+<!-- OldBuild1775524802 -->
+<!-- OldBuild1775524483 -->
+<!-- OldBuild1775524020 -->
+<!-- OldBuild1775522688 -->
 <!-- OldBuild1775521927 -->
 <!-- OldBuild1775521220 -->
 <!-- PrevBuild1775520253 -->
 <!-- OldBuild 1775519671 -->
 <!-- OldBuild 1775519598 -->
-<!-- Build1775522688 -->
+<!-- Build1775531742 -->
+<!-- OldBuild1775524802 -->
+<!-- OldBuild1775524483 -->
+<!-- OldBuild1775524020 -->
+<!-- OldBuild1775522688 -->
 <!-- OldBuild1775521927 -->
 <!-- OldBuild1775521220 -->
 <!-- PrevBuild1775520253 -->
 <!-- OldBuild 1775519671 -->
 <!-- OldBuild 1775504036 -->
-<!-- Build1775522688 -->
+<!-- Build1775531742 -->
+<!-- OldBuild1775524802 -->
+<!-- OldBuild1775524483 -->
+<!-- OldBuild1775524020 -->
+<!-- OldBuild1775522688 -->
 <!-- OldBuild1775521927 -->
 <!-- OldBuild1775521220 -->
 <!-- PrevBuild1775520253 -->
@@ -471,6 +485,225 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
 @media(max-width:1080px){.hero{grid-template-columns:1fr;}.hero-right,.hero-light{display:none;}}
 @media(max-width:860px){.why-layout,.book-layout,.contact-layout{grid-template-columns:1fr;}nav ul{display:none;}.footer-top{grid-template-columns:1fr 1fr;}.form-row-2{grid-template-columns:1fr;}body{cursor:auto;}.cur-dot,.cur-ring{display:none;}#basketPanel{width:100%;right:-100%;}}
 @media(max-width:520px){.footer-top{grid-template-columns:1fr;}}
+
+/* ── SLIDESHOW POPUP ── */
+#slideshowPopup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.97);
+  z-index: 99999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+#slideshowPopup.show { display: flex; }
+
+#slideshowPopup .watermark { position: absolute; top: 24px; left: 40px; font-family: "Playfair Display", serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 2px; z-index: 100; opacity: 0.7; }
+#slideshowPopup .slide-counter { position: absolute; top: 24px; right: 100px; font-size: 0.75rem; color: rgba(212,175,55,0.6); letter-spacing: 3px; z-index: 100; }
+#slideshowPopup .progress-bar { position: absolute; bottom: 0; left: 0; height: 3px; background: linear-gradient(90deg, #b49120, #f0d25a, #d4af37); transition: width 0.1s linear; z-index: 100; }
+#slideshowPopup .indicators { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 100; }
+#slideshowPopup .indicator { width: 8px; height: 8px; background: rgba(212,175,55,0.3); transform: rotate(45deg); cursor: pointer; transition: all 0.3s; }
+#slideshowPopup .indicator.active { background: #d4af37; transform: rotate(45deg) scale(1.4); box-shadow: 0 0 12px rgba(212,175,55,0.8); }
+#slideshowPopup .nav-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.4); color: #d4af37; width: 48px; height: 48px; font-size: 1.4rem; cursor: pointer; z-index: 100; transition: all 0.3s; display: flex; align-items: center; justify-content: center; }
+#slideshowPopup .nav-btn:hover { background: rgba(212,175,55,0.3); border-color: #d4af37; }
+#slideshowPopup .nav-prev { left: 20px; }
+#slideshowPopup .nav-next { right: 20px; }
+
+/* Close button */
+#closeSlideshowBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(212,175,55,0.1);
+  border: 1px solid rgba(212,175,55,0.4);
+  color: #d4af37;
+  width: 44px;
+  height: 44px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  font-family: sans-serif;
+}
+#closeSlideshowBtn:hover {
+  background: rgba(212,175,55,0.3);
+  border-color: #d4af37;
+}
+
+/* Presentation Button */
+.presentation-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #b49120, #f0d25a);
+  color: #080808;
+  padding: 18px 40px;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+  margin: 30px auto;
+  display: flex;
+  width: fit-content;
+}
+.presentation-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(212,175,55,0.5);
+}
+
+</style>
+<style>
+
+  :root {
+    --gold: #d4af37;
+    --gold2: #f0d25a;
+    --gold3: #a07820;
+    --ink: #080808;
+    --ink2: #111114;
+    --ink3: #1a1a20;
+    --white: #ffffff;
+    --grey: #9a9fb0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ink); font-family: 'Outfit', sans-serif; overflow: hidden; width: 100vw; height: 100vh; }
+  .slideshow { width: 100vw; height: 100vh; position: relative; }
+  .slide { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.8s ease; overflow: hidden; }
+  .slide.active { opacity: 1; }
+  .grain { position: fixed; inset: 0; pointer-events: none; z-index: 999; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-size: 128px; }
+  .progress-bar { position: fixed; bottom: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--gold3), var(--gold), var(--gold2)); z-index: 1000; transition: width 0.1s linear; box-shadow: 0 0 12px var(--gold); }
+  .dots { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 1000; }
+  .dot { width: 8px; height: 8px; background: var(--gold3); transform: rotate(45deg); cursor: pointer; transition: all 0.3s; }
+  .dot.active { background: var(--gold); transform: rotate(45deg) scale(1.5); box-shadow: 0 0 8px var(--gold); }
+  .slide-num { position: fixed; top: 24px; right: 30px; font-family: 'Playfair Display', serif; font-size: 0.75rem; color: var(--gold3); letter-spacing: 3px; z-index: 1000; }
+  .nav-btn { position: fixed; top: 50%; transform: translateY(-50%); background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.3); color: var(--gold); width: 52px; height: 52px; cursor: pointer; font-size: 1.4rem; display: flex; align-items: center; justify-content: center; z-index: 1000; transition: all 0.3s; }
+  .nav-btn:hover { background: rgba(212,175,55,0.2); }
+  .nav-prev { left: 16px; }
+  .nav-next { right: 16px; }
+
+  @keyframes fadeUp { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeDown { from { opacity:0; transform:translateY(-40px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes scaleIn { from { opacity:0; transform:scale(0.8); } to { opacity:1; transform:scale(1); } }
+  @keyframes slideLeft { from { opacity:0; transform:translateX(60px); } to { opacity:1; transform:translateX(0); } }
+  @keyframes slideRight { from { opacity:0; transform:translateX(-60px); } to { opacity:1; transform:translateX(0); } }
+  @keyframes goldPulse { 0%,100% { box-shadow:0 0 20px rgba(212,175,55,0.3); } 50% { box-shadow:0 0 50px rgba(212,175,55,0.7); } }
+  @keyframes shimmer { 0% { background-position:-200% center; } 100% { background-position:200% center; } }
+  @keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-12px); } }
+
+  .slide.active .a1 { animation: fadeUp 0.7s ease 0.1s both; }
+  .slide.active .a2 { animation: fadeUp 0.7s ease 0.3s both; }
+  .slide.active .a3 { animation: fadeUp 0.7s ease 0.5s both; }
+  .slide.active .a4 { animation: fadeUp 0.7s ease 0.7s both; }
+  .slide.active .a5 { animation: fadeUp 0.7s ease 0.9s both; }
+  .slide.active .a6 { animation: fadeUp 0.7s ease 1.1s both; }
+  .slide.active .aL { animation: slideRight 0.7s ease 0.2s both; }
+  .slide.active .aR { animation: slideLeft 0.7s ease 0.4s both; }
+  .slide.active .aS { animation: scaleIn 0.7s ease 0.2s both; }
+  .slide.active .aD { animation: fadeDown 0.7s ease 0.1s both; }
+
+  .shimmer { background: linear-gradient(90deg, var(--gold3), var(--gold2), var(--gold), var(--gold2), var(--gold3)); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: shimmer 3s linear infinite; }
+  .gold-line { height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 auto; }
+  .gold-line-thin { height: 1px; background: linear-gradient(90deg, transparent, var(--gold3), transparent); margin: 0 auto; }
+
+  .corner-tl, .corner-tr, .corner-bl, .corner-br { position: absolute; width: 60px; height: 60px; border-color: var(--gold); border-style: solid; opacity: 0.5; }
+  .corner-tl { top:20px; left:20px; border-width:2px 0 0 2px; }
+  .corner-tr { top:20px; right:20px; border-width:2px 2px 0 0; }
+  .corner-bl { bottom:20px; left:20px; border-width:0 0 2px 2px; }
+  .corner-br { bottom:20px; right:20px; border-width:0 2px 2px 0; }
+
+  /* SLIDE 1 */
+  #s1 { background: radial-gradient(ellipse at 50% 30%, #1a1610 0%, #080808 70%); }
+  .s1-box { display:inline-block; background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2)); padding:24px 60px; margin-bottom:40px; animation:goldPulse 3s ease infinite; }
+  .s1-ab { font-family:'Playfair Display',serif; font-size:clamp(80px,12vw,140px); font-weight:900; color:var(--ink); line-height:1; letter-spacing:-4px; }
+  .s1-title { font-family:'Playfair Display',serif; font-size:clamp(32px,5vw,72px); color:var(--white); font-weight:700; letter-spacing:-1px; margin-bottom:12px; }
+  .s1-sub { font-size:clamp(12px,1.8vw,20px); color:var(--gold); letter-spacing:8px; text-transform:uppercase; font-weight:300; margin-bottom:40px; }
+  .s1-tags { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:32px; }
+  .s1-tag { border:1px solid var(--gold3); padding:8px 20px; font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:600; }
+
+  /* SLIDE 2 */
+  #s2 { background: radial-gradient(ellipse at 30% 60%, #141008 0%, #080808 65%); }
+  .s2-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; max-width:1100px; width:90%; align-items:center; }
+  .s2-icon { width:160px; height:160px; border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; font-size:80px; margin-bottom:32px; animation:float 3s ease infinite; background:var(--ink2); box-shadow:0 0 40px rgba(212,175,55,0.15); }
+  .s2-tag { font-size:11px; letter-spacing:5px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; font-weight:600; }
+  .s2-h { font-family:'Playfair Display',serif; font-size:clamp(42px,6vw,90px); color:var(--white); line-height:0.95; margin-bottom:8px; }
+  .s2-h em { font-style:italic; color:var(--gold); }
+  .s2-body { font-size:16px; color:var(--grey); line-height:1.8; margin-top:24px; }
+  .s2-points { display:flex; flex-direction:column; gap:16px; }
+  .s2-pt { display:flex; align-items:center; gap:20px; background:var(--ink2); border:1px solid rgba(212,175,55,0.15); border-left:3px solid var(--gold); padding:20px 24px; }
+  .s2-pt-icon { font-size:28px; }
+  .s2-pt-t { color:var(--white); font-size:16px; font-weight:600; }
+  .s2-pt-s { color:var(--grey); font-size:13px; margin-top:4px; }
+
+  /* SLIDE 3 */
+  #s3 { background: radial-gradient(ellipse at 70% 30%, #101418 0%, #080808 65%); }
+  .s3-wrap { max-width:1200px; width:92%; text-align:center; }
+  .s3-eye { font-size:11px; letter-spacing:6px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; font-weight:600; }
+  .s3-title { font-family:'Playfair Display',serif; font-size:clamp(30px,4vw,58px); color:var(--white); margin-bottom:8px; }
+  .s3-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:32px; }
+  .s3-card { background:var(--ink2); border:1px solid rgba(212,175,55,0.12); padding:28px 16px; text-align:center; position:relative; overflow:hidden; }
+  .s3-card::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
+  .s3-icon { font-size:36px; margin-bottom:12px; display:block; }
+  .s3-name { font-size:14px; font-weight:700; color:var(--white); margin-bottom:6px; }
+  .s3-price { font-size:13px; color:var(--gold); font-weight:600; }
+  .s3-card.free { border-color:rgba(212,175,55,0.4); }
+
+  /* SLIDE 4 */
+  #s4 { background: radial-gradient(ellipse at 50% 50%, #0e0e08 0%, #080808 70%); }
+  .s4-wrap { text-align:center; max-width:800px; padding:40px; }
+  .s4-icon { font-size:100px; display:block; margin-bottom:24px; animation:float 2.5s ease infinite; }
+  .s4-label { font-size:11px; letter-spacing:8px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
+  .s4-h { font-family:'Playfair Display',serif; font-size:clamp(56px,8vw,130px); color:var(--white); line-height:0.9; margin-bottom:8px; }
+  .s4-h .g { color:var(--gold); }
+  .s4-sub { font-size:clamp(16px,2.5vw,26px); color:var(--grey); margin:24px 0 40px; font-weight:300; }
+  .s4-stats { display:flex; gap:32px; justify-content:center; flex-wrap:wrap; margin-top:32px; }
+  .s4-stat { text-align:center; border:1px solid rgba(212,175,55,0.2); padding:24px 32px; background:var(--ink2); position:relative; }
+  .s4-stat::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
+  .s4-num { font-family:'Playfair Display',serif; font-size:48px; color:var(--gold); font-weight:900; display:block; }
+  .s4-lbl { font-size:12px; color:var(--grey); letter-spacing:2px; text-transform:uppercase; }
+
+  /* SLIDE 5 */
+  #s5 { background: radial-gradient(ellipse at 20% 70%, #0a0e14 0%, #080808 65%); }
+  .s5-wrap { max-width:1000px; width:90%; text-align:center; }
+  .s5-title { font-family:'Playfair Display',serif; font-size:clamp(36px,5vw,72px); color:var(--white); margin-bottom:8px; }
+  .s5-sub { color:var(--gold); font-size:16px; letter-spacing:4px; text-transform:uppercase; margin-bottom:48px; }
+  .s5-pays { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:48px; }
+  .s5-pay { background:var(--ink2); border:1px solid rgba(212,175,55,0.2); padding:16px 24px; display:flex; align-items:center; gap:10px; font-size:14px; font-weight:700; color:var(--white); min-width:140px; justify-content:center; }
+  .s5-trusts { display:flex; gap:24px; justify-content:center; flex-wrap:wrap; }
+  .s5-trust { text-align:center; padding:24px 20px; background:var(--ink2); border:1px solid rgba(212,175,55,0.12); min-width:160px; position:relative; }
+  .s5-trust::before { content:''; position:absolute; bottom:0;left:0;right:0; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
+  .s5-t-icon { font-size:36px; margin-bottom:10px; display:block; }
+  .s5-t-text { font-size:13px; color:var(--white); font-weight:700; }
+  .s5-t-sub { font-size:11px; color:var(--grey); margin-top:4px; }
+
+  /* SLIDE 6 */
+  #s6 { background: radial-gradient(ellipse at 50% 50%, #181408 0%, #080808 70%); }
+  .s6-wrap { text-align:center; max-width:800px; padding:40px; }
+  .s6-stars { font-size:40px; letter-spacing:10px; color:var(--gold); margin-bottom:32px; animation:float 3s ease infinite; display:block; }
+  .s6-h { font-family:'Playfair Display',serif; font-size:clamp(36px,5vw,80px); color:var(--white); line-height:1.1; margin-bottom:16px; }
+  .s6-h em { font-style:italic; color:var(--gold); }
+  .s6-body { font-size:18px; color:var(--grey); margin-bottom:48px; line-height:1.8; }
+  .s6-btns { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-bottom:40px; }
+  .s6-btn1 { background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2)); color:var(--ink); padding:18px 48px; font-size:14px; font-weight:700; letter-spacing:4px; text-transform:uppercase; text-decoration:none; display:inline-block; animation:goldPulse 3s ease infinite; }
+  .s6-btn2 { background:transparent; border:1px solid var(--gold); color:var(--gold); padding:18px 48px; font-size:14px; font-weight:700; letter-spacing:4px; text-transform:uppercase; text-decoration:none; display:inline-block; }
+  .s6-contacts { display:flex; gap:48px; justify-content:center; flex-wrap:wrap; }
+  .s6-c-label { font-size:10px; letter-spacing:4px; color:var(--gold3); text-transform:uppercase; margin-bottom:6px; }
+  .s6-c-value { font-family:'Playfair Display',serif; font-size:22px; color:var(--white); }
+
+  @media(max-width:768px) {
+    .s2-grid { grid-template-columns:1fr; gap:30px; }
+    .s3-grid { grid-template-columns:repeat(2,1fr); }
+    .s4-stats { gap:12px; }
+    .s4-stat { padding:12px 16px; }
+    .s4-num { font-size:32px; }
+    .corner-tl,.corner-tr,.corner-bl,.corner-br { width:30px; height:30px; }
+  }
+
 </style>
 </head>
 <body>
@@ -502,11 +735,10 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
   <div class="video-box">
     <button class="video-close" onclick="closeVideo()">✕</button>
     <div class="video-title" id="videoTitle">Service Video</div>
-    <div class="video-placeholder">
-      <div class="big-icon" id="videoIcon">🔧</div>
-      <p id="videoDesc">Upload your own video to this section by replacing the placeholder with a YouTube embed or your own video file.</p>
-      <small>📹 Add your video URL in the code — look for: VIDEO_URL_HERE</small>
+    <div style="width:100%;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+      <iframe id="videoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
     </div>
+    <p id="videoDesc" style="font-size:.85rem;color:var(--text);margin-top:16px;line-height:1.6;"></p>
   </div>
 </div>
 
@@ -967,6 +1199,15 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
       </div>
     </section>
 
+
+<!-- ── PRESENTATION BUTTON ── -->
+<div style="text-align:center;padding:20px 0;background:var(--ink2);">
+  <button class="presentation-btn" onclick="openSlideshow()">
+    🎬 &nbsp;View Our Full Presentation
+  </button>
+  <p style="font-size:.75rem;color:var(--text);letter-spacing:2px;opacity:.5;">PROFESSIONAL SLIDESHOW · 8 SLIDES</p>
+</div>
+
 <!-- REVIEWS -->
 <section id="reviews" style="background:var(--ink);">
   <div class="section-inner">
@@ -1206,13 +1447,28 @@ document.addEventListener('mouseleave', e => {
 function closeExit() { document.getElementById('exitPopup').classList.remove('show'); }
 
 // ── VIDEO ──
+const videoMap = {
+  "Hardware Repair": "https://www.youtube.com/embed/dX1NKLaL-eA",
+  "Virus & Malware Removal": "https://www.youtube.com/embed/nCDHGKMeHbY",
+  "Windows Installation": "https://www.youtube.com/embed/vPCMVCTkTOo",
+  "Custom PC Build": "https://www.youtube.com/embed/BL4DCEkMbj8",
+  "Data Recovery": "https://www.youtube.com/embed/wIhJWr7CTUA",
+  "PC Speed Boost": "https://www.youtube.com/embed/E7gWyqNRR7U",
+  "Network & WiFi Setup": "https://www.youtube.com/embed/Blt3GKfqbJQ",
+  "Free Diagnostics": "https://www.youtube.com/embed/dX1NKLaL-eA",
+};
+
 function openVideo(title, icon, desc) {
   document.getElementById('videoTitle').textContent = title;
-  document.getElementById('videoIcon').textContent = icon;
   document.getElementById('videoDesc').textContent = desc;
+  const videoUrl = videoMap[title] || videoMap[title.trim()] || '';
+  document.getElementById('videoFrame').src = videoUrl + '?autoplay=1&rel=0';
   document.getElementById('videoModal').classList.add('show');
 }
-function closeVideo() { document.getElementById('videoModal').classList.remove('show'); }
+function closeVideo() {
+  document.getElementById('videoModal').classList.remove('show');
+  document.getElementById('videoFrame').src = '';
+}
 
 // ── PAYPAL ──
 function updatePayPal(e) {
@@ -1280,6 +1536,291 @@ function updatePayPal(e) {
   if(!amt || amt <= 0) { e.preventDefault(); alert('Please enter the repair amount first!'); return; }
   document.getElementById('paypalLink').href = 'https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=anthonybrown_@hotmail.co.uk&item_name=Computer+Repair+-+AB+Repairs+Cardiff&currency_code=GBP&amount=' + amt;
 }
+</script>
+
+<!-- ── SLIDESHOW POPUP ── -->
+<div id="slideshowPopup">
+  <button id="closeSlideshowBtn" onclick="closeSlideshow()">✕</button>
+  <div style="position:relative;width:100%;height:100vh;overflow:hidden;">
+    
+<div class="grain"></div>
+<button class="nav-btn nav-prev" onclick="ss_prevSlide()">&#8249;</button>
+<button class="nav-btn nav-next" onclick="ss_nextSlide()">&#8250;</button>
+<div class="slide-num" id="slideNum">01 / 06</div>
+<div class="progress-bar" id="ss-progressBar" style="width:0%"></div>
+<div class="dots" id="dots"></div>
+
+<!-- SLIDE 1 — HERO -->
+<div class="slide active" id="s1">
+  <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+  <div style="text-align:center; max-width:900px; padding:40px;">
+    <div class="s1-box aS"><div class="s1-ab">AB</div></div>
+    <div class="gold-line a2" style="width:400px;max-width:80%;margin-bottom:24px;"></div>
+    <h1 class="s1-title a2">Computer Repairs</h1>
+    <p class="s1-sub a3">Cardiff &amp; South Wales</p>
+    <div class="gold-line a4" style="width:300px;max-width:60%;margin-bottom:32px;"></div>
+    <p class="a4" style="font-size:18px;color:var(--grey);max-width:500px;margin:0 auto;line-height:1.8;">Professional IT repair services from a trusted Cardiff expert. Fast, honest and affordable.</p>
+    <div class="s1-tags a5">
+      <span class="s1-tag">&#9889; Same Day</span>
+      <span class="s1-tag">&#128269; Free Diagnostic</span>
+      <span class="s1-tag">&#128179; Card Accepted</span>
+      <span class="s1-tag">&#9733;&#9733;&#9733;&#9733;&#9733; 5 Star</span>
+    </div>
+    <div class="a6" style="margin-top:40px;font-family:'Playfair Display',serif;font-size:20px;color:var(--gold);">abrepairscardiff.co.uk</div>
+  </div>
+</div>
+
+<!-- SLIDE 2 — FREE DIAGNOSTIC -->
+<div class="slide" id="s2">
+  <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+  <div class="s2-grid">
+    <div class="aL">
+      <div class="s2-icon">&#128269;</div>
+      <p class="s2-tag">Our Promise</p>
+      <h2 class="s2-h">Completely<br><em>Free</em><br>Diagnostic</h2>
+      <div class="gold-line-thin" style="width:200px;margin:20px 0;"></div>
+      <p class="s2-body">Not sure what's wrong with your PC or laptop? Bring it in and we'll diagnose the problem completely free — no obligation, no hidden charges.</p>
+    </div>
+    <div class="s2-points aR">
+      <div class="s2-pt a1"><div class="s2-pt-icon">&#9989;</div><div><div class="s2-pt-t">No Obligation</div><div class="s2-pt-s">Free — no pressure to proceed</div></div></div>
+      <div class="s2-pt a2"><div class="s2-pt-icon">&#128269;</div><div><div class="s2-pt-t">Expert Diagnosis</div><div class="s2-pt-s">Years of experience identifying issues</div></div></div>
+      <div class="s2-pt a3"><div class="s2-pt-icon">&#9889;</div><div><div class="s2-pt-t">Same Day Available</div><div class="s2-pt-s">Drop off and pick up same day</div></div></div>
+      <div class="s2-pt a4"><div class="s2-pt-icon">&#128176;</div><div><div class="s2-pt-t">No Fix, No Fee</div><div class="s2-pt-s">On data recovery — guaranteed</div></div></div>
+      <div class="s2-pt a5"><div class="s2-pt-icon">&#128205;</div><div><div class="s2-pt-t">Cardiff Based</div><div class="s2-pt-s">Serving Cardiff &amp; South Wales</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3 — SERVICES -->
+<div class="slide" id="s3">
+  <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+  <div class="s3-wrap">
+    <p class="s3-eye a1">What We Fix</p>
+    <h2 class="s3-title a2">Our <em style="font-style:italic;color:var(--gold);">Services</em></h2>
+    <div class="gold-line a3" style="width:300px;margin-bottom:0;"></div>
+    <div class="s3-grid">
+      <div class="s3-card a1"><span class="s3-icon">&#128295;</span><div class="s3-name">Hardware Repair</div><div class="s3-price">From £45</div></div>
+      <div class="s3-card a2"><span class="s3-icon">&#129440;</span><div class="s3-name">Virus Removal</div><div class="s3-price">From £40</div></div>
+      <div class="s3-card a3"><span class="s3-icon">&#128191;</span><div class="s3-name">Windows Install</div><div class="s3-price">From £50</div></div>
+      <div class="s3-card a4"><span class="s3-icon">&#128421;</span><div class="s3-name">Custom PC Build</div><div class="s3-price">From £80</div></div>
+      <div class="s3-card a5"><span class="s3-icon">&#128190;</span><div class="s3-name">Data Recovery</div><div class="s3-price">From £60</div></div>
+      <div class="s3-card a6"><span class="s3-icon">&#9889;</span><div class="s3-name">Speed Boost</div><div class="s3-price">From £35</div></div>
+      <div class="s3-card a1"><span class="s3-icon">&#128246;</span><div class="s3-name">Network Setup</div><div class="s3-price">From £45</div></div>
+      <div class="s3-card free a2"><span class="s3-icon">&#128269;</span><div class="s3-name">Free Diagnostic</div><div class="s3-price shimmer">FREE!</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4 — SAME DAY -->
+<div class="slide" id="s4">
+  <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+  <div class="s4-wrap">
+    <span class="s4-icon aS">&#9889;</span>
+    <p class="s4-label a1">Cardiff's Fastest</p>
+    <h2 class="s4-h a2"><span class="g">Same</span><br>Day</h2>
+    <h3 class="a3" style="font-family:'Playfair Display',serif;font-size:clamp(18px,3vw,40px);color:var(--white);font-weight:400;letter-spacing:6px;text-transform:uppercase;margin-top:8px;">Service</h3>
+    <div class="gold-line a4" style="width:300px;margin:24px auto;"></div>
+    <p class="s4-sub a4">Drop off in the morning — pick up the same day</p>
+    <div class="s4-stats a5">
+      <div class="s4-stat"><span class="s4-num shimmer">1hr</span><span class="s4-lbl">Response Time</span></div>
+      <div class="s4-stat"><span class="s4-num shimmer">£0</span><span class="s4-lbl">Diagnostic Fee</span></div>
+      <div class="s4-stat"><span class="s4-num shimmer">★5</span><span class="s4-lbl">Star Rating</span></div>
+      <div class="s4-stat"><span class="s4-num shimmer">100%</span><span class="s4-lbl">Satisfaction</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5 — PAYMENT -->
+<div class="slide" id="s5">
+  <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+  <div class="s5-wrap">
+    <p class="aD" style="font-size:11px;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:12px;">Trusted &amp; Secure</p>
+    <h2 class="s5-title a1">We <em style="font-style:italic;color:var(--gold);">Accept</em></h2>
+    <div class="gold-line a2" style="width:200px;margin-bottom:16px;"></div>
+    <p class="s5-sub a3">All Major Payment Methods</p>
+    <div class="s5-pays">
+      <div class="s5-pay a1"><span style="font-size:20px;font-weight:900;font-style:italic;color:#1a1f71;background:#fff;padding:2px 8px;">VISA</span></div>
+      <div class="s5-pay a2"><span style="display:inline-flex;align-items:center;"><span style="width:20px;height:20px;background:#eb001b;border-radius:50%;display:inline-block;"></span><span style="width:20px;height:20px;background:#f79e1b;border-radius:50%;display:inline-block;margin-left:-8px;"></span></span> Mastercard</div>
+      <div class="s5-pay a3" style="background:#016fd0;"><span style="font-size:10px;font-weight:900;color:#fff;line-height:1.2;text-align:center;">AMERICAN<br>EXPRESS</span></div>
+      <div class="s5-pay a4"><span style="font-weight:900;color:#003087;">Pay<span style="color:#009cde;">Pal</span></span></div>
+      <div class="s5-pay a5" style="background:#000;color:#fff;"> Pay</div>
+      <div class="s5-pay a6"><span style="font-weight:700;font-size:12px;"><span style="color:#4285f4;">G</span><span style="color:#ea4335;">o</span><span style="color:#fbbc05;">o</span><span style="color:#4285f4;">g</span><span style="color:#34a853;">l</span><span style="color:#ea4335;">e</span> Pay</span></div>
+      <div class="s5-pay a1" style="color:#2d7a22;">&#128181; Cash</div>
+    </div>
+    <div class="gold-line a3" style="width:600px;max-width:90%;margin-bottom:32px;"></div>
+    <div class="s5-trusts">
+      <div class="s5-trust a1"><span class="s5-t-icon">&#128274;</span><div class="s5-t-text">256-bit SSL</div><div class="s5-t-sub">Fully Secure</div></div>
+      <div class="s5-trust a2"><span class="s5-t-icon">&#9889;</span><div class="s5-t-text">Same Day</div><div class="s5-t-sub">Fast Service</div></div>
+      <div class="s5-trust a3"><span class="s5-t-icon">&#11088;&#11088;&#11088;&#11088;&#11088;</span><div class="s5-t-text">5 Star Rated</div><div class="s5-t-sub">Cardiff's Best</div></div>
+      <div class="s5-trust a4"><span class="s5-t-icon">&#128737;</span><div class="s5-t-text">No Fix No Fee</div><div class="s5-t-sub">Data Recovery</div></div>
+      <div class="s5-trust a5"><span class="s5-t-icon">&#128205;</span><div class="s5-t-text">Cardiff Based</div><div class="s5-t-sub">South Wales</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6 — CTA -->
+<div class="slide" id="s6">
+  <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+  <div class="s6-wrap">
+    <span class="s6-stars aS">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+    <h2 class="s6-h a1">Ready to <em>Fix</em><br>Your PC?</h2>
+    <div class="gold-line a2" style="width:300px;margin:24px auto;"></div>
+    <p class="s6-body a3">Cardiff's most trusted computer repair service.<br>Fast &middot; Honest &middot; Affordable &middot; Professional</p>
+    <div class="s6-btns a4">
+      <a href="tel:+447444171553" class="s6-btn1">&#128222; Call Now</a>
+      <a href="https://wa.me/447444171553" class="s6-btn2">&#128172; WhatsApp</a>
+    </div>
+    <div class="gold-line-thin a5" style="width:400px;margin-bottom:32px;"></div>
+    <div class="s6-contacts a6">
+      <div><div class="s6-c-label">Phone</div><div class="s6-c-value">07444 171553</div></div>
+      <div><div class="s6-c-label">Website</div><div class="s6-c-value">abrepairscardiff.co.uk</div></div>
+      <div><div class="s6-c-label">Location</div><div class="s6-c-value">Cardiff, CF24</div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const TOTAL = 6, DURATION = 6000;
+  let current = 0, progress = 0, progressTimer;
+  const dotsEl = document.getElementById('dots');
+  for(let i=0;i<TOTAL;i++){
+    const d=document.createElement('div');
+    d.className='dot'+(i===0?' active':'');
+    d.onclick=()=>goTo(i);
+    dotsEl.appendChild(d);
+  }
+  function updateUI(){
+    document.getElementById('slideNum').textContent=String(current+1).padStart(2,'0')+' / '+String(TOTAL).padStart(2,'0');
+    document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===current));
+  }
+  function goTo(n){
+    document.querySelectorAll('.slide')[current].classList.remove('active');
+    current=(n+TOTAL)%TOTAL;
+    document.querySelectorAll('.slide')[current].classList.add('active');
+    updateUI();
+    resetProg();
+  }
+  function nextSlide(){goTo(current+1);}
+  function prevSlide(){goTo(current-1);}
+  function resetProg(){
+    clearInterval(progressTimer);
+    progress=0;
+    document.getElementById('progressBar').style.width='0%';
+    progressTimer=setInterval(()=>{
+      progress+=100/(DURATION/100);
+      document.getElementById('progressBar').style.width=Math.min(progress,100)+'%';
+      if(progress>=100){clearInterval(progressTimer);nextSlide();}
+    },100);
+  }
+  document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key===' ')nextSlide();
+    if(e.key==='ArrowLeft')prevSlide();
+  });
+  let tx=0;
+  document.addEventListener('touchstart',e=>tx=e.touches[0].clientX);
+  document.addEventListener('touchend',e=>{const d=tx-e.changedTouches[0].clientX;if(Math.abs(d)>50)d>0?nextSlide():prevSlide();});
+  updateUI();
+  resetProg();
+</script>
+
+  </div>
+</div>
+
+<script>
+(function() {
+  // ── SLIDESHOW VARIABLES (scoped) ──
+  const SS_TOTAL = 8;
+  const DURATION = 6000;
+  let ss_current = 0;
+  let ss_progress = 0;
+  let ss_progressTimer;
+
+  function ss_updateIndicators() {
+    document.querySelectorAll('#slideshowPopup .indicator').forEach((d, i) => {
+      d.classList.toggle('active', i === ss_current);
+    });
+    const counter = document.getElementById('ss-counter');
+    if(counter) counter.textContent = String(ss_current + 1).padStart(2, '0') + ' / ' + String(SS_TOTAL).padStart(2, '0');
+  }
+
+  window.ss_goTo = function(n) {
+    const prev = document.getElementById('ss-slide-' + ss_current);
+    if(prev) prev.classList.remove('active');
+    ss_current = (n + SS_TOTAL) % SS_TOTAL;
+    const next = document.getElementById('ss-slide-' + ss_current);
+    if(next) next.classList.add('active');
+    ss_updateIndicators();
+    ss_resetProgress();
+  };
+
+  window.ss_nextSlide = function() { ss_goTo(ss_current + 1); };
+  window.ss_prevSlide = function() { ss_goTo(ss_current - 1); };
+
+  window.ss_resetProgress = function() {
+    clearInterval(ss_progressTimer);
+    ss_progress = 0;
+    const bar = document.getElementById('ss-progressBar');
+    if(bar) bar.style.width = '0%';
+    ss_progressTimer = setInterval(() => {
+      ss_progress += 100 / (DURATION / 100);
+      const bar = document.getElementById('ss-progressBar');
+      if(bar) bar.style.width = Math.min(ss_progress, 100) + '%';
+      if(ss_progress >= 100) {
+        clearInterval(ss_progressTimer);
+        ss_nextSlide();
+      }
+    }, 100);
+  };
+
+  window.openSlideshow = function() {
+    document.getElementById('slideshowPopup').classList.add('show');
+    document.body.style.overflow = 'hidden';
+    ss_current = 0;
+    document.querySelectorAll('#slideshowPopup .slide').forEach((s, i) => {
+      s.classList.toggle('active', i === 0);
+    });
+    // Build indicators if not already built
+    const indContainer = document.getElementById('ss-indicators');
+    if(indContainer && indContainer.children.length === 0) {
+      for(let i = 0; i < SS_TOTAL; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'indicator' + (i === 0 ? ' active' : '');
+        dot.onclick = () => ss_goTo(i);
+        indContainer.appendChild(dot);
+      }
+    }
+    ss_resetProgress();
+  };
+
+  window.closeSlideshow = function() {
+    document.getElementById('slideshowPopup').classList.remove('show');
+    document.body.style.overflow = '';
+    clearInterval(ss_progressTimer);
+  };
+
+  document.addEventListener('keydown', function(e) {
+    if(document.getElementById('slideshowPopup') && 
+       document.getElementById('slideshowPopup').classList.contains('show')) {
+      if(e.key === 'Escape') closeSlideshow();
+      if(e.key === 'ArrowRight' || e.key === ' ') ss_nextSlide();
+      if(e.key === 'ArrowLeft') ss_prevSlide();
+    }
+  });
+
+  // Touch support
+  let ss_touchX = 0;
+  document.addEventListener('touchstart', e => {
+    if(document.getElementById('slideshowPopup').classList.contains('show'))
+      ss_touchX = e.touches[0].clientX;
+  });
+  document.addEventListener('touchend', e => {
+    if(document.getElementById('slideshowPopup').classList.contains('show')) {
+      const diff = ss_touchX - e.changedTouches[0].clientX;
+      if(Math.abs(diff) > 50) diff > 0 ? ss_nextSlide() : ss_prevSlide();
+    }
+  });
+
+})();
 </script>
 </body>
 </html>
