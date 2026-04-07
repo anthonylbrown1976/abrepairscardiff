@@ -1242,7 +1242,12 @@ const obs = new IntersectionObserver(entries =>
 document.querySelectorAll('.fi').forEach(el => obs.observe(el));
 
 // Trigger counters when hero stats visible
-const counterObs =
+const counterObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) animateCounters();
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.hero-stats').forEach(el => counterObs.observe(el));
 </script>
 </body>
 </html>
