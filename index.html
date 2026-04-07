@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<!-- Build1775531742 -->
+<!-- Build1775532103 -->
+<!-- OldBuild1775532095 -->
+<!-- OldBuild1775531742 -->
 <!-- OldBuild 1775531445 -->
-<!-- Build1775531742 -->
+<!-- Build1775532103 -->
+<!-- OldBuild1775532095 -->
+<!-- OldBuild1775531742 -->
 <!-- OldBuild1775524802 -->
 <!-- OldBuild1775524483 -->
 <!-- OldBuild1775524020 -->
@@ -11,7 +15,9 @@
 <!-- PrevBuild1775520253 -->
 <!-- OldBuild 1775519671 -->
 <!-- OldBuild 1775519598 -->
-<!-- Build1775531742 -->
+<!-- Build1775532103 -->
+<!-- OldBuild1775532095 -->
+<!-- OldBuild1775531742 -->
 <!-- OldBuild1775524802 -->
 <!-- OldBuild1775524483 -->
 <!-- OldBuild1775524020 -->
@@ -21,7 +27,9 @@
 <!-- PrevBuild1775520253 -->
 <!-- OldBuild 1775519671 -->
 <!-- OldBuild 1775504036 -->
-<!-- Build1775531742 -->
+<!-- Build1775532103 -->
+<!-- OldBuild1775532095 -->
+<!-- OldBuild1775531742 -->
 <!-- OldBuild1775524802 -->
 <!-- OldBuild1775524483 -->
 <!-- OldBuild1775524020 -->
@@ -1546,9 +1554,9 @@ function updatePayPal(e) {
 <div class="grain"></div>
 <button class="nav-btn nav-prev" onclick="ss_prevSlide()">&#8249;</button>
 <button class="nav-btn nav-next" onclick="ss_nextSlide()">&#8250;</button>
-<div class="slide-num" id="slideNum">01 / 06</div>
+<div class="slide-num" id="ss-counter">01 / 06</div>
 <div class="progress-bar" id="ss-progressBar" style="width:0%"></div>
-<div class="dots" id="dots"></div>
+<div class="dots" id="ss-indicators"></div>
 
 <!-- SLIDE 1 — HERO -->
 <div class="slide active" id="s1">
@@ -1679,49 +1687,7 @@ function updatePayPal(e) {
   </div>
 </div>
 
-<script>
-  const TOTAL = 6, DURATION = 6000;
-  let current = 0, progress = 0, progressTimer;
-  const dotsEl = document.getElementById('dots');
-  for(let i=0;i<TOTAL;i++){
-    const d=document.createElement('div');
-    d.className='dot'+(i===0?' active':'');
-    d.onclick=()=>goTo(i);
-    dotsEl.appendChild(d);
-  }
-  function updateUI(){
-    document.getElementById('slideNum').textContent=String(current+1).padStart(2,'0')+' / '+String(TOTAL).padStart(2,'0');
-    document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===current));
-  }
-  function goTo(n){
-    document.querySelectorAll('.slide')[current].classList.remove('active');
-    current=(n+TOTAL)%TOTAL;
-    document.querySelectorAll('.slide')[current].classList.add('active');
-    updateUI();
-    resetProg();
-  }
-  function nextSlide(){goTo(current+1);}
-  function prevSlide(){goTo(current-1);}
-  function resetProg(){
-    clearInterval(progressTimer);
-    progress=0;
-    document.getElementById('progressBar').style.width='0%';
-    progressTimer=setInterval(()=>{
-      progress+=100/(DURATION/100);
-      document.getElementById('progressBar').style.width=Math.min(progress,100)+'%';
-      if(progress>=100){clearInterval(progressTimer);nextSlide();}
-    },100);
-  }
-  document.addEventListener('keydown',e=>{
-    if(e.key==='ArrowRight'||e.key===' ')nextSlide();
-    if(e.key==='ArrowLeft')prevSlide();
-  });
-  let tx=0;
-  document.addEventListener('touchstart',e=>tx=e.touches[0].clientX);
-  document.addEventListener('touchend',e=>{const d=tx-e.changedTouches[0].clientX;if(Math.abs(d)>50)d>0?nextSlide():prevSlide();});
-  updateUI();
-  resetProg();
-</script>
+
 
   </div>
 </div>
