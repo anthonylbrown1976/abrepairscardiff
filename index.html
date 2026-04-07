@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<!-- Build1775524020 -->
+<!-- Build1775524483 -->
+<!-- OldBuild1775524020 -->
 <!-- OldBuild1775522688 -->
 <!-- OldBuild1775521927 -->
 <!-- OldBuild1775521220 -->
 <!-- PrevBuild1775520253 -->
 <!-- OldBuild 1775519671 -->
 <!-- OldBuild 1775519598 -->
-<!-- Build1775524020 -->
+<!-- Build1775524483 -->
+<!-- OldBuild1775524020 -->
 <!-- OldBuild1775522688 -->
 <!-- OldBuild1775521927 -->
 <!-- OldBuild1775521220 -->
 <!-- PrevBuild1775520253 -->
 <!-- OldBuild 1775519671 -->
 <!-- OldBuild 1775504036 -->
-<!-- Build1775524020 -->
+<!-- Build1775524483 -->
+<!-- OldBuild1775524020 -->
 <!-- OldBuild1775522688 -->
 <!-- OldBuild1775521927 -->
 <!-- OldBuild1775521220 -->
@@ -505,11 +508,10 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
   <div class="video-box">
     <button class="video-close" onclick="closeVideo()">✕</button>
     <div class="video-title" id="videoTitle">Service Video</div>
-    <div class="video-placeholder">
-      <div class="big-icon" id="videoIcon">🔧</div>
-      <p id="videoDesc">Upload your own video to this section by replacing the placeholder with a YouTube embed or your own video file.</p>
-      <small>📹 Add your video URL in the code — look for: https://www.youtube.com/embed/BL4DCEkMbj8</small>
+    <div style="width:100%;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+      <iframe id="videoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
     </div>
+    <p id="videoDesc" style="font-size:.85rem;color:var(--text);margin-top:16px;line-height:1.6;"></p>
   </div>
 </div>
 
@@ -1209,13 +1211,28 @@ document.addEventListener('mouseleave', e => {
 function closeExit() { document.getElementById('exitPopup').classList.remove('show'); }
 
 // ── VIDEO ──
+const videoMap = {
+  "Hardware Repair": "https://www.youtube.com/embed/BL4DCEkMbj8",
+  "Virus & Malware Removal": "https://www.youtube.com/embed/7U-RbOKanYs",
+  "Windows Installation": "https://www.youtube.com/embed/OMbMcHSN8mE",
+  "Custom PC Build": "https://www.youtube.com/embed/PXG2wH9RLVA",
+  "Data Recovery": "https://www.youtube.com/embed/4DsnSKSFkAQ",
+  "PC Speed Boost": "https://www.youtube.com/embed/JPk3OxGjDh4",
+  "Network & WiFi Setup": "https://www.youtube.com/embed/qiocGT3_3Es",
+  "Free Diagnostics": "https://www.youtube.com/embed/BL4DCEkMbj8",
+};
+
 function openVideo(title, icon, desc) {
   document.getElementById('videoTitle').textContent = title;
-  document.getElementById('videoIcon').textContent = icon;
   document.getElementById('videoDesc').textContent = desc;
+  const videoUrl = videoMap[title] || videoMap[title.trim()] || '';
+  document.getElementById('videoFrame').src = videoUrl + '?autoplay=1&rel=0';
   document.getElementById('videoModal').classList.add('show');
 }
-function closeVideo() { document.getElementById('videoModal').classList.remove('show'); }
+function closeVideo() {
+  document.getElementById('videoModal').classList.remove('show');
+  document.getElementById('videoFrame').src = '';
+}
 
 // ── PAYPAL ──
 function updatePayPal(e) {
