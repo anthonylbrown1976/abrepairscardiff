@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Build 1776891419 -->
 <!-- Build 1776151047 -->
 <!-- Build 1776150764 -->
 <!-- Build 1776150595 -->
@@ -139,8 +140,8 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .cur-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(201,168,76,0.5);border-radius:50%;pointer-events:none;z-index:9997;transform:translate(-50%,-50%);transition:left .1s ease,top .1s ease;}
 
 /* ── TOAST POPUPS ── */
-#toastZone{position:fixed;bottom:90px;left:24px;z-index:8000;display:flex;flex-direction:column;gap:10px;}
-.toast{background:var(--ink2);border:1px solid var(--border);padding:14px 18px;max-width:280px;display:flex;align-items:center;gap:12px;font-size:0.82rem;color:var(--text2);transform:translateX(-120%);transition:transform .4s ease;box-shadow:0 8px 30px rgba(0,0,0,0.4);}
+
+
 .toast.show{transform:translateX(0);}
 .toast-avatar{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;font-size:0.85rem;flex-shrink:0;}
 .toast-text strong{display:block;color:var(--white);font-size:0.82rem;margin-bottom:2px;}
@@ -773,7 +774,7 @@ s0.parentNode.insertBefore(s1,s0);
 <div class="cur-ring" id="curRing" style="pointer-events:none;"></div>
 
 <!-- ── TOAST ZONE ── -->
-<div id="toastZone"></div>
+
 
 <!-- ── BASKET OVERLAY ── -->
 <div class="basket-overlay" id="basketOverlay" onclick="closeBasket()"></div>
@@ -1475,28 +1476,7 @@ const toastReviews = [
 ];
 
 let toastIdx = 0;
-function showReviewToast() {
-  const t = toastReviews[toastIdx % toastReviews.length]; toastIdx++;
-  const zone = document.getElementById('toastZone');
-  const el = document.createElement('div');
-  el.className = 'toast';
-  el.innerHTML = `<div class="toast-avatar">${t.initials}</div><div class="toast-text"><strong>${t.name}</strong><span>${t.text} </span><div class="toast-stars">★★★★★</div></div>`;
-  zone.appendChild(el);
-  setTimeout(() => el.classList.add('show'), 100);
-  setTimeout(() => { el.classList.remove('show'); setTimeout(() => el.remove(), 400); }, 4000);
-}
-
-function showToastAdd(name) {
-  const zone = document.getElementById('toastZone');
-  const el = document.createElement('div');
-  el.className = 'toast';
-  el.innerHTML = `<div class="toast-avatar">✓</div><div class="toast-text"><strong>${name} added!</strong><span>View your basket to checkout</span></div>`;
-  zone.appendChild(el);
-  setTimeout(() => el.classList.add('show'), 100);
-  setTimeout(() => { el.classList.remove('show'); setTimeout(() => el.remove(), 400); }, 3000);
-}
-
-setTimeout(() => { showReviewToast(); setInterval(showReviewToast, 12000); }, 8000);
+ }, 8000);
 
 // ── EXIT POPUP ──
 let exitShown = false;
