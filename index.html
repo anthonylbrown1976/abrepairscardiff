@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- Build 1776914187 -->
+<!-- Build 1776914025 -->
 <!-- Build 1776894405 -->
 <!-- Build 1776893181 -->
 <!-- Build 1776893168 -->
@@ -573,6 +575,345 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
   box-shadow: 0 16px 40px rgba(212,175,55,.5);
 }
 
+
+/* ── PARTICLE SYSTEM ── */
+#particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* ── CIRCUIT LINES ── */
+#circuit-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.15;
+}
+
+/* ── GLOWING TEXT ── */
+.glow-text {
+  animation: textGlow 3s ease-in-out infinite;
+}
+
+@keyframes textGlow {
+  0%, 100% { text-shadow: 0 0 10px rgba(212,175,55,0.5), 0 0 20px rgba(212,175,55,0.3); }
+  50% { text-shadow: 0 0 20px rgba(212,175,55,0.9), 0 0 40px rgba(212,175,55,0.6), 0 0 80px rgba(212,175,55,0.3); }
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── MORPHING GRADIENT ── */
+.morph-bg {
+  background: linear-gradient(
+    45deg,
+    rgba(212,175,55,0.05),
+    rgba(6,6,8,0),
+    rgba(212,175,55,0.08),
+    rgba(6,6,8,0)
+  );
+  background-size: 400% 400%;
+  animation: morphGradient 8s ease infinite;
+}
+
+@keyframes morphGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── HOVER LIFT ── */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(212,175,55,0.3) !important;
+}
+
+/* ── SHIMMER EFFECT ── */
+.shimmer-text {
+  background: linear-gradient(90deg, #b49120, #f0d25a, #d4af37, #f0d25a, #b49120);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmerText 3s linear infinite;
+}
+
+@keyframes shimmerText {
+  to { background-position: 200% center; }
+}
+
+/* ── PULSE RING ── */
+.pulse-ring {
+  position: relative;
+}
+
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 2px solid var(--gold);
+  animation: pulseRing 2s ease-out infinite;
+  opacity: 0;
+}
+
+@keyframes pulseRing {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  100% { transform: scale(1.1); opacity: 0; }
+}
+
+/* ── TYPEWRITER ── */
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid var(--gold);
+  white-space: nowrap;
+  animation: typing 3s steps(40) 1s both, blink 0.8s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* ── FLOATING ANIMATION ── */
+.floating {
+  animation: floating 4s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+/* ── SCAN LINE ── */
+.scan-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-line::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  animation: scanLine 3s linear infinite;
+}
+
+@keyframes scanLine {
+  to { top: 200%; }
+}
+
+/* ── BORDER ANIMATION ── */
+.animated-border {
+  position: relative;
+}
+
+.animated-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  background: linear-gradient(90deg, var(--gold), transparent, var(--gold)) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  animation: borderRotate 4s linear infinite;
+  background-size: 200% 100%;
+}
+
+@keyframes borderRotate {
+  to { background-position: 200% 0; }
+}
+
+
+/* ── 3D CARD FLIP ── */
+.srv-card {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.srv-card:hover {
+  transform: translateY(-8px) rotateX(5deg) rotateY(2deg) !important;
+  box-shadow: 0 30px 60px rgba(212,175,55,0.4) !important;
+}
+
+/* ── 3D HERO TEXT ── */
+.hero-inner h1 {
+  transform-style: preserve-3d;
+  animation: heroFloat 6s ease-in-out infinite;
+}
+
+@keyframes heroFloat {
+  0%, 100% { transform: translateZ(0) rotateX(0); }
+  50% { transform: translateZ(20px) rotateX(2deg); }
+}
+
+/* ── PARALLAX STARS ── */
+.star-field {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* ── NEON GLOW BORDER ── */
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(212,175,55,0.3),
+                0 0 10px rgba(212,175,55,0.2),
+                0 0 20px rgba(212,175,55,0.1),
+                inset 0 0 10px rgba(212,175,55,0.05);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(212,175,55,0.6),
+                0 0 20px rgba(212,175,55,0.4),
+                0 0 40px rgba(212,175,55,0.2),
+                inset 0 0 20px rgba(212,175,55,0.1);
+  }
+}
+
+.srv-card {
+  animation: neonPulse 4s ease-in-out infinite !important;
+}
+
+/* ── MAGNETIC BUTTON ── */
+.nav-cta, .form-submit, .pres-btn {
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1) !important;
+}
+
+/* ── LIQUID GOLD EFFECT ── */
+@keyframes liquidGold {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.marquee-3 {
+  background: linear-gradient(270deg, #b49120, #f0d25a, #d4af37, #b49120) !important;
+  background-size: 400% 400% !important;
+  animation: liquidGold 4s ease infinite !important;
+}
+
+/* ── 3D DEPTH LAYERS ── */
+.section-heading {
+  transform-style: preserve-3d;
+  text-shadow: 
+    1px 1px 0 rgba(212,175,55,0.3),
+    2px 2px 0 rgba(212,175,55,0.2),
+    3px 3px 0 rgba(212,175,55,0.1),
+    0 0 30px rgba(212,175,55,0.5);
+}
+
+/* ── HOLOGRAPHIC EFFECT ── */
+@keyframes holographic {
+  0% { filter: hue-rotate(0deg) brightness(1); }
+  25% { filter: hue-rotate(10deg) brightness(1.1); }
+  50% { filter: hue-rotate(-10deg) brightness(1.2); }
+  75% { filter: hue-rotate(5deg) brightness(1.1); }
+  100% { filter: hue-rotate(0deg) brightness(1); }
+}
+
+.intro-logo {
+  animation: holographic 6s ease-in-out infinite, floating 4s ease-in-out infinite !important;
+}
+
+/* ── RIPPLE EFFECT ── */
+.form-submit {
+  position: relative;
+  overflow: hidden;
+}
+
+.form-submit::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 0; height: 0;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s, opacity 0.6s;
+}
+
+.form-submit:active::after {
+  width: 300px;
+  height: 300px;
+  opacity: 0;
+}
+
+/* ── SCROLL PROGRESS BAR ── */
+#scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #b49120, #f0d25a, #d4af37);
+  z-index: 99999;
+  transition: width 0.1s;
+  box-shadow: 0 0 10px rgba(212,175,55,0.8);
+}
+
+/* ── CURSOR TRAIL ── */
+.cursor-trail {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99998;
+  border-radius: 50%;
+  background: rgba(212,175,55,0.6);
+  transform: translate(-50%, -50%);
+}
+
 </style>
 <style>
 
@@ -741,7 +1082,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 <!-- ── INTRO ANIMATION ── -->
 <div id="intro">
-  <div class="intro-logo">AB<span>.</span></div>
+  <div class="intro-logo floating">AB<span>.</span></div>
   <div class="intro-bar"></div>
   <div class="intro-sub">Computer Repairs — Premium IT Services</div>
 </div>
@@ -950,15 +1291,15 @@ s0.parentNode.insertBefore(s1,s0);
 
 <!-- SERVICES -->
 <section id="services" style="background:var(--ink2);">
-  <div class="section-inner" style="padding-bottom:0;">
-    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">What We Fix</div></div>
-    <div class="section-heading">Our <em>Services</em></div>
+  <div class="section-inner morph-bg" style="padding-bottom:0;">
+    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text shimmer-text">What We Fix</div></div>
+    <div class="section-heading glow-text">Our <em>Services</em></div>
     <p class="section-body">From a broken screen to a full custom build — every service comes with a video walkthrough so you know exactly what to expect.</p>
   </div>
   <div style="max-width:1320px;margin:0 auto;padding:0 5% 100px;">
     <div class="srv-grid">
 
-      <div class="srv-card fi">
+      <div class="srv-card hover-lift fi">
         <div class="srv-media">
           <div class="srv-media-bg">🔧</div>
           <div class="srv-media-overlay"></div>
@@ -973,7 +1314,7 @@ s0.parentNode.insertBefore(s1,s0);
         </div>
       </div>
 
-      <div class="srv-card fi">
+      <div class="srv-card hover-lift fi">
         <div class="srv-media">
           <div class="srv-media-bg">🛡️</div>
           <div class="srv-media-overlay"></div>
@@ -988,7 +1329,7 @@ s0.parentNode.insertBefore(s1,s0);
         </div>
       </div>
 
-      <div class="srv-card fi">
+      <div class="srv-card hover-lift fi">
         <div class="srv-media">
           <div class="srv-media-bg">🪟</div>
           <div class="srv-media-overlay"></div>
@@ -1003,7 +1344,7 @@ s0.parentNode.insertBefore(s1,s0);
         </div>
       </div>
 
-      <div class="srv-card fi">
+      <div class="srv-card hover-lift fi">
         <div class="srv-media">
           <div class="srv-media-bg">💻</div>
           <div class="srv-media-overlay"></div>
@@ -1018,7 +1359,7 @@ s0.parentNode.insertBefore(s1,s0);
         </div>
       </div>
 
-      <div class="srv-card fi">
+      <div class="srv-card hover-lift fi">
         <div class="srv-media">
           <div class="srv-media-bg">💾</div>
           <div class="srv-media-overlay"></div>
@@ -1033,7 +1374,7 @@ s0.parentNode.insertBefore(s1,s0);
         </div>
       </div>
 
-      <div class="srv-card fi">
+      <div class="srv-card hover-lift fi">
         <div class="srv-media">
           <div class="srv-media-bg">⚡</div>
           <div class="srv-media-overlay"></div>
@@ -1048,7 +1389,7 @@ s0.parentNode.insertBefore(s1,s0);
         </div>
       </div>
 
-      <div class="srv-card fi">
+      <div class="srv-card hover-lift fi">
         <div class="srv-media">
           <div class="srv-media-bg">📡</div>
           <div class="srv-media-overlay"></div>
@@ -1063,7 +1404,7 @@ s0.parentNode.insertBefore(s1,s0);
         </div>
       </div>
 
-      <div class="srv-card fi">
+      <div class="srv-card hover-lift fi">
         <div class="srv-media">
           <div class="srv-media-bg">🔍</div>
           <div class="srv-media-overlay"></div>
@@ -1091,9 +1432,9 @@ s0.parentNode.insertBefore(s1,s0);
 
 <!-- WHY -->
 <section id="why" style="background:var(--ink);">
-  <div class="section-inner">
-    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Our Edge</div></div>
-    <div class="section-heading">Why Choose <em>AB Repairs?</em></div>
+  <div class="section-inner morph-bg">
+    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text shimmer-text">Our Edge</div></div>
+    <div class="section-heading glow-text">Why Choose <em>AB Repairs?</em></div>
     <p class="section-body">Real expertise from a self-taught IT technician who builds PCs from scratch. No call centres, no upselling, no nonsense.</p>
     <div class="why-layout">
       <div class="why-list">
@@ -1132,9 +1473,9 @@ s0.parentNode.insertBefore(s1,s0);
 
 <!-- BOOK & PAY -->
 <section id="book" style="background:var(--ink2);">
-  <div class="section-inner">
-    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Get Started</div></div>
-    <div class="section-heading">Book a Repair &amp; <em>Pay Online</em></div>
+  <div class="section-inner morph-bg">
+    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text shimmer-text">Get Started</div></div>
+    <div class="section-heading glow-text">Book a Repair &amp; <em>Pay Online</em></div>
     <p class="section-body">Submit your request below. Once quoted, pay securely via PayPal at your convenience.</p>
     <div class="book-layout">
       <div class="form-card fi">
@@ -1290,9 +1631,9 @@ document.addEventListener('keydown', function(e) {
 
 <!-- REVIEWS -->
 <section id="reviews" style="background:var(--ink);">
-  <div class="section-inner">
-    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Customer Feedback</div></div>
-    <div class="section-heading">What Our Customers <em>Say</em></div>
+  <div class="section-inner morph-bg">
+    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text shimmer-text">Customer Feedback</div></div>
+    <div class="section-heading glow-text">What Our Customers <em>Say</em></div>
     <p class="section-body">Real experiences from real people. We believe our work speaks louder than any advertisement.</p>
     <div class="rev-grid">
       <div class="rev-card fi"><div class="rev-stars">★★★★★</div><p class="rev-quote">"My laptop was completely dead — AB had it running perfectly within a day. Incredibly knowledgeable and kept me updated throughout. Will use again without hesitation."</p><div class="reviewer"><div class="rev-avatar">MJ</div><div><div class="rev-name">Mark Johnson</div><div class="rev-loc">Local Customer</div></div></div></div>
@@ -1311,9 +1652,9 @@ document.addEventListener('keydown', function(e) {
 
 <!-- CONTACT -->
 <section id="contact" style="background:var(--ink2);">
-  <div class="section-inner">
-    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Reach Us</div></div>
-    <div class="section-heading">Get in <em>Touch</em></div>
+  <div class="section-inner morph-bg">
+    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text shimmer-text">Reach Us</div></div>
+    <div class="section-heading glow-text">Get in <em>Touch</em></div>
     <p class="section-body">Questions before you book? Not sure what's wrong? We're always happy to help.</p>
     <div class="contact-layout">
       <div class="fi">
@@ -1331,7 +1672,7 @@ document.addEventListener('keydown', function(e) {
         <div class="ci"><div class="ci-icon">🕐</div><div><h4>Opening Hours</h4><div style="margin-top:8px;"><div class="hr-row"><span>Monday – Friday</span><span>9:00am – 6:00pm</span></div><div class="hr-row"><span>Saturday</span><span>10:00am – 4:00pm</span></div><div class="hr-row"><span>Sunday</span><span>By Appointment</span></div></div></div></div>
       </div>
       <div class="fi">
-        <div class="eyebrow" style="margin-bottom:20px;"><div class="eyebrow-line"></div><div class="eyebrow-text">Follow Us</div></div>
+        <div class="eyebrow" style="margin-bottom:20px;"><div class="eyebrow-line"></div><div class="eyebrow-text shimmer-text">Follow Us</div></div>
         <p style="font-size:.9rem;font-weight:300;color:var(--text);line-height:1.8;margin-bottom:28px;">Follow us on social media for build photos, repair tips and exclusive offers. A Google review means the world to a small local business.</p>
         <a href="https://www.facebook.com/profile.php?id=61575739385660" target="_blank" class="soc-link"><span>📘</span><span>Facebook — AB Computer Repairs Cardiff</span></a>
         <a href="https://www.instagram.com/abrepairscardiff" target="_blank" class="soc-link"><span>📸</span><span>Instagram — @abrepairscardiff</span></a>
@@ -1687,5 +2028,274 @@ function updatePayPal(e) {
     </p>
   </div>
 </footer>
+
+<canvas id="particle-canvas"></canvas>
+<canvas id="circuit-canvas"></canvas>
+
+<script>
+// ── PARTICLE SYSTEM ──
+(function() {
+  const canvas = document.getElementById('particle-canvas');
+  const ctx = canvas.getContext('2d');
+  
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  
+  const particles = [];
+  const GOLD = 'rgba(212,175,55,';
+  
+  class Particle {
+    constructor() {
+      this.reset();
+    }
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 2.5 + 0.5;
+      this.speedX = (Math.random() - 0.5) * 0.4;
+      this.speedY = (Math.random() - 0.5) * 0.4;
+      this.opacity = Math.random() * 0.5 + 0.1;
+      this.life = Math.random() * 200 + 100;
+      this.maxLife = this.life;
+      this.twinkle = Math.random() * Math.PI * 2;
+    }
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      this.life--;
+      this.twinkle += 0.05;
+      if(this.life <= 0 || this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+        this.reset();
+      }
+    }
+    draw() {
+      const fade = this.life / this.maxLife;
+      const twinkleOp = (Math.sin(this.twinkle) * 0.3 + 0.7) * this.opacity * fade;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = GOLD + twinkleOp + ')';
+      ctx.fill();
+    }
+  }
+  
+  for(let i = 0; i < 80; i++) {
+    particles.push(new Particle());
+  }
+  
+  function animateParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => { p.update(); p.draw(); });
+    requestAnimationFrame(animateParticles);
+  }
+  animateParticles();
+})();
+
+// ── CIRCUIT BOARD ──
+(function() {
+  const canvas = document.getElementById('circuit-canvas');
+  const ctx = canvas.getContext('2d');
+  
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  
+  const lines = [];
+  const dots = [];
+  let offset = 0;
+  
+  // Create circuit grid
+  const spacing = 80;
+  for(let x = 0; x < window.innerWidth + spacing; x += spacing) {
+    for(let y = 0; y < window.innerHeight + spacing; y += spacing) {
+      if(Math.random() > 0.5) {
+        lines.push({
+          x1: x, y1: y,
+          x2: x + (Math.random() > 0.5 ? spacing : 0),
+          y2: y + (Math.random() > 0.5 ? spacing : 0),
+          speed: Math.random() * 0.5 + 0.2,
+          progress: Math.random()
+        });
+      }
+      if(Math.random() > 0.7) {
+        dots.push({x, y, size: Math.random() * 3 + 1});
+      }
+    }
+  }
+  
+  function drawCircuit() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // Draw static lines
+    ctx.strokeStyle = 'rgba(212,175,55,0.12)';
+    ctx.lineWidth = 1;
+    lines.forEach(line => {
+      ctx.beginPath();
+      ctx.moveTo(line.x1, line.y1);
+      ctx.lineTo(line.x2, line.y2);
+      ctx.stroke();
+    });
+    
+    // Draw animated pulse
+    lines.forEach(line => {
+      line.progress += line.speed * 0.005;
+      if(line.progress > 1) line.progress = 0;
+      
+      const px = line.x1 + (line.x2 - line.x1) * line.progress;
+      const py = line.y1 + (line.y2 - line.y1) * line.progress;
+      
+      ctx.beginPath();
+      ctx.arc(px, py, 2, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(212,175,55,0.6)';
+      ctx.fill();
+    });
+    
+    // Draw dots
+    dots.forEach(dot => {
+      ctx.beginPath();
+      ctx.arc(dot.x, dot.y, dot.size, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(212,175,55,0.2)';
+      ctx.fill();
+    });
+    
+    requestAnimationFrame(drawCircuit);
+  }
+  drawCircuit();
+})();
+
+// ── SCROLL REVEAL ──
+(function() {
+  const reveals = document.querySelectorAll('.fi, .section-inner, .srv-card, .rev-card, .why-panel, .pay-card');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if(entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('reveal', 'visible');
+        }, i * 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  reveals.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+    observer.observe(el);
+  });
+})();
+</script>
+
+<div id="scroll-progress"></div>
+
+<script>
+// ── SCROLL PROGRESS BAR ──
+window.addEventListener('scroll', () => {
+  const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  document.getElementById('scroll-progress').style.width = scrolled + '%';
+});
+
+// ── CURSOR TRAIL ──
+(function() {
+  const trails = [];
+  const numTrails = 8;
+  
+  for(let i = 0; i < numTrails; i++) {
+    const trail = document.createElement('div');
+    trail.className = 'cursor-trail';
+    const size = (numTrails - i) * 3;
+    trail.style.cssText = `width:${size}px;height:${size}px;opacity:${(numTrails-i)/numTrails * 0.6};`;
+    document.body.appendChild(trail);
+    trails.push({el: trail, x: 0, y: 0});
+  }
+  
+  let mouseX = 0, mouseY = 0;
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+  
+  function animateTrail() {
+    let x = mouseX, y = mouseY;
+    trails.forEach((trail, i) => {
+      trail.el.style.left = x + 'px';
+      trail.el.style.top = y + 'px';
+      const prev = trails[i - 1] || {x: mouseX, y: mouseY};
+      trail.x += (prev.x - trail.x) * 0.4;
+      trail.y += (prev.y - trail.y) * 0.4;
+      x = trail.x;
+      y = trail.y;
+    });
+    requestAnimationFrame(animateTrail);
+  }
+  animateTrail();
+})();
+
+// ── 3D TILT ON SERVICE CARDS ──
+(function() {
+  document.querySelectorAll('.srv-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = (y - centerY) / 8;
+      const rotateY = (centerX - x) / 8;
+      card.style.transform = `translateY(-8px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+      card.style.transition = 'transform 0.5s ease';
+    });
+  });
+})();
+
+// ── MAGNETIC BUTTONS ──
+(function() {
+  document.querySelectorAll('.nav-cta, .form-submit').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+      btn.style.transition = 'transform 0.3s ease';
+    });
+  });
+})();
+
+// ── COUNTER ANIMATION ──
+(function() {
+  const counters = document.querySelectorAll('.stat-num, [data-count]');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        const target = parseInt(entry.target.textContent);
+        if(!isNaN(target)) {
+          let count = 0;
+          const increment = target / 50;
+          const timer = setInterval(() => {
+            count += increment;
+            if(count >= target) { count = target; clearInterval(timer); }
+            entry.target.textContent = Math.floor(count) + (entry.target.dataset.suffix || '');
+          }, 30);
+        }
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.5});
+  counters.forEach(c => observer.observe(c));
+})();
+</script>
 </body>
 </html>
