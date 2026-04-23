@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<!-- Build 1776917033 -->
+<!-- Build 1776917013 -->
+<!-- Build 1776916998 -->
+<!-- Build 1776916972 -->
 <!-- Build 1776916611 -->
 <!-- Build 1776914187 -->
 <!-- Build 1776914025 -->
@@ -107,7 +111,7 @@
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{background:var(--ink);color:var(--text2);font-family:'Outfit',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+body{background:var(--ink);color:var(--text2);font-family:'Outfit',sans-serif;overflow-x:hidden;overflow-y:auto;-webkit-font-smoothing:antialiased;}
 
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");opacity:0.028;pointer-events:none;z-index:9000;}
 
@@ -930,7 +934,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: var(--ink); font-family: 'Outfit', sans-serif; }
-  .slideshow { width: 100vw; height: 100vh; position: relative; }
+  .slideshow { width: 100%; min-height: 100vh; position: relative; }
   .slide { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.8s ease; overflow: hidden; }
   .slide.active { opacity: 1; }
   .grain { position: fixed; inset: 0; pointer-events: none; z-index: 999; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-size: 128px; }
@@ -1592,7 +1596,6 @@ var presIframe = null;
 function openPres() {
   var popup = document.getElementById('presPopup');
   popup.classList.add('open');
-  document.body.style.overflow = 'hidden';
   
   if(!presIframe) {
     presIframe = document.createElement('iframe');
@@ -1607,7 +1610,7 @@ function openPres() {
 function closePres() {
   document.getElementById('presPopup').classList.remove('open');
   document.getElementById('presClose').classList.remove('visible');
-  document.body.style.overflow = '';
+  
 }
 
 document.addEventListener('keydown', function(e) {
