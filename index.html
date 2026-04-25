@@ -1,13 +1,4 @@
 <!DOCTYPE html>
-<!-- Build 1777119296 -->
-<!-- Build 1777119267 -->
-<!-- Build 1777119260 -->
-<!-- Build 1777119156 -->
-<!-- Build 1777119039 -->
-<!-- Build 1777119019 -->
-<!-- Build 1777118942 -->
-<!-- Build 1777077139 -->
-<!-- Build 1776917625 -->
 <!-- Build 1776917033 -->
 <!-- Build 1776917013 -->
 <!-- Build 1776916998 -->
@@ -95,15 +86,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
 <style>
-/* ── NUCLEAR SCROLL FIX ── */
-html, body {
-  overflow-x: hidden !important;
-  overflow-y: auto !important;
-  height: auto !important;
-  max-height: none !important;
-  position: static !important;
-}
-
 :root {
   --ink:      #0a0a0b;
   --ink2:     #111114;
@@ -134,7 +116,7 @@ body{background:var(--ink);color:var(--text2);font-family:'Outfit',sans-serif;ov
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");opacity:0.028;pointer-events:none;z-index:9000;}
 
 /* ── INTRO ANIMATION ── */
-#intro{position:fixed;inset:0;background:var(--ink);z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity 0.8s ease;}
+#intro{position:fixed;inset:0;background:var(--ink);z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;}
 .intro-logo{font-family:'Playfair Display',serif;font-size:5rem;font-weight:900;color:transparent;-webkit-text-stroke:1px var(--gold);letter-spacing:4px;animation:intro-stroke 1.5s ease forwards;}
 .intro-logo span{color:var(--gold);-webkit-text-stroke:0;}
 .intro-sub{font-size:0.75rem;font-weight:600;letter-spacing:8px;text-transform:uppercase;color:var(--text);opacity:0;animation:intro-fade 1s ease 1s forwards;}
@@ -829,6 +811,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
   width: 100%; height: 100%;
   pointer-events: none;
   z-index: 0;
+  overflow: hidden;
 }
 
 /* ── NEON GLOW BORDER ── */
@@ -1102,31 +1085,6 @@ s0.parentNode.insertBefore(s1,s0);
 </head>
 <body>
 
-<script>
-// FORCE SCROLL FIX
-document.addEventListener('DOMContentLoaded', function() {
-  document.documentElement.style.overflow = 'auto';
-  document.documentElement.style.height = 'auto';
-  document.body.style.overflow = 'auto';
-  document.body.style.height = 'auto';
-  document.body.style.position = 'static';
-  
-  // Also hide intro immediately
-  var intro = document.getElementById('intro');
-  if(intro) {
-    setTimeout(function() {
-      intro.style.display = 'none';
-    }, 2800);
-  }
-});
-window.addEventListener('load', function() {
-  document.documentElement.style.overflow = 'auto';
-  document.body.style.overflow = 'auto';
-  document.body.style.height = 'auto';
-});
-</script>
-
-
 <!-- ── INTRO ANIMATION ── -->
 <div id="intro">
   <div class="intro-logo floating">AB<span>.</span></div>
@@ -1245,7 +1203,7 @@ window.addEventListener('load', function() {
 </div>
 
 <!-- ── HERO ── -->
-<div style="background:var(--ink);position:relative;">
+<div style="background:var(--ink);overflow:hidden;position:relative;">
   <div class="hero-light"></div>
   <div class="hero">
     <div class="hero-left">
@@ -1463,21 +1421,6 @@ window.addEventListener('load', function() {
           <h3>Free Diagnostics</h3>
           <p>Not sure what's wrong? Bring it in — full diagnosis at absolutely no cost, zero obligation.</p>
           <div class="srv-footer"><div class="srv-price" style="color:var(--green);">Complimentary</div><span class="free-tag">FREE</span></div>
-        </div>
-      </div>
-
-      <div class="srv-card hover-lift fi">
-        <div class="srv-media">
-          <div class="srv-media-bg">💾</div>
-          <div class="srv-media-overlay"></div>
-          <button class="srv-play" onclick="openVideo('SSD Upgrade','💾','See how we upgrade your old slow hard drive to a lightning fast SSD — boot Windows in under 10 seconds!')">▶</button>
-          <div class="srv-media-label">Watch Service Video</div>
-        </div>
-        <div class="srv-body">
-          <div class="srv-top"><div class="srv-num">09</div><div class="srv-icon-wrap">💾</div></div>
-          <h3>SSD Upgrade</h3>
-          <p>Transform your slow PC into a speed machine! Boot Windows in under 10 seconds. Free data migration included. All laptops and PCs.</p>
-          <div class="srv-footer"><div class="srv-price">From £45</div><button class="srv-add-btn" onclick="addToBasket('SSD Upgrade',45)">+ Add to Basket</button></div>
         </div>
       </div>
 
@@ -1768,7 +1711,11 @@ document.addEventListener('keydown', function(e) {
 <script>
 // ── INTRO ──
 window.addEventListener('load', () => {
-  intro.style.display = 'none';
+  setTimeout(() => {
+    const intro = document.getElementById('intro');
+    intro.classList.add('intro-out');
+    setTimeout(() => intro.style.display = 'none', 800);
+  }, 2800);
 });
 
 // ── CURSOR ──
