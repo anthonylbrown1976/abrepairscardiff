@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<!-- Build 1777148054 -->
+<!-- Build 1777147958 -->
+<!-- Build 1777147638 -->
+<!-- Build 1777147614 -->
 <!-- Build 1777147026 -->
 <!-- Build 1777120510 -->
 <html lang="en">
@@ -75,11 +79,11 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 
 /* ── TOAST POPUPS ── */
 #toastZone{position:fixed;bottom:90px;left:24px;z-index:8000;display:flex;flex-direction:column;gap:10px;}
-.toast{background:var(--ink2);border:1px solid var(--border);padding:14px 18px;max-width:280px;display:flex;align-items:center;gap:12px;font-size:0.82rem;color:var(--text2);transform:translateX(-120%);transition:transform .4s ease;box-shadow:0 8px 30px rgba(0,0,0,0.4);}
-.toast.show{transform:translateX(0);}
-.toast-avatar{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;font-size:0.85rem;flex-shrink:0;}
-.toast-text strong{display:block;color:var(--white);font-size:0.82rem;margin-bottom:2px;}
-.toast-stars{color:var(--gold);font-size:0.65rem;}
+
+
+
+
+
 
 /* ── EXIT POPUP ── */
 #exitPopup{position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9990;display:none;align-items:center;justify-content:center;backdrop-filter:blur(8px);}
@@ -582,7 +586,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
     <p class="login-sub">Sign in to your AB Computer Repairs Cardiff account to track repairs and view order history.</p>
     <div class="login-fg">
       <label>Email Address</label>
-      <input type="email" id="loginEmail" placeholder="your@email.com">
+      <input type="email" id="loginEmail" placeholder="anthony.brown@abrepairscardiff.co.uk">
     </div>
     <div class="login-fg">
       <label>Password</label>
@@ -603,7 +607,9 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
     <p class="exit-sub">First time customer? Use this exclusive code at checkout to get <strong style="color:var(--gold)">10% off</strong> your first repair. Don't miss out!</p>
     <div class="exit-code">FIRSTTIME</div>
     <div class="exit-btns">
-      <a href="#book" class="exit-yes" onclick="closeExit()">Claim My 10% Off</a>
+      <a href="https://pay.sumup.com/b2c/QPKUFTJ8" target="_blank" class="cta-gold">💳 Pay Online</a>
+    <a href="https://wa.me/447444171553" target="_blank" class="cta-outline">💬 WhatsApp Us</a>
+    <a href="#book" class="exit-yes" onclick="closeExit()">Claim My 10% Off</a>
       <button class="exit-no" onclick="closeExit()">No thanks, I'll pay full price</button>
     </div>
   </div>
@@ -625,7 +631,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
 <div class="cur-ring" id="curRing"></div>
 
 <!-- ── TOAST ZONE ── -->
-<div id="toastZone"></div>
+
 
 <!-- ── BASKET OVERLAY ── -->
 <div class="basket-overlay" id="basketOverlay" onclick="closeBasket()"></div>
@@ -734,17 +740,17 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
       </div>
       <li><a href="#book" class="nav-cta">Get a Quote</a></li>
     </ul>
-  </nav>
+  <a href="https://abrepairscardiff.sumupstore.com" target="_blank" class="nav-cta">🛒 Book & Pay</a></nav>
 </div>
 
 <!-- ── HERO ── -->
-<div style="background:var(--ink);overflow:hidden;position:relative;">
+<div style="background:var(--ink);position:relative;">
   <div class="hero-light"></div>
   <div class="hero">
     <div class="hero-left">
       <div class="hero-overline">
         <div class="live-pip"></div>
-        <span><em>Available Now</em> — Same Day Service</span>
+        <span><em>Available Now</em> — Mon-Fri 9-5 | Sat 10-4 | Sun By Appointment</span>
       </div>
       <h1>
         <span class="solid">Expert</span>
@@ -1021,12 +1027,12 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
       <div class="form-card fi">
         <div class="form-title">Request a Repair</div>
         <p class="form-sub">Fill in the details and we'll be in touch with a quote promptly.</p>
-        <form action="mailto:YOUR-EMAIL@gmail.com" method="POST" enctype="text/plain">
+        <form action="mailto:anthony.brown@abrepairscardiff.co.uk" method="POST" enctype="text/plain">
           <div class="form-row-2">
             <div class="fg"><label>First Name</label><input type="text" name="first" placeholder="John" required></div>
             <div class="fg"><label>Last Name</label><input type="text" name="last" placeholder="Smith" required></div>
           </div>
-          <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="john@email.com" required></div>
+          <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="anthony.brown@abrepairscardiff.co.uk" required></div>
           <div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="+44 7700 000000"></div>
           <div class="fg">
             <label>Service Required</label>
@@ -1050,15 +1056,15 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
             <span>£</span>
             <input type="number" id="payAmount" placeholder="0.00" min="1" step="0.01">
           </div>
-          <!-- REPLACE your-paypal-email@example.com with your PayPal email -->
-          <a id="paypalLink" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=your-paypal-email@example.com&item_name=Computer+Repair&currency_code=GBP&amount=0" target="_blank" class="paypal-btn" onclick="updatePayPal(event)">🅿 &nbsp;Pay Securely with PayPal</a>
+          <!-- REPLACE anthonybrown_@hotmail.co.uk with your PayPal email -->
+          <a id="paypalLink" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=anthonybrown_@hotmail.co.uk&item_name=Computer+Repair&currency_code=GBP&amount=0" target="_blank" class="paypal-btn" onclick="updatePayPal(event)">🅿 &nbsp;Pay Securely with PayPal</a>
           <p class="secure-note">Secured by PayPal · 256-bit SSL · Buyer Protection Included</p>
         </div>
         <div class="tracker-card fi">
           <h3>🔍 Track Your Repair</h3>
           <p>Enter your email address to check the current status of your repair.</p>
           <div class="tracker-input-row">
-            <input type="email" id="trackEmail" placeholder="your@email.com">
+            <input type="email" id="trackEmail" placeholder="anthony.brown@abrepairscardiff.co.uk">
             <button onclick="trackRepair()">Check Status</button>
           </div>
           <div class="tracker-result" id="trackerResult">
@@ -1295,8 +1301,8 @@ function checkout() {
   if(basket.length === 0) { alert('Your basket is empty. Please add a service first.'); return; }
   const total = basket.reduce((a,b) => a+b.price,0) * (discountApplied ? 0.9 : 1);
   const services = basket.map(b=>b.name).join(', ');
-  // REPLACE your-paypal-email@example.com with your real PayPal email
-  window.open(`https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=your-paypal-email@example.com&item_name=${encodeURIComponent('AB Computer Repairs Cardiff: '+services)}&currency_code=GBP&amount=${total.toFixed(2)}`, '_blank');
+  // REPLACE anthonybrown_@hotmail.co.uk with your real PayPal email
+  window.open(`https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=anthonybrown_@hotmail.co.uk&item_name=${encodeURIComponent('AB Computer Repairs Cardiff: '+services)}&currency_code=GBP&amount=${total.toFixed(2)}`, '_blank');
 }
 
 // ── TOASTS ──
@@ -1320,17 +1326,7 @@ function showReviewToast() {
   setTimeout(() => { el.classList.remove('show'); setTimeout(() => el.remove(), 400); }, 4000);
 }
 
-function showToastAdd(name) {
-  const zone = document.getElementById('toastZone');
-  const el = document.createElement('div');
-  el.className = 'toast';
-  el.innerHTML = `<div class="toast-avatar">✓</div><div class="toast-text"><strong>${name} added!</strong><span>View your basket to checkout</span></div>`;
-  zone.appendChild(el);
-  setTimeout(() => el.classList.add('show'), 100);
-  setTimeout(() => { el.classList.remove('show'); setTimeout(() => el.remove(), 400); }, 3000);
-}
-
-setTimeout(() => { showReviewToast(); setInterval(showReviewToast, 7000); }, 5000);
+ }, 5000);
 
 // ── EXIT POPUP ──
 let exitShown = false;
@@ -1366,8 +1362,8 @@ function closeVideo() {
 // ── PAYPAL ──
 function updatePayPal(e) {
   const amt = document.getElementById('payAmount').value || '0';
-  // REPLACE your-paypal-email@example.com with your real PayPal email
-  document.getElementById('paypalLink').href = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=your-paypal-email@example.com&item_name=Computer+Repair+%E2%80%93+AB+Repairs&currency_code=GBP&amount=${amt}`;
+  // REPLACE anthonybrown_@hotmail.co.uk with your real PayPal email
+  document.getElementById('paypalLink').href = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=anthonybrown_@hotmail.co.uk&item_name=Computer+Repair+%E2%80%93+AB+Repairs&currency_code=GBP&amount=${amt}`;
 }
 
 // ── REPAIR TRACKER ──
@@ -1470,7 +1466,7 @@ function updateOpenStatus() {
   const statusEl = document.querySelector('.cbar-num[style*="green"]');
   if(!statusEl) return;
   let isOpen = false;
-  if(day >= 1 && day <= 5 && hour >= 9 && hour < 18) isOpen = true; // Mon-Fri 9-6
+  if(day >= 1 && day <= 5 && hour >= 9 && hour < 17) isOpen = true; // Mon-Fri 9-5
   if(day === 6 && hour >= 10 && hour < 16) isOpen = true; // Sat 10-4
   statusEl.textContent = isOpen ? 'OPEN' : 'CLOSED';
   statusEl.style.color = isOpen ? 'var(--green)' : 'var(--red)';
