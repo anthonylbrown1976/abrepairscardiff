@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- Build 1777148535 -->
+<!-- Build 1777148445 -->
 <!-- Build 1777148054 -->
 <!-- Build 1777147958 -->
 <!-- Build 1777147638 -->
@@ -133,7 +135,7 @@ nav>ul>li>a:hover::after{transform:scaleX(1);}
 .nav-cta:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 8px 28px rgba(201,168,76,0.35)!important;}
 
 /* ── HERO ── */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;max-width:1320px;margin:0 auto;padding:0 5%;gap:80px;position:relative;}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;max-width:1320px;margin:0 auto;padding:0 5%;gap:80px;position:relative;overflow:visible;}
 .hero-light{position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(201,168,76,0.055) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;animation:breathe 6s ease-in-out infinite alternate;}
 @keyframes breathe{from{transform:translate(-50%,-50%) scale(1);opacity:.7;}to{transform:translate(-50%,-50%) scale(1.3);opacity:1;}}
 .hero-left{position:relative;z-index:1;}
@@ -567,6 +569,11 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
 }
 .rs-platform-stars { color: var(--gold); font-size: 0.7rem; letter-spacing: 1px; }
 
+
+/* FORCE SCROLL */
+html { overflow: auto !important; }
+body { overflow: auto !important; height: auto !important; min-height: 100% !important; }
+#intro { pointer-events: none !important; }
 </style>
 </head>
 <body>
@@ -1461,17 +1468,51 @@ setInterval(() => {
 // Open/closed status based on real time
 function updateOpenStatus() {
   const now = new Date();
-  const day = now.getDay(); // 0=Sun, 6=Sat
+  const day = now.getDay(); // 0=Sun, 1=Mon...6=Sat
   const hour = now.getHours();
-  const statusEl = document.querySelector('.cbar-num[style*="green"]');
-  if(!statusEl) return;
+  const min = now.getMinutes();
+  const time = hour + min/60;
+  
   let isOpen = false;
-  if(day >= 1 && day <= 5 && hour >= 9 && hour < 17) isOpen = true; // Mon-Fri 9-5
-  if(day === 6 && hour >= 10 && hour < 16) isOpen = true; // Sat 10-4
-  statusEl.textContent = isOpen ? 'OPEN' : 'CLOSED';
-  statusEl.style.color = isOpen ? 'var(--green)' : 'var(--red)';
+  let statusText = 'CLOSED';
+  let statusMsg = 'Currently Closed';
+  
+  if(day >= 1 && day <= 5 && time >= 9 && time < 17) {
+    isOpen = true;
+    statusText = 'OPEN';
+    statusMsg = 'Available Now — Mon-Fri 9-5';
+  }
+  if(day === 6 && time >= 10 && time < 16) {
+    isOpen = true;
+    statusText = 'OPEN';
+    statusMsg = 'Available Now — Sat 10-4';
+  }
+  if(day === 0) {
+    statusText = 'BY APPT';
+    statusMsg = 'Sunday — By Appointment Only';
+  }
+  
+  const color = isOpen ? 'var(--green)' : (day === 0 ? 'var(--gold)' : 'var(--red,#ff4444)');
+  
+  // Update all status elements
+  document.querySelectorAll('.cbar-num, .open-badge, .status-badge').forEach(el => {
+    el.textContent = statusText;
+    el.style.color = color;
+  });
+  
+  // Update available now text
+  document.querySelectorAll('.hero-overline span em, .live-text').forEach(el => {
+    el.textContent = statusText === 'OPEN' ? 'Available Now' : statusText;
+  });
+  
+  // Update live pip color
+  document.querySelectorAll('.live-pip').forEach(pip => {
+    pip.style.background = color;
+    pip.style.boxShadow = isOpen ? '0 0 0 3px rgba(0,200,100,0.2)' : '0 0 0 3px rgba(255,68,68,0.2)';
+  });
 }
 updateOpenStatus();
+setInterval(updateOpenStatus, 60000); // Update every minute
 
 </script>
 </body>
