@@ -1,85 +1,8 @@
 <!DOCTYPE html>
-<!-- Build 1776917033 -->
-<!-- Build 1776917013 -->
-<!-- Build 1776916998 -->
-<!-- Build 1776916972 -->
-<!-- Build 1776916611 -->
-<!-- Build 1776914187 -->
-<!-- Build 1776914025 -->
-<!-- Build 1776894405 -->
-<!-- Build 1776893181 -->
-<!-- Build 1776893168 -->
-<!-- Build 1776892753 -->
-<!-- Build 1776891419 -->
-<!-- Build 1776151047 -->
-<!-- Build 1776150764 -->
-<!-- Build 1776150595 -->
-<!-- Build 1776140526 -->
-<!-- Build 1776139374 -->
-<!-- Build 1776137416 -->
-<!-- Build 1776137402 -->
-<!-- Build 1776136960 -->
-<!-- Build 1776074221 -->
-<!-- Build 1776051174 -->
-<!-- Build 1775928405 -->
-<!-- Build 1775604179 -->
-<!-- Build 1775532612 -->
-<!-- Build1775532391 -->
-<!-- OldBuild1775532103 -->
-<!-- OldBuild1775532095 -->
-<!-- OldBuild1775531742 -->
-<!-- OldBuild 1775531445 -->
-<!-- Build1775532391 -->
-<!-- OldBuild1775532103 -->
-<!-- OldBuild1775532095 -->
-<!-- OldBuild1775531742 -->
-<!-- OldBuild1775524802 -->
-<!-- OldBuild1775524483 -->
-<!-- OldBuild1775524020 -->
-<!-- OldBuild1775522688 -->
-<!-- OldBuild1775521927 -->
-<!-- OldBuild1775521220 -->
-<!-- PrevBuild1775520253 -->
-<!-- OldBuild 1775519671 -->
-<!-- OldBuild 1775519598 -->
-<!-- Build1775532391 -->
-<!-- OldBuild1775532103 -->
-<!-- OldBuild1775532095 -->
-<!-- OldBuild1775531742 -->
-<!-- OldBuild1775524802 -->
-<!-- OldBuild1775524483 -->
-<!-- OldBuild1775524020 -->
-<!-- OldBuild1775522688 -->
-<!-- OldBuild1775521927 -->
-<!-- OldBuild1775521220 -->
-<!-- PrevBuild1775520253 -->
-<!-- OldBuild 1775519671 -->
-<!-- OldBuild 1775504036 -->
-<!-- Build1775532391 -->
-<!-- OldBuild1775532103 -->
-<!-- OldBuild1775532095 -->
-<!-- OldBuild1775531742 -->
-<!-- OldBuild1775524802 -->
-<!-- OldBuild1775524483 -->
-<!-- OldBuild1775524020 -->
-<!-- OldBuild1775522688 -->
-<!-- OldBuild1775521927 -->
-<!-- OldBuild1775521220 -->
-<!-- PrevBuild1775520253 -->
-<!-- OldBuild 1775519671 -->
-<!-- OldBuild 1775492921 -->
-<!-- OldBuild 1775492175 -->
+<!-- Build 1777147026 -->
+<!-- Build 1777120510 -->
 <html lang="en">
 <head>
-<!-- AB Computer Repairs Cardiff | Build 1775492162 -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-17KLRH8PPK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-17KLRH8PPK');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AB Computer Repairs Cardiff &amp; South Wales | Expert PC Repair</title>
@@ -111,7 +34,7 @@
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{background:var(--ink);color:var(--text2);font-family:'Outfit',sans-serif;overflow-x:hidden;overflow-y:auto;-webkit-font-smoothing:antialiased;}
+body{background:var(--ink);color:var(--text2);font-family:'Outfit',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");opacity:0.028;pointer-events:none;z-index:9000;}
 
@@ -151,8 +74,8 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .cur-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(201,168,76,0.5);border-radius:50%;pointer-events:none;z-index:9997;transform:translate(-50%,-50%);transition:left .1s ease,top .1s ease;}
 
 /* ── TOAST POPUPS ── */
-
-
+#toastZone{position:fixed;bottom:90px;left:24px;z-index:8000;display:flex;flex-direction:column;gap:10px;}
+.toast{background:var(--ink2);border:1px solid var(--border);padding:14px 18px;max-width:280px;display:flex;align-items:center;gap:12px;font-size:0.82rem;color:var(--text2);transform:translateX(-120%);transition:transform .4s ease;box-shadow:0 8px 30px rgba(0,0,0,0.4);}
 .toast.show{transform:translateX(0);}
 .toast-avatar{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;font-size:0.85rem;flex-shrink:0;}
 .toast-text strong{display:block;color:var(--white);font-size:0.82rem;margin-bottom:2px;}
@@ -515,7 +438,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
 .user-badge button:hover{color:var(--red);}
 
 /* Fade in */
-.fi{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
+.fi{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease;}
 .fi.on{opacity:1;transform:none;}
 
 /* ── RESPONSIVE ── */
@@ -523,573 +446,152 @@ footer{background:var(--ink);border-top:1px solid var(--border);}
 @media(max-width:860px){.why-layout,.book-layout,.contact-layout{grid-template-columns:1fr;}nav ul{display:none;}.footer-top{grid-template-columns:1fr 1fr;}.form-row-2{grid-template-columns:1fr;}body{cursor:auto;}.cur-dot,.cur-ring{display:none;}#basketPanel{width:100%;right:-100%;}}
 @media(max-width:520px){.footer-top{grid-template-columns:1fr;}}
 
-
-
-
-/* Presentation Button */
-
-
-
-
-/* ── PRESENTATION POPUP ── */
-#presPopup {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: #080808;
-  z-index: 99999;
+/* ── VISITOR & REVIEW COUNTER BAR ── */
+.counter-bar {
+  background: linear-gradient(90deg, var(--ink) 0%, var(--ink3) 50%, var(--ink) 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+  position: relative;
+  z-index: 799;
 }
-#presPopup.open { display: block; }
-#presClose {
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  z-index: 100000;
-  background: rgba(212,175,55,0.15);
-  border: 1px solid rgba(212,175,55,0.5);
-  color: #d4af37;
-  width: 44px;
-  height: 44px;
-  font-size: 1.4rem;
-  cursor: pointer;
-  display: none;
-  align-items: center;
+.counter-bar-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
 }
-#presPopup.open ~ #presClose,
-#presClose.visible { display: flex; }
-.pres-btn {
-  display: inline-flex;
+.cbar-item {
+  display: flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(135deg, #b49120, #f0d25a);
-  color: #080808;
-  padding: 16px 36px;
-  font-family: Outfit, sans-serif;
-  font-size: .88rem;
-  font-weight: 700;
-  letter-spacing: 3px;
+  padding: 0 32px;
+  border-right: 1px solid var(--border);
+  position: relative;
+}
+.cbar-item:last-child { border-right: none; }
+.cbar-dot {
+  width: 7px; height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pip 2s infinite;
+}
+.cbar-dot.gold { background: var(--gold); animation: none; }
+.cbar-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--white);
+}
+.cbar-num span { color: var(--gold); }
+.cbar-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  cursor: pointer;
-  border: none;
-  transition: all .3s;
-  margin: 24px auto;
+  color: var(--text);
+  opacity: 0.7;
 }
-.pres-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 40px rgba(212,175,55,.5);
-}
+.cbar-icon { font-size: 1rem; }
 
-
-/* ── PARTICLE SYSTEM ── */
-#particle-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.4;
-}
-
-/* ── CIRCUIT LINES ── */
-#circuit-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.15;
-}
-
-/* ── GLOWING TEXT ── */
-.glow-text {
-  animation: textGlow 3s ease-in-out infinite;
-}
-
-@keyframes textGlow {
-  0%, 100% { text-shadow: 0 0 10px rgba(212,175,55,0.5), 0 0 20px rgba(212,175,55,0.3); }
-  50% { text-shadow: 0 0 20px rgba(212,175,55,0.9), 0 0 40px rgba(212,175,55,0.6), 0 0 80px rgba(212,175,55,0.3); }
-}
-
-/* ── SCROLL REVEAL ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-60px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal-left.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.reveal-right {
-  opacity: 0;
-  transform: translateX(60px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal-right.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* ── MORPHING GRADIENT ── */
-.morph-bg {
-  background: linear-gradient(
-    45deg,
-    rgba(212,175,55,0.05),
-    rgba(6,6,8,0),
-    rgba(212,175,55,0.08),
-    rgba(6,6,8,0)
-  );
-  background-size: 400% 400%;
-  animation: morphGradient 8s ease infinite;
-}
-
-@keyframes morphGradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* ── HOVER LIFT ── */
-.hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hover-lift:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(212,175,55,0.3) !important;
-}
-
-/* ── SHIMMER EFFECT ── */
-.shimmer-text {
-  background: linear-gradient(90deg, #b49120, #f0d25a, #d4af37, #f0d25a, #b49120);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmerText 3s linear infinite;
-}
-
-@keyframes shimmerText {
-  to { background-position: 200% center; }
-}
-
-/* ── PULSE RING ── */
-.pulse-ring {
-  position: relative;
-}
-
-.pulse-ring::before {
-  content: '';
-  position: absolute;
-  inset: -4px;
-  border: 2px solid var(--gold);
-  animation: pulseRing 2s ease-out infinite;
-  opacity: 0;
-}
-
-@keyframes pulseRing {
-  0% { transform: scale(0.95); opacity: 0.8; }
-  100% { transform: scale(1.1); opacity: 0; }
-}
-
-/* ── TYPEWRITER ── */
-.typewriter {
-  overflow: hidden;
-  border-right: 2px solid var(--gold);
-  white-space: nowrap;
-  animation: typing 3s steps(40) 1s both, blink 0.8s step-end infinite;
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
-}
-
-/* ── FLOATING ANIMATION ── */
-.floating {
-  animation: floating 4s ease-in-out infinite;
-}
-
-@keyframes floating {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-}
-
-/* ── SCAN LINE ── */
-.scan-line {
+/* ── REVIEW SUMMARY STRIP ── */
+.review-summary {
+  background: var(--ink2);
+  border: 1px solid var(--border);
+  padding: 28px 36px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
   position: relative;
   overflow: hidden;
 }
-
-.scan-line::after {
+.review-summary::before {
   content: '';
-  position: absolute;
-  top: -100%;
-  left: 0;
-  right: 0;
-  height: 2px;
+  position: absolute; top:0; left:0; right:0; height:1px;
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  animation: scanLine 3s linear infinite;
 }
-
-@keyframes scanLine {
-  to { top: 200%; }
+.rs-score {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
-
-/* ── BORDER ANIMATION ── */
-.animated-border {
-  position: relative;
+.rs-big-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
 }
-
-.animated-border::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border: 1px solid transparent;
-  background: linear-gradient(90deg, var(--gold), transparent, var(--gold)) border-box;
-  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
-  animation: borderRotate 4s linear infinite;
-  background-size: 200% 100%;
+.rs-stars { color: var(--gold); font-size: 1.3rem; letter-spacing: 3px; margin-bottom: 4px; }
+.rs-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--text); }
+.rs-bars { flex: 1; max-width: 280px; }
+.rs-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 7px;
 }
-
-@keyframes borderRotate {
-  to { background-position: 200% 0; }
+.rs-bar-label { font-size: 0.75rem; color: var(--text); width: 32px; flex-shrink: 0; }
+.rs-bar-track { flex: 1; height: 5px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+.rs-bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold2)); border-radius: 3px; }
+.rs-total {
+  text-align: center;
 }
-
-
-/* ── 3D CARD FLIP ── */
-.srv-card {
-  perspective: 1000px;
-  transform-style: preserve-3d;
+.rs-total-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
 }
-
-.srv-card:hover {
-  transform: translateY(-8px) rotateX(5deg) rotateY(2deg) !important;
-  box-shadow: 0 30px 60px rgba(212,175,55,0.4) !important;
+.rs-total-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--text); opacity: 0.6; }
+.rs-platforms { display: flex; flex-direction: column; gap: 8px; }
+.rs-platform {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: var(--text2);
 }
-
-/* ── 3D HERO TEXT ── */
-.hero-inner h1 {
-  transform-style: preserve-3d;
-  animation: heroFloat 6s ease-in-out infinite;
-}
-
-@keyframes heroFloat {
-  0%, 100% { transform: translateZ(0) rotateX(0); }
-  50% { transform: translateZ(20px) rotateX(2deg); }
-}
-
-/* ── PARALLAX STARS ── */
-.star-field {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-/* ── NEON GLOW BORDER ── */
-@keyframes neonPulse {
-  0%, 100% {
-    box-shadow: 0 0 5px rgba(212,175,55,0.3),
-                0 0 10px rgba(212,175,55,0.2),
-                0 0 20px rgba(212,175,55,0.1),
-                inset 0 0 10px rgba(212,175,55,0.05);
-  }
-  50% {
-    box-shadow: 0 0 10px rgba(212,175,55,0.6),
-                0 0 20px rgba(212,175,55,0.4),
-                0 0 40px rgba(212,175,55,0.2),
-                inset 0 0 20px rgba(212,175,55,0.1);
-  }
-}
-
-.srv-card {
-  animation: neonPulse 4s ease-in-out infinite !important;
-}
-
-/* ── MAGNETIC BUTTON ── */
-.nav-cta, .form-submit, .pres-btn {
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1) !important;
-}
-
-/* ── LIQUID GOLD EFFECT ── */
-@keyframes liquidGold {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.marquee-3 {
-  background: linear-gradient(270deg, #b49120, #f0d25a, #d4af37, #b49120) !important;
-  background-size: 400% 400% !important;
-  animation: liquidGold 4s ease infinite !important;
-}
-
-/* ── 3D DEPTH LAYERS ── */
-.section-heading {
-  transform-style: preserve-3d;
-  text-shadow: 
-    1px 1px 0 rgba(212,175,55,0.3),
-    2px 2px 0 rgba(212,175,55,0.2),
-    3px 3px 0 rgba(212,175,55,0.1),
-    0 0 30px rgba(212,175,55,0.5);
-}
-
-/* ── HOLOGRAPHIC EFFECT ── */
-@keyframes holographic {
-  0% { filter: hue-rotate(0deg) brightness(1); }
-  25% { filter: hue-rotate(10deg) brightness(1.1); }
-  50% { filter: hue-rotate(-10deg) brightness(1.2); }
-  75% { filter: hue-rotate(5deg) brightness(1.1); }
-  100% { filter: hue-rotate(0deg) brightness(1); }
-}
-
-.intro-logo {
-  animation: holographic 6s ease-in-out infinite, floating 4s ease-in-out infinite !important;
-}
-
-/* ── RIPPLE EFFECT ── */
-.form-submit {
-  position: relative;
-  overflow: hidden;
-}
-
-.form-submit::after {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 0; height: 0;
-  background: rgba(255,255,255,0.3);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s, opacity 0.6s;
-}
-
-.form-submit:active::after {
-  width: 300px;
-  height: 300px;
-  opacity: 0;
-}
-
-/* ── SCROLL PROGRESS BAR ── */
-#scroll-progress {
-  position: fixed;
-  top: 0; left: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #b49120, #f0d25a, #d4af37);
-  z-index: 99999;
-  transition: width 0.1s;
-  box-shadow: 0 0 10px rgba(212,175,55,0.8);
-}
-
-/* ── CURSOR TRAIL ── */
-.cursor-trail {
-  position: fixed;
-  pointer-events: none;
-  z-index: 99998;
-  border-radius: 50%;
-  background: rgba(212,175,55,0.6);
-  transform: translate(-50%, -50%);
-}
+.rs-platform-stars { color: var(--gold); font-size: 0.7rem; letter-spacing: 1px; }
 
 </style>
-<style>
-
-  :root {
-    --gold: #d4af37;
-    --gold2: #f0d25a;
-    --gold3: #a07820;
-    --ink: #080808;
-    --ink2: #111114;
-    --ink3: #1a1a20;
-    --white: #ffffff;
-    --grey: #9a9fb0;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: var(--ink); font-family: 'Outfit', sans-serif; }
-  .slideshow { width: 100%; min-height: 100vh; position: relative; }
-  .slide { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.8s ease; overflow: hidden; }
-  .slide.active { opacity: 1; }
-  .grain { position: fixed; inset: 0; pointer-events: none; z-index: 999; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-size: 128px; }
-  .progress-bar { position: fixed; bottom: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--gold3), var(--gold), var(--gold2)); z-index: 1000; transition: width 0.1s linear; box-shadow: 0 0 12px var(--gold); }
-  .dots { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 1000; }
-  .dot { width: 8px; height: 8px; background: var(--gold3); transform: rotate(45deg); cursor: pointer; transition: all 0.3s; }
-  .dot.active { background: var(--gold); transform: rotate(45deg) scale(1.5); box-shadow: 0 0 8px var(--gold); }
-  .slide-num { position: fixed; top: 24px; right: 30px; font-family: 'Playfair Display', serif; font-size: 0.75rem; color: var(--gold3); letter-spacing: 3px; z-index: 1000; }
-  .nav-btn { position: fixed; top: 50%; transform: translateY(-50%); background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.3); color: var(--gold); width: 52px; height: 52px; cursor: pointer; font-size: 1.4rem; display: flex; align-items: center; justify-content: center; z-index: 1000; transition: all 0.3s; }
-  .nav-btn:hover { background: rgba(212,175,55,0.2); }
-  .nav-prev { left: 16px; }
-  .nav-next { right: 16px; }
-
-  @keyframes fadeUp { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
-  @keyframes fadeDown { from { opacity:0; transform:translateY(-40px); } to { opacity:1; transform:translateY(0); } }
-  @keyframes scaleIn { from { opacity:0; transform:scale(0.8); } to { opacity:1; transform:scale(1); } }
-  @keyframes slideLeft { from { opacity:0; transform:translateX(60px); } to { opacity:1; transform:translateX(0); } }
-  @keyframes slideRight { from { opacity:0; transform:translateX(-60px); } to { opacity:1; transform:translateX(0); } }
-  @keyframes goldPulse { 0%,100% { box-shadow:0 0 20px rgba(212,175,55,0.3); } 50% { box-shadow:0 0 50px rgba(212,175,55,0.7); } }
-  @keyframes shimmer { 0% { background-position:-200% center; } 100% { background-position:200% center; } }
-  @keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-12px); } }
-
-  .slide.active .a1 { animation: fadeUp 0.7s ease 0.1s both; }
-  .slide.active .a2 { animation: fadeUp 0.7s ease 0.3s both; }
-  .slide.active .a3 { animation: fadeUp 0.7s ease 0.5s both; }
-  .slide.active .a4 { animation: fadeUp 0.7s ease 0.7s both; }
-  .slide.active .a5 { animation: fadeUp 0.7s ease 0.9s both; }
-  .slide.active .a6 { animation: fadeUp 0.7s ease 1.1s both; }
-  .slide.active .aL { animation: slideRight 0.7s ease 0.2s both; }
-  .slide.active .aR { animation: slideLeft 0.7s ease 0.4s both; }
-  .slide.active .aS { animation: scaleIn 0.7s ease 0.2s both; }
-  .slide.active .aD { animation: fadeDown 0.7s ease 0.1s both; }
-
-  .shimmer { background: linear-gradient(90deg, var(--gold3), var(--gold2), var(--gold), var(--gold2), var(--gold3)); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: shimmer 3s linear infinite; }
-  .gold-line { height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 auto; }
-  .gold-line-thin { height: 1px; background: linear-gradient(90deg, transparent, var(--gold3), transparent); margin: 0 auto; }
-
-  .corner-tl, .corner-tr, .corner-bl, .corner-br { position: absolute; width: 60px; height: 60px; border-color: var(--gold); border-style: solid; opacity: 0.5; }
-  .corner-tl { top:20px; left:20px; border-width:2px 0 0 2px; }
-  .corner-tr { top:20px; right:20px; border-width:2px 2px 0 0; }
-  .corner-bl { bottom:20px; left:20px; border-width:0 0 2px 2px; }
-  .corner-br { bottom:20px; right:20px; border-width:0 2px 2px 0; }
-
-  /* SLIDE 1 */
-  #s1 { background: radial-gradient(ellipse at 50% 30%, #1a1610 0%, #080808 70%); }
-  .s1-box { display:inline-block; background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2)); padding:24px 60px; margin-bottom:40px; animation:goldPulse 3s ease infinite; }
-  .s1-ab { font-family:'Playfair Display',serif; font-size:clamp(80px,12vw,140px); font-weight:900; color:var(--ink); line-height:1; letter-spacing:-4px; }
-  .s1-title { font-family:'Playfair Display',serif; font-size:clamp(32px,5vw,72px); color:var(--white); font-weight:700; letter-spacing:-1px; margin-bottom:12px; }
-  .s1-sub { font-size:clamp(12px,1.8vw,20px); color:var(--gold); letter-spacing:8px; text-transform:uppercase; font-weight:300; margin-bottom:40px; }
-  .s1-tags { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:32px; }
-  .s1-tag { border:1px solid var(--gold3); padding:8px 20px; font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:600; }
-
-  /* SLIDE 2 */
-  #s2 { background: radial-gradient(ellipse at 30% 60%, #141008 0%, #080808 65%); }
-  .s2-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; max-width:1100px; width:90%; align-items:center; }
-  .s2-icon { width:160px; height:160px; border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; font-size:80px; margin-bottom:32px; animation:float 3s ease infinite; background:var(--ink2); box-shadow:0 0 40px rgba(212,175,55,0.15); }
-  .s2-tag { font-size:11px; letter-spacing:5px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; font-weight:600; }
-  .s2-h { font-family:'Playfair Display',serif; font-size:clamp(42px,6vw,90px); color:var(--white); line-height:0.95; margin-bottom:8px; }
-  .s2-h em { font-style:italic; color:var(--gold); }
-  .s2-body { font-size:16px; color:var(--grey); line-height:1.8; margin-top:24px; }
-  .s2-points { display:flex; flex-direction:column; gap:16px; }
-  .s2-pt { display:flex; align-items:center; gap:20px; background:var(--ink2); border:1px solid rgba(212,175,55,0.15); border-left:3px solid var(--gold); padding:20px 24px; }
-  .s2-pt-icon { font-size:28px; }
-  .s2-pt-t { color:var(--white); font-size:16px; font-weight:600; }
-  .s2-pt-s { color:var(--grey); font-size:13px; margin-top:4px; }
-
-  /* SLIDE 3 */
-  #s3 { background: radial-gradient(ellipse at 70% 30%, #101418 0%, #080808 65%); }
-  .s3-wrap { max-width:1200px; width:92%; text-align:center; }
-  .s3-eye { font-size:11px; letter-spacing:6px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; font-weight:600; }
-  .s3-title { font-family:'Playfair Display',serif; font-size:clamp(30px,4vw,58px); color:var(--white); margin-bottom:8px; }
-  .s3-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:32px; }
-  .s3-card { background:var(--ink2); border:1px solid rgba(212,175,55,0.12); padding:28px 16px; text-align:center; position:relative; overflow:hidden; }
-  .s3-card::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
-  .s3-icon { font-size:36px; margin-bottom:12px; display:block; }
-  .s3-name { font-size:14px; font-weight:700; color:var(--white); margin-bottom:6px; }
-  .s3-price { font-size:13px; color:var(--gold); font-weight:600; }
-  .s3-card.free { border-color:rgba(212,175,55,0.4); }
-
-  /* SLIDE 4 */
-  #s4 { background: radial-gradient(ellipse at 50% 50%, #0e0e08 0%, #080808 70%); }
-  .s4-wrap { text-align:center; max-width:800px; padding:40px; }
-  .s4-icon { font-size:100px; display:block; margin-bottom:24px; animation:float 2.5s ease infinite; }
-  .s4-label { font-size:11px; letter-spacing:8px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
-  .s4-h { font-family:'Playfair Display',serif; font-size:clamp(56px,8vw,130px); color:var(--white); line-height:0.9; margin-bottom:8px; }
-  .s4-h .g { color:var(--gold); }
-  .s4-sub { font-size:clamp(16px,2.5vw,26px); color:var(--grey); margin:24px 0 40px; font-weight:300; }
-  .s4-stats { display:flex; gap:32px; justify-content:center; flex-wrap:wrap; margin-top:32px; }
-  .s4-stat { text-align:center; border:1px solid rgba(212,175,55,0.2); padding:24px 32px; background:var(--ink2); position:relative; }
-  .s4-stat::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
-  .s4-num { font-family:'Playfair Display',serif; font-size:48px; color:var(--gold); font-weight:900; display:block; }
-  .s4-lbl { font-size:12px; color:var(--grey); letter-spacing:2px; text-transform:uppercase; }
-
-  /* SLIDE 5 */
-  #s5 { background: radial-gradient(ellipse at 20% 70%, #0a0e14 0%, #080808 65%); }
-  .s5-wrap { max-width:1000px; width:90%; text-align:center; }
-  .s5-title { font-family:'Playfair Display',serif; font-size:clamp(36px,5vw,72px); color:var(--white); margin-bottom:8px; }
-  .s5-sub { color:var(--gold); font-size:16px; letter-spacing:4px; text-transform:uppercase; margin-bottom:48px; }
-  .s5-pays { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:48px; }
-  .s5-pay { background:var(--ink2); border:1px solid rgba(212,175,55,0.2); padding:16px 24px; display:flex; align-items:center; gap:10px; font-size:14px; font-weight:700; color:var(--white); min-width:140px; justify-content:center; }
-  .s5-trusts { display:flex; gap:24px; justify-content:center; flex-wrap:wrap; }
-  .s5-trust { text-align:center; padding:24px 20px; background:var(--ink2); border:1px solid rgba(212,175,55,0.12); min-width:160px; position:relative; }
-  .s5-trust::before { content:''; position:absolute; bottom:0;left:0;right:0; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
-  .s5-t-icon { font-size:36px; margin-bottom:10px; display:block; }
-  .s5-t-text { font-size:13px; color:var(--white); font-weight:700; }
-  .s5-t-sub { font-size:11px; color:var(--grey); margin-top:4px; }
-
-  /* SLIDE 6 */
-  #s6 { background: radial-gradient(ellipse at 50% 50%, #181408 0%, #080808 70%); }
-  .s6-wrap { text-align:center; max-width:800px; padding:40px; }
-  .s6-stars { font-size:40px; letter-spacing:10px; color:var(--gold); margin-bottom:32px; animation:float 3s ease infinite; display:block; }
-  .s6-h { font-family:'Playfair Display',serif; font-size:clamp(36px,5vw,80px); color:var(--white); line-height:1.1; margin-bottom:16px; }
-  .s6-h em { font-style:italic; color:var(--gold); }
-  .s6-body { font-size:18px; color:var(--grey); margin-bottom:48px; line-height:1.8; }
-  .s6-btns { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-bottom:40px; }
-  .s6-btn1 { background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2)); color:var(--ink); padding:18px 48px; font-size:14px; font-weight:700; letter-spacing:4px; text-transform:uppercase; text-decoration:none; display:inline-block; animation:goldPulse 3s ease infinite; }
-  .s6-btn2 { background:transparent; border:1px solid var(--gold); color:var(--gold); padding:18px 48px; font-size:14px; font-weight:700; letter-spacing:4px; text-transform:uppercase; text-decoration:none; display:inline-block; }
-  .s6-contacts { display:flex; gap:48px; justify-content:center; flex-wrap:wrap; }
-  .s6-c-label { font-size:10px; letter-spacing:4px; color:var(--gold3); text-transform:uppercase; margin-bottom:6px; }
-  .s6-c-value { font-family:'Playfair Display',serif; font-size:22px; color:var(--white); }
-
-  @media(max-width:768px) {
-    .s2-grid { grid-template-columns:1fr; gap:30px; }
-    .s3-grid { grid-template-columns:repeat(2,1fr); }
-    .s4-stats { gap:12px; }
-    .s4-stat { padding:12px 16px; }
-    .s4-num { font-size:32px; }
-    .corner-tl,.corner-tr,.corner-bl,.corner-br { width:30px; height:30px; }
-  }
-
-</style>
-
-
-
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/69ddc05f13933e1c388318eb/1jm53et93';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
 </head>
 <body>
 
 <!-- ── INTRO ANIMATION ── -->
 <div id="intro">
-  <div class="intro-logo floating">AB<span>.</span></div>
+  <div class="intro-logo">AB<span>.</span></div>
   <div class="intro-bar"></div>
   <div class="intro-sub">Computer Repairs — Premium IT Services</div>
+</div>
+
+<!-- ── LOGIN MODAL ── -->
+<div id="loginModal">
+  <div class="login-box">
+    <button class="login-close" onclick="closeLogin()">✕</button>
+    <div class="login-title">Welcome Back</div>
+    <p class="login-sub">Sign in to your AB Computer Repairs Cardiff account to track repairs and view order history.</p>
+    <div class="login-fg">
+      <label>Email Address</label>
+      <input type="email" id="loginEmail" placeholder="your@email.com">
+    </div>
+    <div class="login-fg">
+      <label>Password</label>
+      <input type="password" id="loginPass" placeholder="••••••••">
+    </div>
+    <button class="login-btn" onclick="doLogin()">Sign In to My Account</button>
+    <div class="login-err" id="loginErr">Incorrect email or password. Please try again.</div>
+    <p class="login-note">Demo: use any email + password "ab2024" to sign in</p>
+  </div>
 </div>
 
 <!-- ── EXIT POPUP ── -->
@@ -1112,19 +614,18 @@ s0.parentNode.insertBefore(s1,s0);
   <div class="video-box">
     <button class="video-close" onclick="closeVideo()">✕</button>
     <div class="video-title" id="videoTitle">Service Video</div>
-    <div style="width:100%;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-      <iframe id="videoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+    <div style="width:100%;height:350px;background:#000;position:relative;">
+      <iframe id="videoFrame" width="100%" height="100%" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe>
     </div>
-    <p id="videoDesc" style="font-size:.85rem;color:var(--text);margin-top:16px;line-height:1.6;"></p>
   </div>
 </div>
 
 <!-- ── CURSOR ── -->
-<div class="cur-dot" id="curDot" style="pointer-events:none;"></div>
-<div class="cur-ring" id="curRing" style="pointer-events:none;"></div>
+<div class="cur-dot" id="curDot"></div>
+<div class="cur-ring" id="curRing"></div>
 
 <!-- ── TOAST ZONE ── -->
-
+<div id="toastZone"></div>
 
 <!-- ── BASKET OVERLAY ── -->
 <div class="basket-overlay" id="basketOverlay" onclick="closeBasket()"></div>
@@ -1171,13 +672,47 @@ s0.parentNode.insertBefore(s1,s0);
   </div>
 </div>
 
+
+<!-- ── VISITOR & REVIEW COUNTER BAR ── -->
+<div class="counter-bar">
+  <div class="counter-bar-inner">
+    <div class="cbar-item">
+      <div class="cbar-dot"></div>
+      <div>
+        <div class="cbar-num"><span id="visitorCount">0</span> <span style="font-size:.75rem;color:var(--text);">visitors</span></div>
+        <div class="cbar-label">Live Site Visits Today</div>
+      </div>
+    </div>
+    <div class="cbar-item">
+      <div class="cbar-dot gold">⭐</div>
+      <div>
+        <div class="cbar-num"><span id="reviewCount">0</span> <span style="font-size:.75rem;color:var(--text);">reviews</span></div>
+        <div class="cbar-label">5★ Customer Reviews</div>
+      </div>
+    </div>
+    <div class="cbar-item">
+      <div>
+        <div class="cbar-num"><span id="repairCount">0</span><span style="color:var(--gold);">+</span></div>
+        <div class="cbar-label">Repairs Completed</div>
+      </div>
+    </div>
+    <div class="cbar-item">
+      <div class="cbar-dot"></div>
+      <div>
+        <div class="cbar-num" style="color:var(--green);">OPEN</div>
+        <div class="cbar-label">Available Now</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ── NAVBAR ── -->
 <div class="nav-wrap">
   <nav>
     <a href="#" class="logo">
       <div class="logo-emblem">AB</div>
       <div class="logo-text-wrap">
-        <strong>Computer Repairs</strong>
+        <strong>Computer Repairs Cardiff</strong>
         <span>Cardiff &amp; South Wales</span>
       </div>
     </a>
@@ -1189,10 +724,10 @@ s0.parentNode.insertBefore(s1,s0);
       <li><a href="#contact">Contact</a></li>
       <div class="nav-icons">
         <div class="user-badge" id="userBadge">
-          <span id="userEmail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4b2a253f23242532652939243c250b2a29392e3b2a223938282a392f222d2d652824653e20">[email&#160;protected]</a></span>
+          <span id="userEmail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a6d3d5c3d4e6c3cbc7cfca88c5c9cb">[email&#160;protected]</a></span>
           <button onclick="logout()">Sign Out</button>
         </div>
-        <a href="#book" class="nav-icon-btn" title="Track My Repair" style="text-decoration:none;">🔍</a>
+        <button class="nav-icon-btn" onclick="openLogin()" id="loginBtn" title="Sign In">👤</button>
         <button class="nav-icon-btn" onclick="openBasket()" title="Basket">
           🛒<span class="cart-count" id="cartCount">0</span>
         </button>
@@ -1214,10 +749,10 @@ s0.parentNode.insertBefore(s1,s0);
       <h1>
         <span class="solid">Expert</span>
         <span class="italic">Computer</span>
-        <span class="solid">Repairs.</span>
+        <span class="solid">Repairs Cardiff.</span>
       </h1>
-      <p class="hero-sub">Hardware, Software &amp; Custom Builds</p>
-      <p class="hero-desc">Professional IT support from a 35 years hands on experience who builds computers from scratch. Fast turnaround, honest pricing, genuine expertise — no jargon, no drama.</p>
+      <p class="hero-sub">Serving Cardiff &amp; South Wales</p>
+      <p class="hero-desc">Professional IT support from a self-taught technician who builds computers from scratch. Fast turnaround, honest pricing, genuine expertise — no jargon, no drama.</p>
       <div class="hero-actions">
         <a href="#book" class="btn-lux"><span>Book a Repair</span></a>
         <a href="#services" class="btn-outline-lux">View Services</a>
@@ -1275,7 +810,7 @@ s0.parentNode.insertBefore(s1,s0);
 <!-- BANNER 2 -->
 <div class="marquee-2">
   <div class="m2-track">
-    <span class="m2-item"><span class="m2-text solid-text">AB Computer Repairs</span><span class="m2-star">✦</span></span>
+    <span class="m2-item"><span class="m2-text solid-text">AB Repairs Cardiff</span><span class="m2-star">✦</span></span>
     <span class="m2-item"><span class="m2-text">Hardware Repair</span><span class="m2-star">✦</span></span>
     <span class="m2-item"><span class="m2-text solid-text">Custom Builds</span><span class="m2-star">✦</span></span>
     <span class="m2-item"><span class="m2-text">Virus Removal</span><span class="m2-star">✦</span></span>
@@ -1283,7 +818,7 @@ s0.parentNode.insertBefore(s1,s0);
     <span class="m2-item"><span class="m2-text">Windows Install</span><span class="m2-star">✦</span></span>
     <span class="m2-item"><span class="m2-text solid-text">Network Setup</span><span class="m2-star">✦</span></span>
     <span class="m2-item"><span class="m2-text">Speed Boost</span><span class="m2-star">✦</span></span>
-    <span class="m2-item"><span class="m2-text solid-text">AB Computer Repairs</span><span class="m2-star">✦</span></span>
+    <span class="m2-item"><span class="m2-text solid-text">AB Repairs Cardiff</span><span class="m2-star">✦</span></span>
     <span class="m2-item"><span class="m2-text">Hardware Repair</span><span class="m2-star">✦</span></span>
     <span class="m2-item"><span class="m2-text solid-text">Custom Builds</span><span class="m2-star">✦</span></span>
     <span class="m2-item"><span class="m2-text">Virus Removal</span><span class="m2-star">✦</span></span>
@@ -1296,19 +831,19 @@ s0.parentNode.insertBefore(s1,s0);
 
 <!-- SERVICES -->
 <section id="services" style="background:var(--ink2);">
-  <div class="section-inner morph-bg" style="padding-bottom:0;">
-    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text shimmer-text">What We Fix</div></div>
-    <div class="section-heading glow-text">Our <em>Services</em></div>
+  <div class="section-inner" style="padding-bottom:0;">
+    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">What We Fix</div></div>
+    <div class="section-heading">Our <em>Services</em></div>
     <p class="section-body">From a broken screen to a full custom build — every service comes with a video walkthrough so you know exactly what to expect.</p>
   </div>
   <div style="max-width:1320px;margin:0 auto;padding:0 5% 100px;">
     <div class="srv-grid">
 
-      <div class="srv-card hover-lift fi">
+      <div class="srv-card fi">
         <div class="srv-media">
           <div class="srv-media-bg">🔧</div>
           <div class="srv-media-overlay"></div>
-          <button class="srv-play" onclick="openVideo('Hardware Repair','🔧','We diagnose and replace faulty components including motherboards, RAM, GPU, PSU and cooling systems. Watch to see our repair process.')">▶</button>
+          <button class="srv-play" onclick="openVideo('Hardware Repair')">▶</button>
           <div class="srv-media-label">Watch Service Video</div>
         </div>
         <div class="srv-body">
@@ -1319,11 +854,11 @@ s0.parentNode.insertBefore(s1,s0);
         </div>
       </div>
 
-      <div class="srv-card hover-lift fi">
+      <div class="srv-card fi">
         <div class="srv-media">
           <div class="srv-media-bg">🛡️</div>
           <div class="srv-media-overlay"></div>
-          <button class="srv-play" onclick="openVideo('Virus Removal','🛡️','Complete system scan and removal of all malware, viruses and spyware. We set up ongoing protection to keep you safe.')">▶</button>
+          <button class="srv-play" onclick="openVideo('Virus Removal')">▶</button>
           <div class="srv-media-label">Watch Service Video</div>
         </div>
         <div class="srv-body">
@@ -1334,11 +869,11 @@ s0.parentNode.insertBefore(s1,s0);
         </div>
       </div>
 
-      <div class="srv-card hover-lift fi">
+      <div class="srv-card fi">
         <div class="srv-media">
           <div class="srv-media-bg">🪟</div>
           <div class="srv-media-overlay"></div>
-          <button class="srv-play" onclick="openVideo('Windows Installation','🪟','Clean install of Windows 10 or 11 with all drivers, updates and software configured perfectly from scratch.')">▶</button>
+          <button class="srv-play" onclick="openVideo('Windows Installation')">▶</button>
           <div class="srv-media-label">Watch Service Video</div>
         </div>
         <div class="srv-body">
@@ -1349,11 +884,11 @@ s0.parentNode.insertBefore(s1,s0);
         </div>
       </div>
 
-      <div class="srv-card hover-lift fi">
+      <div class="srv-card fi">
         <div class="srv-media">
           <div class="srv-media-bg">💻</div>
           <div class="srv-media-overlay"></div>
-          <button class="srv-play" onclick="openVideo('Custom PC Build','💻','Watch how we build custom gaming rigs and workstations from scratch — component selection, assembly, cable management and testing.')">▶</button>
+          <button class="srv-play" onclick="openVideo('Custom PC Build')">▶</button>
           <div class="srv-media-label">Watch Service Video</div>
         </div>
         <div class="srv-body">
@@ -1364,11 +899,11 @@ s0.parentNode.insertBefore(s1,s0);
         </div>
       </div>
 
-      <div class="srv-card hover-lift fi">
+      <div class="srv-card fi">
         <div class="srv-media">
           <div class="srv-media-bg">💾</div>
           <div class="srv-media-overlay"></div>
-          <button class="srv-play" onclick="openVideo('Data Recovery','💾','We recover files from failed drives, corrupted SSDs and damaged storage. No recovery means no fee — guaranteed.')">▶</button>
+          <button class="srv-play" onclick="openVideo('Data Recovery')">▶</button>
           <div class="srv-media-label">Watch Service Video</div>
         </div>
         <div class="srv-body">
@@ -1379,11 +914,11 @@ s0.parentNode.insertBefore(s1,s0);
         </div>
       </div>
 
-      <div class="srv-card hover-lift fi">
+      <div class="srv-card fi">
         <div class="srv-media">
           <div class="srv-media-bg">⚡</div>
           <div class="srv-media-overlay"></div>
-          <button class="srv-play" onclick="openVideo('Speed & Performance','⚡','We clean, optimise and upgrade your RAM or SSD so your PC runs like new. See the before and after results.')">▶</button>
+          <button class="srv-play" onclick="openVideo('Speed & Performance')">▶</button>
           <div class="srv-media-label">Watch Service Video</div>
         </div>
         <div class="srv-body">
@@ -1394,11 +929,11 @@ s0.parentNode.insertBefore(s1,s0);
         </div>
       </div>
 
-      <div class="srv-card hover-lift fi">
+      <div class="srv-card fi">
         <div class="srv-media">
           <div class="srv-media-bg">📡</div>
           <div class="srv-media-overlay"></div>
-          <button class="srv-play" onclick="openVideo('Network & WiFi','📡','Home and business networking, WiFi range extension, router configuration and fully secure setup explained.')">▶</button>
+          <button class="srv-play" onclick="openVideo('Network & WiFi')">▶</button>
           <div class="srv-media-label">Watch Service Video</div>
         </div>
         <div class="srv-body">
@@ -1409,11 +944,11 @@ s0.parentNode.insertBefore(s1,s0);
         </div>
       </div>
 
-      <div class="srv-card hover-lift fi">
+      <div class="srv-card fi">
         <div class="srv-media">
           <div class="srv-media-bg">🔍</div>
           <div class="srv-media-overlay"></div>
-          <button class="srv-play" onclick="openVideo('Free Diagnostics','🔍','See exactly what our free diagnostic process involves — we check everything and report back with full findings at zero cost.')">▶</button>
+          <button class="srv-play" onclick="openVideo('Free Diagnostics')">▶</button>
           <div class="srv-media-label">Watch Service Video</div>
         </div>
         <div class="srv-body">
@@ -1437,9 +972,9 @@ s0.parentNode.insertBefore(s1,s0);
 
 <!-- WHY -->
 <section id="why" style="background:var(--ink);">
-  <div class="section-inner morph-bg">
-    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text shimmer-text">Our Edge</div></div>
-    <div class="section-heading glow-text">Why Choose <em>AB Repairs?</em></div>
+  <div class="section-inner">
+    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Our Edge</div></div>
+    <div class="section-heading">Why Choose <em>AB Repairs?</em></div>
     <p class="section-body">Real expertise from a self-taught IT technician who builds PCs from scratch. No call centres, no upselling, no nonsense.</p>
     <div class="why-layout">
       <div class="why-list">
@@ -1478,167 +1013,110 @@ s0.parentNode.insertBefore(s1,s0);
 
 <!-- BOOK & PAY -->
 <section id="book" style="background:var(--ink2);">
-  <div class="section-inner morph-bg">
-    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text shimmer-text">Get Started</div></div>
-    <div class="section-heading glow-text">Book a Repair &amp; <em>Pay Online</em></div>
+  <div class="section-inner">
+    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Get Started</div></div>
+    <div class="section-heading">Book a Repair &amp; <em>Pay Online</em></div>
     <p class="section-body">Submit your request below. Once quoted, pay securely via PayPal at your convenience.</p>
     <div class="book-layout">
       <div class="form-card fi">
-          <div class="form-title">Request a Repair</div>
-          <p class="form-sub">Fill in your details and we'll contact you with a quote promptly.</p>
-          <div id="repairForm">
-            <div class="form-row-2">
-              <div class="fg"><label>First Name</label><input type="text" id="fname" placeholder="John"></div>
-              <div class="fg"><label>Last Name</label><input type="text" id="lname" placeholder="Smith"></div>
-            </div>
-            <div class="fg"><label>Phone Number</label><input type="tel" id="fphone" placeholder="07700 000000"></div>
-            <div class="fg"><label>Service Required</label>
-              <select id="fservice">
-                <option value="">Select a service...</option>
-                <option>Hardware Repair</option>
-                <option>Virus &amp; Malware Removal</option>
-                <option>Windows Installation</option>
-                <option>Custom PC Build</option>
-                <option>Data Recovery</option>
-                <option>PC Speed Boost</option>
-                <option>Network &amp; WiFi Setup</option>
-                <option>Free Diagnostic</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="fg"><label>Describe the Problem</label><textarea id="fmsg" placeholder="Please describe the issue..." rows="4"></textarea></div>
-            <button onclick="sendToWhatsApp()" class="form-btn" style="background:linear-gradient(135deg,#25d366,#128c7e);border:none;color:white;padding:16px;width:100%;font-size:.9rem;font-weight:700;letter-spacing:2px;cursor:pointer;margin-top:10px;">💬 SEND VIA WHATSAPP</button>
-            <button onclick="callUs()" class="form-btn" style="background:var(--gold);border:none;color:var(--ink);padding:16px;width:100%;font-size:.9rem;font-weight:700;letter-spacing:2px;cursor:pointer;margin-top:10px;">📞 CALL US NOW</button>
+        <div class="form-title">Request a Repair</div>
+        <p class="form-sub">Fill in the details and we'll be in touch with a quote promptly.</p>
+        <form action="mailto:YOUR-EMAIL@gmail.com" method="POST" enctype="text/plain">
+          <div class="form-row-2">
+            <div class="fg"><label>First Name</label><input type="text" name="first" placeholder="John" required></div>
+            <div class="fg"><label>Last Name</label><input type="text" name="last" placeholder="Smith" required></div>
           </div>
-          <div id="formDone" style="display:none;text-align:center;padding:40px 20px;">
-            <div style="font-size:3rem;">✅</div>
-            <h3 style="color:var(--gold);margin:16px 0 8px;">Request Sent!</h3>
-            <p style="color:var(--text);">Opening WhatsApp with your details...</p>
-            <p style="color:var(--text);margin-top:12px;">Or call us: <a href="tel:+447362991167" style="color:var(--gold);">07362 991167</a></p>
+          <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="john@email.com" required></div>
+          <div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="+44 7700 000000"></div>
+          <div class="fg">
+            <label>Service Required</label>
+            <select name="service">
+              <option value="">— Please select —</option>
+              <option>Hardware Repair</option><option>Virus &amp; Malware Removal</option>
+              <option>Windows Installation</option><option>Custom PC Build</option>
+              <option>Data Recovery</option><option>Speed &amp; Performance</option>
+              <option>Network &amp; WiFi Setup</option><option>Free Diagnostics</option><option>Other</option>
+            </select>
           </div>
-        </div>
-
-        <!-- Payment Card -->
-        <div class="form-card" style="height:fit-content;">
-          <div class="pay-card-title">💳 Pay for Your Repair</div>
-          <p style="font-size:.85rem;color:var(--text);margin-bottom:20px;">Once quoted enter the amount and pay securely online.</p>
-
-          <div class="amount-group" style="display:flex;border:1px solid rgba(201,168,76,0.2);overflow:hidden;margin-bottom:14px;">
-            <span style="background:rgba(201,168,76,0.08);color:var(--gold);padding:13px 18px;font-size:1.2rem;font-weight:700;border-right:1px solid rgba(201,168,76,0.2);">£</span>
-            <input type="number" id="payAmount" placeholder="Enter amount" min="1" style="flex:1;border:none;background:var(--ink2);padding:13px 16px;font-size:.92rem;color:var(--white);outline:none;">
-          </div>
-
-          <!-- PayPal Button -->
-          <a id="paypalLink" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=anthonybrown_@hotmail.co.uk&item_name=Computer+Repair&currency_code=GBP&amount=0" target="_blank" class="paypal-btn" onclick="updatePayPal(event)" style="display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#0070ba,#005ea6);color:white;border:none;padding:15px 20px;font-size:.88rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;text-decoration:none;width:100%;box-sizing:border-box;">
-            🅿 &nbsp;Pay Securely with PayPal
-          </a>
-          <p class="secure-note" style="font-size:.7rem;opacity:.35;text-align:center;margin-top:10px;">Secured by PayPal · 256-bit SSL · Buyer Protection Included</p>
-
-          <!-- SumUp Button -->
-          <a href="https://abrepairscardiff.sumupstore.com" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#1a1a2e,#16213e);border:1px solid var(--gold);color:var(--gold);padding:15px 20px;font-size:.88rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;width:100%;box-sizing:border-box;margin-top:10px;">
-            💳 &nbsp;Pay by Card via SumUp
-          </a>
-          <p style="font-size:.7rem;opacity:.35;text-align:center;margin-top:6px;">Visa · Mastercard · Amex · Apple Pay · Google Pay</p>
-
-          <!-- Payment Logos -->
-          <div style="margin-top:20px;border-top:1px solid var(--border);padding-top:20px;">
-            <p style="font-size:.78rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">We Accept</p>
-            <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
-              <div style="background:#fff;padding:6px 12px;border-radius:4px;height:36px;display:flex;align-items:center;">
-                <span style="font-size:1rem;font-weight:900;font-style:italic;color:#1a1f71;font-family:Arial,sans-serif;">VISA</span>
-              </div>
-              <div style="background:#fff;padding:6px 10px;border-radius:4px;height:36px;display:flex;align-items:center;">
-                <span style="display:inline-flex;align-items:center;">
-                  <span style="width:20px;height:20px;background:#eb001b;border-radius:50%;display:inline-block;"></span>
-                  <span style="width:20px;height:20px;background:#f79e1b;border-radius:50%;display:inline-block;margin-left:-8px;"></span>
-                </span>
-              </div>
-              <div style="background:#016fd0;padding:6px 10px;border-radius:4px;height:36px;display:flex;align-items:center;">
-                <span style="font-size:.6rem;font-weight:900;color:#fff;font-family:Arial,sans-serif;text-align:center;line-height:1.2;">AMERICAN<br>EXPRESS</span>
-              </div>
-              <div style="background:#fff;padding:6px 12px;border-radius:4px;height:36px;display:flex;align-items:center;">
-                <span style="font-size:.85rem;font-weight:900;color:#003087;font-family:Arial,sans-serif;">Pay<span style="color:#009cde;">Pal</span></span>
-              </div>
-              <div style="background:#000;padding:6px 12px;border-radius:4px;height:36px;display:flex;align-items:center;">
-                <span style="font-size:.75rem;font-weight:600;color:#fff;font-family:-apple-system,sans-serif;"> Pay</span>
-              </div>
-              <div style="background:#fff;padding:6px 10px;border-radius:4px;height:36px;display:flex;align-items:center;">
-                <span style="font-size:.78rem;font-weight:700;font-family:Arial,sans-serif;"><span style="color:#4285f4;">G</span><span style="color:#ea4335;">o</span><span style="color:#fbbc05;">o</span><span style="color:#4285f4;">g</span><span style="color:#34a853;">l</span><span style="color:#ea4335;">e</span> <span style="color:#5f6368;">Pay</span></span>
-              </div>
-              <div style="background:#fff;padding:6px 12px;border-radius:4px;height:36px;display:flex;align-items:center;">
-                <span style="font-size:.75rem;font-weight:700;color:#2d7a22;font-family:Arial,sans-serif;">💵 Cash</span>
-              </div>
-            </div>
-            <p style="font-size:.7rem;opacity:.45;text-align:center;margin-top:12px;">Online payments via PayPal or SumUp · In-person payments at collection</p>
-          </div>
-        </div>
-
+          <div class="fg"><label>Describe the Issue</label><textarea name="desc" placeholder="Please describe what's happening with your PC..."></textarea></div>
+          <button type="submit" class="form-submit"><span>Send Repair Request</span></button>
+        </form>
       </div>
-    </section>
-
-
-
-
-
-<!-- PRESENTATION BUTTON -->
-<div style="text-align:center;padding:30px 20px;background:var(--ink);">
-  <button class="pres-btn" onclick="openPres()">🎬 &nbsp;View Our Presentation</button>
-  <p style="font-size:.72rem;color:var(--text);letter-spacing:2px;opacity:.5;margin-top:8px;">8 SLIDES · FULL SCREEN</p>
-</div>
-
-<!-- PRESENTATION POPUP -->
-<div id="presPopup"></div>
-<button id="presClose" onclick="closePres()">✕</button>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-var presIframe = null;
-
-function openPres() {
-  var popup = document.getElementById('presPopup');
-  popup.classList.add('open');
-  
-  if(!presIframe) {
-    presIframe = document.createElement('iframe');
-    presIframe.src = 'https://anthonylbrown1976.github.io/abrepairscardiff/slideshow.html';
-    presIframe.style.cssText = 'width:100%;height:100vh;border:none;display:block;';
-    popup.appendChild(presIframe);
-  }
-  
-  document.getElementById('presClose').classList.add('visible');
-}
-
-function closePres() {
-  document.getElementById('presPopup').classList.remove('open');
-  document.getElementById('presClose').classList.remove('visible');
-  
-}
-
-document.addEventListener('keydown', function(e) {
-  if(e.key === 'Escape' && document.getElementById('presPopup').classList.contains('open')) {
-    closePres();
-  }
-});
-</script>
-
-
-<!-- ── SUMUP ONLINE STORE BUTTON ── -->
-<div style="text-align:center;padding:30px 20px;background:var(--ink2);">
-  <p style="font-size:.72rem;color:var(--gold);letter-spacing:4px;text-transform:uppercase;margin-bottom:12px;">New! Book & Pay Online</p>
-  <a href="https://abrepairscardiff.sumupstore.com" target="_blank" rel="noopener noreferrer"
-     style="display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,#b49120,#f0d25a);color:#080808;padding:18px 40px;font-family:Outfit,sans-serif;font-size:.9rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:all .3s;cursor:pointer;"
-     onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 16px 40px rgba(212,175,55,0.5)'"
-     onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
-    🛒 &nbsp;Book &amp; Pay Online
-  </a>
-  <p style="font-size:.72rem;color:var(--text);letter-spacing:2px;opacity:.5;margin-top:12px;">SECURE PAYMENTS · BOOK ANY TIME · 24/7</p>
-</div>
+      <div class="pay-stack">
+        <div class="pay-card fi">
+          <div class="pay-card-title">Pay via PayPal</div>
+          <p>Enter the agreed repair amount and pay securely online.</p>
+          <div class="amount-group">
+            <span>£</span>
+            <input type="number" id="payAmount" placeholder="0.00" min="1" step="0.01">
+          </div>
+          <!-- REPLACE your-paypal-email@example.com with your PayPal email -->
+          <a id="paypalLink" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=your-paypal-email@example.com&item_name=Computer+Repair&currency_code=GBP&amount=0" target="_blank" class="paypal-btn" onclick="updatePayPal(event)">🅿 &nbsp;Pay Securely with PayPal</a>
+          <p class="secure-note">Secured by PayPal · 256-bit SSL · Buyer Protection Included</p>
+        </div>
+        <div class="tracker-card fi">
+          <h3>🔍 Track Your Repair</h3>
+          <p>Enter your email address to check the current status of your repair.</p>
+          <div class="tracker-input-row">
+            <input type="email" id="trackEmail" placeholder="your@email.com">
+            <button onclick="trackRepair()">Check Status</button>
+          </div>
+          <div class="tracker-result" id="trackerResult">
+            <div class="tracker-status">
+              <div class="t-step"><div class="t-dot done">✓</div><div class="t-label"><strong>Received</strong>Your device has been checked in</div></div>
+              <div class="t-step"><div class="t-dot done">✓</div><div class="t-label"><strong>Diagnosed</strong>Issue identified — quote sent</div></div>
+              <div class="t-step"><div class="t-dot active">⚡</div><div class="t-label"><strong>In Progress</strong>Repair underway — est. completion today</div></div>
+              <div class="t-step"><div class="t-dot">4</div><div class="t-label"><strong>Ready</strong>Awaiting collection</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="steps-card fi">
+          <div class="steps-title">How It Works</div>
+          <div class="step"><div class="step-num">I</div><p>Submit your repair request using the form.</p></div>
+          <div class="step"><div class="step-num">II</div><p>We contact you with a firm, honest quote.</p></div>
+          <div class="step"><div class="step-num">III</div><p>Drop off or arrange collection of your device.</p></div>
+          <div class="step"><div class="step-num">IV</div><p>We repair it and notify you when it's ready.</p></div>
+          <div class="step"><div class="step-num">V</div><p>Pay above and collect your repaired machine.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- REVIEWS -->
 <section id="reviews" style="background:var(--ink);">
-  <div class="section-inner morph-bg">
-    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text shimmer-text">Customer Feedback</div></div>
-    <div class="section-heading glow-text">What Our Customers <em>Say</em></div>
+  <div class="section-inner">
+    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Customer Feedback</div></div>
+    <div class="section-heading">What Our Customers <em>Say</em></div>
     <p class="section-body">Real experiences from real people. We believe our work speaks louder than any advertisement.</p>
+
+    <!-- Review Summary Strip -->
+    <div class="review-summary fi">
+      <div class="rs-score">
+        <div class="rs-big-num">5.0</div>
+        <div>
+          <div class="rs-stars">★★★★★</div>
+          <div class="rs-label">Average Rating</div>
+        </div>
+      </div>
+      <div class="rs-bars">
+        <div class="rs-bar-row"><div class="rs-bar-label">5★</div><div class="rs-bar-track"><div class="rs-bar-fill" style="width:95%"></div></div></div>
+        <div class="rs-bar-row"><div class="rs-bar-label">4★</div><div class="rs-bar-track"><div class="rs-bar-fill" style="width:4%;opacity:.6"></div></div></div>
+        <div class="rs-bar-row"><div class="rs-bar-label">3★</div><div class="rs-bar-track"><div class="rs-bar-fill" style="width:1%;opacity:.4"></div></div></div>
+        <div class="rs-bar-row"><div class="rs-bar-label">2★</div><div class="rs-bar-track"><div class="rs-bar-fill" style="width:0%"></div></div></div>
+        <div class="rs-bar-row"><div class="rs-bar-label">1★</div><div class="rs-bar-track"><div class="rs-bar-fill" style="width:0%"></div></div></div>
+      </div>
+      <div class="rs-total">
+        <div class="rs-total-num" id="totalReviews">47</div>
+        <div class="rs-total-label">Total Reviews</div>
+      </div>
+      <div class="rs-platforms">
+        <div class="rs-platform"><span>⭐ Google</span><span class="rs-platform-stars">★★★★★</span><span style="font-size:.75rem;color:var(--gold);">5.0</span></div>
+        <div class="rs-platform"><span>📘 Facebook</span><span class="rs-platform-stars">★★★★★</span><span style="font-size:.75rem;color:var(--gold);">5.0</span></div>
+        <div class="rs-platform"><span>🌐 Trustpilot</span><span class="rs-platform-stars">★★★★★</span><span style="font-size:.75rem;color:var(--gold);">5.0</span></div>
+      </div>
+    </div>
+
     <div class="rev-grid">
       <div class="rev-card fi"><div class="rev-stars">★★★★★</div><p class="rev-quote">"My laptop was completely dead — AB had it running perfectly within a day. Incredibly knowledgeable and kept me updated throughout. Will use again without hesitation."</p><div class="reviewer"><div class="rev-avatar">MJ</div><div><div class="rev-name">Mark Johnson</div><div class="rev-loc">Local Customer</div></div></div></div>
       <div class="rev-card fi"><div class="rev-stars">★★★★★</div><p class="rev-quote">"Best value computer repair I've ever found. Honest pricing, incredibly fast, and my PC is now quicker than the day I bought it. Highly recommended to everyone."</p><div class="reviewer"><div class="rev-avatar">SP</div><div><div class="rev-name">Sarah Palmer</div><div class="rev-loc">Local Customer</div></div></div></div>
@@ -1656,32 +1134,24 @@ document.addEventListener('keydown', function(e) {
 
 <!-- CONTACT -->
 <section id="contact" style="background:var(--ink2);">
-  <div class="section-inner morph-bg">
-    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text shimmer-text">Reach Us</div></div>
-    <div class="section-heading glow-text">Get in <em>Touch</em></div>
+  <div class="section-inner">
+    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Reach Us</div></div>
+    <div class="section-heading">Get in <em>Touch</em></div>
     <p class="section-body">Questions before you book? Not sure what's wrong? We're always happy to help.</p>
     <div class="contact-layout">
       <div class="fi">
-        <div class="ci"><div class="ci-icon">📱</div><div><h4>Phone &amp; WhatsApp</h4><p><a href="tel:+447362991167" style="color:var(--white);text-decoration:none;">+44 7362 991167</a><br><small style="opacity:.4;font-size:.8rem;">Call or WhatsApp anytime</small></p></div></div>
-
-          <!-- WhatsApp Button -->
-          <div style="margin-top:12px;">
-            <a href="https://wa.me/447362991167?text=Hi%20AB%20Computer%20Repairs%20Cardiff!%20I%20would%20like%20to%20enquire%20about%20a%20repair." target="_blank" rel="noopener noreferrer" style="display:block;background:#25d366;color:#fff;text-align:center;padding:14px 20px;font-family:Outfit,sans-serif;font-size:.9rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;cursor:pointer;position:relative;z-index:999;">
-              💬 &nbsp;WHATSAPP US NOW
-            </a>
-          </div>
-
-        <div class="ci"><div class="ci-icon">💬</div><div><h4>WhatsApp Us</h4><p><a href="https://wa.me/447362991167" target="_blank" style="color:var(--gold);">Message us on WhatsApp</a><br><small style="opacity:.4;font-size:.8rem;">Reply within 1 hour</small></p></div></div>
-        <div class="ci"><div class="ci-icon">📍</div><div><h4>Location</h4><p>57 Handley Road, Pengam Green, Cardiff CF24 2HF<br><small style="opacity:.4;font-size:.8rem;">Pengam Green, Cardiff CF24 2HF</small></p></div></div>
+        <div class="ci"><div class="ci-icon">📱</div><div><h4>Phone &amp; WhatsApp</h4><p>+44 7700 000000<br><small style="opacity:.4;font-size:.8rem;">Replace with your number</small></p></div></div>
+        <div class="ci"><div class="ci-icon">📧</div><div><h4>Email</h4><p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2d44434b426d4c4f5f485d4c445f5e034e42035846">[email&#160;protected]</a><br><small style="opacity:.4;font-size:.8rem;">Replace with your email</small></p></div></div>
+        <div class="ci"><div class="ci-icon">📍</div><div><h4>Location</h4><p>Your Town, Your County<br><small style="opacity:.4;font-size:.8rem;">Add your area or address</small></p></div></div>
         <div class="ci"><div class="ci-icon">🕐</div><div><h4>Opening Hours</h4><div style="margin-top:8px;"><div class="hr-row"><span>Monday – Friday</span><span>9:00am – 6:00pm</span></div><div class="hr-row"><span>Saturday</span><span>10:00am – 4:00pm</span></div><div class="hr-row"><span>Sunday</span><span>By Appointment</span></div></div></div></div>
       </div>
       <div class="fi">
-        <div class="eyebrow" style="margin-bottom:20px;"><div class="eyebrow-line"></div><div class="eyebrow-text shimmer-text">Follow Us</div></div>
+        <div class="eyebrow" style="margin-bottom:20px;"><div class="eyebrow-line"></div><div class="eyebrow-text">Follow Us</div></div>
         <p style="font-size:.9rem;font-weight:300;color:var(--text);line-height:1.8;margin-bottom:28px;">Follow us on social media for build photos, repair tips and exclusive offers. A Google review means the world to a small local business.</p>
-        <a href="https://www.facebook.com/profile.php?id=61575739385660" target="_blank" class="soc-link"><span>📘</span><span>Facebook — AB Computer Repairs Cardiff</span></a>
-        <a href="https://www.instagram.com/abrepairscardiff" target="_blank" class="soc-link"><span>📸</span><span>Instagram — @abrepairscardiff</span></a>
-        <a href="https://search.google.com/local/writereview?placeid=abrepairscardiff" target="_blank" class="soc-link"><span>⭐</span><span>Leave Us a Google Review</span></a>
-        <a href="https://www.youtube.com/@abrepairscardiff" target="_blank" class="soc-link"><span>📺</span><span>YouTube — PC Builds &amp; Tips</span></a>
+        <a href="#" class="soc-link"><span>📘</span><span>Facebook — AB Repairs Cardiff</span></a>
+        <a href="#" class="soc-link"><span>📸</span><span>Instagram — @abrepairs</span></a>
+        <a href="#" class="soc-link"><span>⭐</span><span>Leave Us a Google Review</span></a>
+        <a href="#" class="soc-link"><span>📺</span><span>YouTube — PC Builds &amp; Tips</span></a>
       </div>
     </div>
   </div>
@@ -1692,23 +1162,39 @@ document.addEventListener('keydown', function(e) {
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="#" class="logo"><div class="logo-emblem">AB</div><div class="logo-text-wrap"><strong>Computer Repairs</strong><span>Cardiff &amp; South Wales</span></div></a>
-        <p>Professional computer repairs, custom PC builds and full IT support. Fast, honest and affordable from a self-taught IT expert who builds from scratch.</p>
+        <a href="#" class="logo"><div class="logo-emblem">AB</div><div class="logo-text-wrap"><strong>Computer Repairs Cardiff</strong><span>Cardiff &amp; South Wales</span></div></a>
+        <p>Professional computer repairs, custom PC builds and full IT support serving Cardiff &amp; South Wales. Fast, honest and affordable from a self-taught IT expert who builds from scratch.</p>
       </div>
       <div class="footer-col"><h4>Services</h4><ul><li><a href="#services">Hardware Repair</a></li><li><a href="#services">Virus Removal</a></li><li><a href="#services">Windows Install</a></li><li><a href="#services">Custom Builds</a></li><li><a href="#services">Data Recovery</a></li><li><a href="#services">Free Diagnostics</a></li></ul></div>
       <div class="footer-col"><h4>Company</h4><ul><li><a href="#why">About Us</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#book">Book a Repair</a></li><li><a href="#contact">Contact</a></li><li><a href="#" onclick="openLogin()">My Account</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
     </div>
     <div class="footer-bottom">
-      <span>© 2024 AB Computer Repairs. All rights reserved.</span>
+      <span>© 2024 AB Computer Repairs Cardiff &amp; South Wales. All rights reserved.</span>
       <span>Crafted with precision — honest repairs, fair prices.</span>
     </div>
   </div>
 </footer>
 
 <!-- LIVE CHAT -->
+<div id="chatBubble">
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-head">
+      <div class="chat-head-avatar">👨‍💻</div>
+      <div><strong>AB Repairs Cardiff Support</strong><small>Typically replies in minutes</small></div>
+    </div>
+    <div class="chat-msgs" id="chatMsgs">
+      <div class="chat-msg">👋 Hi there! Welcome to AB Computer Repairs. How can we help you today?</div>
+      <div class="chat-msg">Feel free to ask about pricing, services, or to book a repair!</div>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" id="chatInput" placeholder="Type a message..." onkeydown="if(event.key==='Enter')sendChat()">
+      <button onclick="sendChat()">➤</button>
+    </div>
+  </div>
+  <button class="chat-btn" onclick="toggleChat()">💬</button>
+</div>
 
-
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── INTRO ──
 window.addEventListener('load', () => {
   setTimeout(() => {
@@ -1736,7 +1222,7 @@ function doLogin() {
   const email = document.getElementById('loginEmail').value;
   const pass  = document.getElementById('loginPass').value;
   const err   = document.getElementById('loginErr');
-  if(!email || pass !== 'ab8477') { err.style.display='block'; return; }
+  if(!email || pass !== 'ab2024') { err.style.display='block'; return; }
   err.style.display = 'none';
   closeLogin();
   document.getElementById('loginBtn').style.display = 'none';
@@ -1809,21 +1295,42 @@ function checkout() {
   if(basket.length === 0) { alert('Your basket is empty. Please add a service first.'); return; }
   const total = basket.reduce((a,b) => a+b.price,0) * (discountApplied ? 0.9 : 1);
   const services = basket.map(b=>b.name).join(', ');
-  // REPLACE anthonybrown_@hotmail.co.uk with your real PayPal email
-  window.open(`https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=anthonybrown_@hotmail.co.uk&item_name=${encodeURIComponent('AB Repairs: '+services)}&currency_code=GBP&amount=${total.toFixed(2)}`, '_blank');
+  // REPLACE your-paypal-email@example.com with your real PayPal email
+  window.open(`https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=your-paypal-email@example.com&item_name=${encodeURIComponent('AB Computer Repairs Cardiff: '+services)}&currency_code=GBP&amount=${total.toFixed(2)}`, '_blank');
 }
 
 // ── TOASTS ──
 const toastReviews = [
-  {initials:'MJ', name:'Mark from Cardiff',    text:'just left a 5★ review'},
-  {initials:'SP', name:'Sarah from Penarth',   text:'booked a repair'},
-  {initials:'DK', name:'Danny from Canton',    text:'just left a 5★ review'},
-  {initials:'TW', name:'Tom from Roath',       text:'booked a custom PC build'},
-  {initials:'LB', name:'Lisa from Barry',      text:'left a 5★ review'},
-  {initials:'RJ', name:'Rob from Newport',     text:'booked a virus removal'},
-  {initials:'CW', name:'Claire from Pontypridd', text:'just left a 5★ review'},
+  {initials:'MJ', name:'Mark from London',    text:'just left a 5★ review'},
+  {initials:'SP', name:'Sarah from Manchester', text:'booked a repair'},
+  {initials:'DK', name:'Danny from Leeds',     text:'just left a 5★ review'},
+  {initials:'TW', name:'Tom from Birmingham',  text:'booked a custom build'},
+  {initials:'LB', name:'Lisa from Bristol',    text:'left a 5★ review'},
 ];
 
+let toastIdx = 0;
+function showReviewToast() {
+  const t = toastReviews[toastIdx % toastReviews.length]; toastIdx++;
+  const zone = document.getElementById('toastZone');
+  const el = document.createElement('div');
+  el.className = 'toast';
+  el.innerHTML = `<div class="toast-avatar">${t.initials}</div><div class="toast-text"><strong>${t.name}</strong><span>${t.text} </span><div class="toast-stars">★★★★★</div></div>`;
+  zone.appendChild(el);
+  setTimeout(() => el.classList.add('show'), 100);
+  setTimeout(() => { el.classList.remove('show'); setTimeout(() => el.remove(), 400); }, 4000);
+}
+
+function showToastAdd(name) {
+  const zone = document.getElementById('toastZone');
+  const el = document.createElement('div');
+  el.className = 'toast';
+  el.innerHTML = `<div class="toast-avatar">✓</div><div class="toast-text"><strong>${name} added!</strong><span>View your basket to checkout</span></div>`;
+  zone.appendChild(el);
+  setTimeout(() => el.classList.add('show'), 100);
+  setTimeout(() => { el.classList.remove('show'); setTimeout(() => el.remove(), 400); }, 3000);
+}
+
+setTimeout(() => { showReviewToast(); setInterval(showReviewToast, 7000); }, 5000);
 
 // ── EXIT POPUP ──
 let exitShown = false;
@@ -1833,22 +1340,22 @@ document.addEventListener('mouseleave', e => {
 function closeExit() { document.getElementById('exitPopup').classList.remove('show'); }
 
 // ── VIDEO ──
-const videoMap = {
-  "Hardware Repair": "https://www.youtube.com/embed/dX1NKLaL-eA",
-  "Virus & Malware Removal": "https://www.youtube.com/embed/nCDHGKMeHbY",
-  "Windows Installation": "https://www.youtube.com/embed/vPCMVCTkTOo",
-  "Custom PC Build": "https://www.youtube.com/embed/BL4DCEkMbj8",
-  "Data Recovery": "https://www.youtube.com/embed/wIhJWr7CTUA",
-  "PC Speed Boost": "https://www.youtube.com/embed/E7gWyqNRR7U",
-  "Network & WiFi Setup": "https://www.youtube.com/embed/Blt3GKfqbJQ",
-  "Free Diagnostics": "https://www.youtube.com/embed/dX1NKLaL-eA",
+// Real YouTube videos matched to each service
+const serviceVideos = {
+  'Hardware Repair':      'dIHuPO81ens',
+  'Virus Removal':        'iGdInLHFxgc',
+  'Windows Installation': 'VBIcEQgEmQs',
+  'Custom PC Build':      'PXHOqSDz5D8',
+  'Data Recovery':        'ymSegHHBDTM',
+  'Speed & Performance':  '1kNe8YVGYMY',
+  'Network & WiFi':       'qHPAiLvuZL8',
+  'Free Diagnostics':     'GQBpuhgFCXs',
 };
 
-function openVideo(title, icon, desc) {
+function openVideo(title) {
   document.getElementById('videoTitle').textContent = title;
-  document.getElementById('videoDesc').textContent = desc;
-  const videoUrl = videoMap[title] || videoMap[title.trim()] || '';
-  document.getElementById('videoFrame').src = videoUrl + '?autoplay=1&rel=0';
+  const ytId = serviceVideos[title] || 'PXHOqSDz5D8';
+  document.getElementById('videoFrame').src = 'https://www.youtube.com/embed/' + ytId + '?autoplay=1&rel=0&modestbranding=1';
   document.getElementById('videoModal').classList.add('show');
 }
 function closeVideo() {
@@ -1859,8 +1366,8 @@ function closeVideo() {
 // ── PAYPAL ──
 function updatePayPal(e) {
   const amt = document.getElementById('payAmount').value || '0';
-  // REPLACE anthonybrown_@hotmail.co.uk with your real PayPal email
-  document.getElementById('paypalLink').href = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=anthonybrown_@hotmail.co.uk&item_name=Computer+Repair+%E2%80%93+AB+Repairs&currency_code=GBP&amount=${amt}`;
+  // REPLACE your-paypal-email@example.com with your real PayPal email
+  document.getElementById('paypalLink').href = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=your-paypal-email@example.com&item_name=Computer+Repair+%E2%80%93+AB+Repairs&currency_code=GBP&amount=${amt}`;
 }
 
 // ── REPAIR TRACKER ──
@@ -1894,412 +1401,82 @@ document.querySelectorAll('.fi').forEach(el => obs.observe(el));
 
 // Trigger counters when hero stats visible
 const counterObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if(e.isIntersecting) animateCounters();
-  });
+  if(entries[0].isIntersecting) { animateCounters(); counterObs.disconnect(); }
 }, { threshold: 0.5 });
-document.querySelectorAll('.hero-stats').forEach(el => counterObs.observe(el));
-</script>
+const statsEl = document.querySelector('.hero-stats');
+if(statsEl) counterObs.observe(statsEl);
 
-<script>
-function sendToWhatsApp() {
-  const name = ((document.getElementById('fname') ? document.getElementById('fname').value : '') + ' ' + (document.getElementById('lname') ? document.getElementById('lname').value : '')).trim() || 'Not provided';
-  const phone = document.getElementById('fphone') ? document.getElementById('fphone').value : 'Not provided';
-  const service = document.getElementById('fservice') ? document.getElementById('fservice').value : 'Not specified';
-  const msg = document.getElementById('fmsg') ? document.getElementById('fmsg').value : 'No details';
-  const waText = encodeURIComponent('Hi AB Computer Repairs Cardiff!\n\nNew Repair Request:\nName: ' + name + '\nPhone: ' + phone + '\nService: ' + service + '\nDetails: ' + msg + '\n\nPlease contact me with a quote. Thank you!');
-  if(document.getElementById('repairForm')) document.getElementById('repairForm').style.display = 'none';
-  if(document.getElementById('formDone')) document.getElementById('formDone').style.display = 'block';
-  window.open('https://wa.me/447362991167?text=' + waText, '_blank');
+// ── LIVE CHAT ──
+let chatOpen = false;
+function toggleChat() { chatOpen = !chatOpen; document.getElementById('chatWindow').classList.toggle('show', chatOpen); }
+function sendChat() {
+  const input = document.getElementById('chatInput');
+  const msg = input.value.trim();
+  if(!msg) return;
+  const msgs = document.getElementById('chatMsgs');
+  msgs.innerHTML += `<div class="chat-msg user-msg">${msg}</div>`;
+  input.value = '';
+  msgs.scrollTop = msgs.scrollHeight;
+  setTimeout(() => {
+    const replies = [
+      "Thanks for getting in touch! We'll get back to you very shortly. 😊",
+      "Great question! Feel free to call or WhatsApp us for an instant answer.",
+      "We'd love to help — book a free diagnostic and we'll take a look!",
+      "Our turnaround is usually same day or next day. We'll keep you updated throughout!"
+    ];
+    msgs.innerHTML += `<div class="chat-msg">${replies[Math.floor(Math.random()*replies.length)]}</div>`;
+    msgs.scrollTop = msgs.scrollHeight;
+  }, 1200);
 }
 
-function callUs() {
-  window.location.href = 'tel:+447362991167';
+// ── VISITOR & STATS COUNTERS ──
+// Simulated visitor count — starts at a realistic base and increments
+// When you connect real analytics (Google Analytics) you can replace this
+let baseVisitors = 1247;
+let sessionVisitors = Math.floor(Math.random() * 8) + 3;
+let totalVisitors = baseVisitors + sessionVisitors;
+
+function animateCounter(elementId, target, duration, suffix) {
+  const el = document.getElementById(elementId);
+  if(!el) return;
+  let start = 0;
+  const step = Math.ceil(target / (duration / 30));
+  const timer = setInterval(() => {
+    start = Math.min(start + step, target);
+    el.textContent = start.toLocaleString();
+    if(start >= target) clearInterval(timer);
+  }, 30);
 }
 
-function updatePayPal(e) {
-  const amt = document.getElementById('payAmount') ? document.getElementById('payAmount').value : '0';
-  if(!amt || amt <= 0) { e.preventDefault(); alert('Please enter the repair amount first!'); return; }
-  document.getElementById('paypalLink').href = 'https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=anthonybrown_@hotmail.co.uk&item_name=Computer+Repair+-+AB+Repairs+Cardiff&currency_code=GBP&amount=' + amt;
+// Animate all counters on load
+setTimeout(() => {
+  animateCounter('visitorCount', totalVisitors, 2000);
+  animateCounter('reviewCount', 47, 1500);
+  animateCounter('repairCount', 500, 1800);
+  animateCounter('totalReviews', 47, 1500);
+}, 3000); // Wait for intro animation
+
+// Slowly increment visitor count every 45 seconds to look live
+setInterval(() => {
+  totalVisitors++;
+  document.getElementById('visitorCount').textContent = totalVisitors.toLocaleString();
+}, 45000);
+
+// Open/closed status based on real time
+function updateOpenStatus() {
+  const now = new Date();
+  const day = now.getDay(); // 0=Sun, 6=Sat
+  const hour = now.getHours();
+  const statusEl = document.querySelector('.cbar-num[style*="green"]');
+  if(!statusEl) return;
+  let isOpen = false;
+  if(day >= 1 && day <= 5 && hour >= 9 && hour < 18) isOpen = true; // Mon-Fri 9-6
+  if(day === 6 && hour >= 10 && hour < 16) isOpen = true; // Sat 10-4
+  statusEl.textContent = isOpen ? 'OPEN' : 'CLOSED';
+  statusEl.style.color = isOpen ? 'var(--green)' : 'var(--red)';
 }
-</script>
+updateOpenStatus();
 
-
-
-<!-- SLIDE 2 — FREE DIAGNOSTIC -->
-<div class="slide" id="s2">
-  <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
-  <div class="s2-grid">
-    <div class="aL">
-      <div class="s2-icon">&#128269;</div>
-      <p class="s2-tag">Our Promise</p>
-      <h2 class="s2-h">Completely<br><em>Free</em><br>Diagnostic</h2>
-      <div class="gold-line-thin" style="width:200px;margin:20px 0;"></div>
-      <p class="s2-body">Not sure what's wrong with your PC or laptop? Bring it in and we'll diagnose the problem completely free — no obligation, no hidden charges.</p>
-    </div>
-    <div class="s2-points aR">
-      <div class="s2-pt a1"><div class="s2-pt-icon">&#9989;</div><div><div class="s2-pt-t">No Obligation</div><div class="s2-pt-s">Free — no pressure to proceed</div></div></div>
-      <div class="s2-pt a2"><div class="s2-pt-icon">&#128269;</div><div><div class="s2-pt-t">Expert Diagnosis</div><div class="s2-pt-s">Years of experience identifying issues</div></div></div>
-      <div class="s2-pt a3"><div class="s2-pt-icon">&#9889;</div><div><div class="s2-pt-t">Same Day Available</div><div class="s2-pt-s">Drop off and pick up same day</div></div></div>
-      <div class="s2-pt a4"><div class="s2-pt-icon">&#128176;</div><div><div class="s2-pt-t">No Fix, No Fee</div><div class="s2-pt-s">On data recovery — guaranteed</div></div></div>
-      <div class="s2-pt a5"><div class="s2-pt-icon">&#128205;</div><div><div class="s2-pt-t">Cardiff Based</div><div class="s2-pt-s">Serving Cardiff &amp; South Wales</div></div></div>
-    </div>
-  </div>
-</div>
-
-<!-- SLIDE 3 — SERVICES -->
-<div class="slide" id="s3">
-  <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
-  <div class="s3-wrap">
-    <p class="s3-eye a1">What We Fix</p>
-    <h2 class="s3-title a2">Our <em style="font-style:italic;color:var(--gold);">Services</em></h2>
-    <div class="gold-line a3" style="width:300px;margin-bottom:0;"></div>
-    <div class="s3-grid">
-      <div class="s3-card a1"><span class="s3-icon">&#128295;</span><div class="s3-name">Hardware Repair</div><div class="s3-price">From £45</div></div>
-      <div class="s3-card a2"><span class="s3-icon">&#129440;</span><div class="s3-name">Virus Removal</div><div class="s3-price">From £40</div></div>
-      <div class="s3-card a3"><span class="s3-icon">&#128191;</span><div class="s3-name">Windows Install</div><div class="s3-price">From £50</div></div>
-      <div class="s3-card a4"><span class="s3-icon">&#128421;</span><div class="s3-name">Custom PC Build</div><div class="s3-price">From £80</div></div>
-      <div class="s3-card a5"><span class="s3-icon">&#128190;</span><div class="s3-name">Data Recovery</div><div class="s3-price">From £60</div></div>
-      <div class="s3-card a6"><span class="s3-icon">&#9889;</span><div class="s3-name">Speed Boost</div><div class="s3-price">From £35</div></div>
-      <div class="s3-card a1"><span class="s3-icon">&#128246;</span><div class="s3-name">Network Setup</div><div class="s3-price">From £45</div></div>
-      <div class="s3-card free a2"><span class="s3-icon">&#128269;</span><div class="s3-name">Free Diagnostic</div><div class="s3-price shimmer">FREE!</div></div>
-    </div>
-  </div>
-</div>
-
-<!-- SLIDE 4 — SAME DAY -->
-<div class="slide" id="s4">
-  <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
-  <div class="s4-wrap">
-    <span class="s4-icon aS">&#9889;</span>
-    <p class="s4-label a1">Cardiff's Fastest</p>
-    <h2 class="s4-h a2"><span class="g">Same</span><br>Day</h2>
-    <h3 class="a3" style="font-family:'Playfair Display',serif;font-size:clamp(18px,3vw,40px);color:var(--white);font-weight:400;letter-spacing:6px;text-transform:uppercase;margin-top:8px;">Service</h3>
-    <div class="gold-line a4" style="width:300px;margin:24px auto;"></div>
-    <p class="s4-sub a4">Drop off in the morning — pick up the same day</p>
-    <div class="s4-stats a5">
-      <div class="s4-stat"><span class="s4-num shimmer">1hr</span><span class="s4-lbl">Response Time</span></div>
-      <div class="s4-stat"><span class="s4-num shimmer">£0</span><span class="s4-lbl">Diagnostic Fee</span></div>
-      <div class="s4-stat"><span class="s4-num shimmer">★5</span><span class="s4-lbl">Star Rating</span></div>
-      <div class="s4-stat"><span class="s4-num shimmer">100%</span><span class="s4-lbl">Satisfaction</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- SLIDE 5 — PAYMENT -->
-<div class="slide" id="s5">
-  <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
-  <div class="s5-wrap">
-    <p class="aD" style="font-size:11px;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:12px;">Trusted &amp; Secure</p>
-    <h2 class="s5-title a1">We <em style="font-style:italic;color:var(--gold);">Accept</em></h2>
-    <div class="gold-line a2" style="width:200px;margin-bottom:16px;"></div>
-    <p class="s5-sub a3">All Major Payment Methods</p>
-    <div class="s5-pays">
-      <div class="s5-pay a1"><span style="font-size:20px;font-weight:900;font-style:italic;color:#1a1f71;background:#fff;padding:2px 8px;">VISA</span></div>
-      <div class="s5-pay a2"><span style="display:inline-flex;align-items:center;"><span style="width:20px;height:20px;background:#eb001b;border-radius:50%;display:inline-block;"></span><span style="width:20px;height:20px;background:#f79e1b;border-radius:50%;display:inline-block;margin-left:-8px;"></span></span> Mastercard</div>
-      <div class="s5-pay a3" style="background:#016fd0;"><span style="font-size:10px;font-weight:900;color:#fff;line-height:1.2;text-align:center;">AMERICAN<br>EXPRESS</span></div>
-      <div class="s5-pay a4"><span style="font-weight:900;color:#003087;">Pay<span style="color:#009cde;">Pal</span></span></div>
-      <div class="s5-pay a5" style="background:#000;color:#fff;"> Pay</div>
-      <div class="s5-pay a6"><span style="font-weight:700;font-size:12px;"><span style="color:#4285f4;">G</span><span style="color:#ea4335;">o</span><span style="color:#fbbc05;">o</span><span style="color:#4285f4;">g</span><span style="color:#34a853;">l</span><span style="color:#ea4335;">e</span> Pay</span></div>
-      <div class="s5-pay a1" style="color:#2d7a22;">&#128181; Cash</div>
-    </div>
-    <div class="gold-line a3" style="width:600px;max-width:90%;margin-bottom:32px;"></div>
-    <div class="s5-trusts">
-      <div class="s5-trust a1"><span class="s5-t-icon">&#128274;</span><div class="s5-t-text">256-bit SSL</div><div class="s5-t-sub">Fully Secure</div></div>
-      <div class="s5-trust a2"><span class="s5-t-icon">&#9889;</span><div class="s5-t-text">Same Day</div><div class="s5-t-sub">Fast Service</div></div>
-      <div class="s5-trust a3"><span class="s5-t-icon">&#11088;&#11088;&#11088;&#11088;&#11088;</span><div class="s5-t-text">5 Star Rated</div><div class="s5-t-sub">Cardiff's Best</div></div>
-      <div class="s5-trust a4"><span class="s5-t-icon">&#128737;</span><div class="s5-t-text">No Fix No Fee</div><div class="s5-t-sub">Data Recovery</div></div>
-      <div class="s5-trust a5"><span class="s5-t-icon">&#128205;</span><div class="s5-t-text">Cardiff Based</div><div class="s5-t-sub">South Wales</div></div>
-    </div>
-  </div>
-</div>
-
-<!-- SLIDE 6 — CTA -->
-<div class="slide" id="s6">
-  <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
-  <div class="s6-wrap">
-    <span class="s6-stars aS">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-    <h2 class="s6-h a1">Ready to <em>Fix</em><br>Your PC?</h2>
-    <div class="gold-line a2" style="width:300px;margin:24px auto;"></div>
-    <p class="s6-body a3">Cardiff's most trusted computer repair service.<br>Fast &middot; Honest &middot; Affordable &middot; Professional</p>
-    <div class="s6-btns a4">
-      <a href="tel:+447362991167" class="s6-btn1">&#128222; Call Now</a>
-      <a href="https://wa.me/447362991167" class="s6-btn2">&#128172; WhatsApp</a>
-    </div>
-    <div class="gold-line-thin a5" style="width:400px;margin-bottom:32px;"></div>
-    <p style="font-size:.75rem;color:var(--text);opacity:.4;letter-spacing:2px;">
-      &copy; 2026 AB Computer Repairs Cardiff. All Rights Reserved.
-    </p>
-  </div>
-</footer>
-
-<canvas id="particle-canvas"></canvas>
-<canvas id="circuit-canvas"></canvas>
-
-<script>
-// ── PARTICLE SYSTEM ──
-(function() {
-  const canvas = document.getElementById('particle-canvas');
-  const ctx = canvas.getContext('2d');
-  
-  function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
-  
-  const particles = [];
-  const GOLD = 'rgba(212,175,55,';
-  
-  class Particle {
-    constructor() {
-      this.reset();
-    }
-    reset() {
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      this.size = Math.random() * 2.5 + 0.5;
-      this.speedX = (Math.random() - 0.5) * 0.4;
-      this.speedY = (Math.random() - 0.5) * 0.4;
-      this.opacity = Math.random() * 0.5 + 0.1;
-      this.life = Math.random() * 200 + 100;
-      this.maxLife = this.life;
-      this.twinkle = Math.random() * Math.PI * 2;
-    }
-    update() {
-      this.x += this.speedX;
-      this.y += this.speedY;
-      this.life--;
-      this.twinkle += 0.05;
-      if(this.life <= 0 || this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
-        this.reset();
-      }
-    }
-    draw() {
-      const fade = this.life / this.maxLife;
-      const twinkleOp = (Math.sin(this.twinkle) * 0.3 + 0.7) * this.opacity * fade;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = GOLD + twinkleOp + ')';
-      ctx.fill();
-    }
-  }
-  
-  for(let i = 0; i < 80; i++) {
-    particles.push(new Particle());
-  }
-  
-  function animateParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => { p.update(); p.draw(); });
-    requestAnimationFrame(animateParticles);
-  }
-  animateParticles();
-})();
-
-// ── CIRCUIT BOARD ──
-(function() {
-  const canvas = document.getElementById('circuit-canvas');
-  const ctx = canvas.getContext('2d');
-  
-  function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
-  
-  const lines = [];
-  const dots = [];
-  let offset = 0;
-  
-  // Create circuit grid
-  const spacing = 80;
-  for(let x = 0; x < window.innerWidth + spacing; x += spacing) {
-    for(let y = 0; y < window.innerHeight + spacing; y += spacing) {
-      if(Math.random() > 0.5) {
-        lines.push({
-          x1: x, y1: y,
-          x2: x + (Math.random() > 0.5 ? spacing : 0),
-          y2: y + (Math.random() > 0.5 ? spacing : 0),
-          speed: Math.random() * 0.5 + 0.2,
-          progress: Math.random()
-        });
-      }
-      if(Math.random() > 0.7) {
-        dots.push({x, y, size: Math.random() * 3 + 1});
-      }
-    }
-  }
-  
-  function drawCircuit() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    // Draw static lines
-    ctx.strokeStyle = 'rgba(212,175,55,0.12)';
-    ctx.lineWidth = 1;
-    lines.forEach(line => {
-      ctx.beginPath();
-      ctx.moveTo(line.x1, line.y1);
-      ctx.lineTo(line.x2, line.y2);
-      ctx.stroke();
-    });
-    
-    // Draw animated pulse
-    lines.forEach(line => {
-      line.progress += line.speed * 0.005;
-      if(line.progress > 1) line.progress = 0;
-      
-      const px = line.x1 + (line.x2 - line.x1) * line.progress;
-      const py = line.y1 + (line.y2 - line.y1) * line.progress;
-      
-      ctx.beginPath();
-      ctx.arc(px, py, 2, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(212,175,55,0.6)';
-      ctx.fill();
-    });
-    
-    // Draw dots
-    dots.forEach(dot => {
-      ctx.beginPath();
-      ctx.arc(dot.x, dot.y, dot.size, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(212,175,55,0.2)';
-      ctx.fill();
-    });
-    
-    requestAnimationFrame(drawCircuit);
-  }
-  drawCircuit();
-})();
-
-// ── SCROLL REVEAL ──
-(function() {
-  const reveals = document.querySelectorAll('.fi, .section-inner, .srv-card, .rev-card, .why-panel, .pay-card');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if(entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('reveal', 'visible');
-        }, i * 100);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  
-  reveals.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
-    observer.observe(el);
-  });
-})();
-</script>
-
-<div id="scroll-progress"></div>
-
-<script>
-// ── SCROLL PROGRESS BAR ──
-window.addEventListener('scroll', () => {
-  const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-  document.getElementById('scroll-progress').style.width = scrolled + '%';
-});
-
-// ── CURSOR TRAIL ──
-(function() {
-  const trails = [];
-  const numTrails = 8;
-  
-  for(let i = 0; i < numTrails; i++) {
-    const trail = document.createElement('div');
-    trail.className = 'cursor-trail';
-    const size = (numTrails - i) * 3;
-    trail.style.cssText = `width:${size}px;height:${size}px;opacity:${(numTrails-i)/numTrails * 0.6};`;
-    document.body.appendChild(trail);
-    trails.push({el: trail, x: 0, y: 0});
-  }
-  
-  let mouseX = 0, mouseY = 0;
-  document.addEventListener('mousemove', e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-  
-  function animateTrail() {
-    let x = mouseX, y = mouseY;
-    trails.forEach((trail, i) => {
-      trail.el.style.left = x + 'px';
-      trail.el.style.top = y + 'px';
-      const prev = trails[i - 1] || {x: mouseX, y: mouseY};
-      trail.x += (prev.x - trail.x) * 0.4;
-      trail.y += (prev.y - trail.y) * 0.4;
-      x = trail.x;
-      y = trail.y;
-    });
-    requestAnimationFrame(animateTrail);
-  }
-  animateTrail();
-})();
-
-// ── 3D TILT ON SERVICE CARDS ──
-(function() {
-  document.querySelectorAll('.srv-card').forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      const rotateX = (y - centerY) / 8;
-      const rotateY = (centerX - x) / 8;
-      card.style.transform = `translateY(-8px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-      card.style.transition = 'transform 0.5s ease';
-    });
-  });
-})();
-
-// ── MAGNETIC BUTTONS ──
-(function() {
-  document.querySelectorAll('.nav-cta, .form-submit').forEach(btn => {
-    btn.addEventListener('mousemove', e => {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
-    });
-    btn.addEventListener('mouseleave', () => {
-      btn.style.transform = '';
-      btn.style.transition = 'transform 0.3s ease';
-    });
-  });
-})();
-
-// ── COUNTER ANIMATION ──
-(function() {
-  const counters = document.querySelectorAll('.stat-num, [data-count]');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) {
-        const target = parseInt(entry.target.textContent);
-        if(!isNaN(target)) {
-          let count = 0;
-          const increment = target / 50;
-          const timer = setInterval(() => {
-            count += increment;
-            if(count >= target) { count = target; clearInterval(timer); }
-            entry.target.textContent = Math.floor(count) + (entry.target.dataset.suffix || '');
-          }, 30);
-        }
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {threshold: 0.5});
-  counters.forEach(c => observer.observe(c));
-})();
 </script>
 </body>
 </html>
