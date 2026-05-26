@@ -1231,6 +1231,7 @@ h1, h2, h3, h4 { font-family: 'Libre Baskerville', serif; }
   font-size:clamp(16px,3vw,22px);font-weight:700;
   color:var(--gold2);line-height:1.1;
 }
+#sb-avail{font-size:clamp(14px,2.5vw,18px);letter-spacing:.05em}
 .sb-lbl{
   font-family:'Cinzel',serif;
   font-size:8px;letter-spacing:.15em;text-transform:uppercase;
@@ -1290,7 +1291,9 @@ h1, h2, h3, h4 { font-family: 'Libre Baskerville', serif; }
 @media(max-width:600px){
   #stats-bar{grid-template-columns:repeat(2,1fr)}
   .stat-box{border-bottom:1px solid var(--border)}
-  #biz-header{flex-direction:column;align-items:flex-start}
+  #biz-header{flex-direction:row;align-items:center;padding:10px 14px;gap:10px}
+  #biz-header > div:first-child{flex:1;min-width:0}
+  #biz-header a{padding:9px 14px;font-size:11px;white-space:nowrap}
 }
 
 </style>
@@ -1325,13 +1328,7 @@ h1, h2, h3, h4 { font-family: 'Libre Baskerville', serif; }
 
 
 <!-- ════ BUSINESS CARD HEADER ════ -->
-<div id="biz-header" style="margin-top:70px; style="
-  background:var(--dark);
-  border-bottom:1px solid var(--border2);
-  padding:14px 24px;
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
-  flex-wrap:wrap;
-">
+<div id="biz-header" style="margin-top:70px;background:var(--dark);border-bottom:1px solid var(--border2);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
   <div style="display:flex;align-items:center;gap:16px">
     <div style="
       width:58px;height:58px;flex-shrink:0;
@@ -1342,7 +1339,7 @@ h1, h2, h3, h4 { font-family: 'Libre Baskerville', serif; }
     ">AB</div>
     <div>
       <div style="font-family:'Libre Baskerville',serif;font-size:16px;font-weight:700;color:var(--white);letter-spacing:.02em">Computer Repairs Cardiff</div>
-      <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:.2em;color:var(--muted);margin-top:3px;text-transform:uppercase">57 Handley Road, Cardiff CF24 2HF</div>
+      <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:.2em;color:var(--muted);margin-top:3px;text-transform:uppercase">17 Richmond Road, Cardiff CF24 3AQ</div>
     </div>
   </div>
   <a href="#contact" style="
@@ -1399,7 +1396,7 @@ h1, h2, h3, h4 { font-family: 'Libre Baskerville', serif; }
   </div>
   <div class="stat-box">
     <span class="sb-dot" id="avail-dot" style="background:#22cc66"></span>
-    <div class="sb-num" id="sb-avail" style="color:#22cc66">OPEN</div>
+    <div class="sb-num" id="sb-avail" style="color:var(--gold2)">--</div>
     <div class="sb-lbl">Available Now</div>
   </div>
 </div>
@@ -1432,7 +1429,7 @@ h1, h2, h3, h4 { font-family: 'Libre Baskerville', serif; }
       transition:box-shadow .3s,background .3s;
     " onmouseover="this.style.boxShadow='0 0 18px rgba(255,215,0,.3)';this.style.background='rgba(212,160,23,.08)'"
        onmouseout="this.style.boxShadow='none';this.style.background='transparent'">
-      📞 07362 991167
+      07362 991167
     </a>
     <a href="https://m.facebook.com/profile.php?id=61575739385660" target="_blank" class="nav-fb" id="fb-nav">
       <span>f</span> Facebook
@@ -2629,7 +2626,7 @@ function updateStatus(){
     txt.style.color = '#ff4444';
     txt.textContent = 'CLOSED';
     availDot.style.background = '#ff4444';
-    availTxt.style.color = '#ff4444';
+    availTxt.style.color = 'var(--gold2)';
     availTxt.textContent = 'CLOSED';
   }
 }
