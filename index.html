@@ -1365,37 +1365,9 @@ h1, h2, h3, h4 { font-family: 'Libre Baskerville', serif; }
 </div>
 
 
-<!-- ════ BUSINESS CARD HEADER ════ -->
-<div id="biz-header" style="margin-top:72px;background:var(--dark);border-bottom:1px solid var(--border2);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:nowrap;overflow:hidden;">
-  <div style="display:flex;align-items:center;gap:16px">
-    <div style="
-      width:58px;height:58px;flex-shrink:0;
-      background:linear-gradient(135deg,var(--gold4),var(--gold2));
-      display:flex;align-items:center;justify-content:center;
-      font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;
-      color:var(--black);
-    ">AB</div>
-    <div>
-      <div style="font-family:'Libre Baskerville',serif;font-size:16px;font-weight:700;color:var(--white);letter-spacing:.02em">Computer Repairs Cardiff</div>
-      <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:.2em;color:var(--muted);margin-top:3px;text-transform:uppercase">17 Richmond Road, Cardiff CF24 3AQ</div>
-    </div>
-  </div>
-  <a href="#contact" style="
-    display:inline-flex;align-items:center;gap:6px;
-    background:linear-gradient(135deg,var(--gold4),var(--gold2));
-    color:var(--black);padding:9px 14px;text-decoration:none;
-    font-family:'Libre Baskerville',serif;font-size:12px;font-weight:700;
-    letter-spacing:.04em;white-space:nowrap;flex-shrink:0;
-    transition:box-shadow .3s;
-    clip-path:polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);
-  " onmouseover="this.style.boxShadow='0 0 24px rgba(255,215,0,.4)'"
-     onmouseout="this.style.boxShadow='none'">
-    🛒 Book &amp; Pay
-  </a>
-</div>
 
 <!-- ════ OPEN/CLOSED STATUS BAR ════ -->
-<div id="status-bar" style="
+<div id="status-bar" style="margin-top:72px;
   background:var(--black);
   border-bottom:1px solid var(--border);
   padding:10px 24px;
@@ -1445,7 +1417,7 @@ h1, h2, h3, h4 { font-family: 'Libre Baskerville', serif; }
     <div class="nav-logo-badge">AB</div>
     <div>
       <div class="nav-logo-text">AB Computer Repairs</div>
-      <div class="nav-logo-sub">Cardiff &amp; South Wales</div>
+      <div class="nav-logo-sub">17 Richmond Road · CF24 3AQ</div>
     </div>
   </a>
   <ul class="nav-links">
@@ -1472,9 +1444,30 @@ h1, h2, h3, h4 { font-family: 'Libre Baskerville', serif; }
     <a href="https://m.facebook.com/profile.php?id=61575739385660" target="_blank" class="nav-fb" id="fb-nav">
       <span>f</span> Facebook
     </a>
-    <button class="nav-cta" onclick="scrollTo('contact')">Book Now</button>
+    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">🛒 Book &amp; Pay</button>
+    <button class="nav-basket" id="nav-basket" onclick="openBasket()" title="Your Basket">
+      <span class="nav-basket-icon">🛒</span>
+      <span class="basket-count" id="basket-count">0</span>
+    </button>
   </div>
 </nav>
+
+<!-- ════ ADDRESS BAR ════ -->
+<div style="
+  margin-top:72px;
+  background:rgba(10,8,14,.95);
+  border-bottom:1px solid rgba(212,160,23,.2);
+  padding:7px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:8px;
+">
+  <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:.2em;color:rgba(212,160,23,.6);text-transform:uppercase">
+    📍 17 Richmond Road, Cardiff CF24 3AQ
+  </div>
+  <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:.15em;color:rgba(212,160,23,.4);text-transform:uppercase">
+    Mon–Fri 9–6 &nbsp;·&nbsp; Sat 10–4 &nbsp;·&nbsp; Sun by Appointment
+  </div>
+</div>
 
 <!-- ════ HERO ════ -->
 <section class="hero">
