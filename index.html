@@ -1300,9 +1300,9 @@ h1, h2, h3, h4 { font-family: 'Libre Baskerville', serif; }
 /* ═══ MOBILE HEADER FIX ═══ */
 @media(max-width:768px){
   nav{
-    padding:12px 14px !important;
+    padding:10px 10px !important;
     flex-wrap:nowrap !important;
-    gap:8px !important;
+    gap:6px !important;
   }
   .nav-logo-badge{width:32px !important;height:32px !important;font-size:12px !important}
   .nav-logo-text{font-size:13px !important}
@@ -1444,7 +1444,7 @@ h1, h2, h3, h4 { font-family: 'Libre Baskerville', serif; }
     <a href="https://m.facebook.com/profile.php?id=61575739385660" target="_blank" class="nav-fb" id="fb-nav">
       <span>f</span> Facebook
     </a>
-    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">🛒 Book &amp; Pay</button>
+    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="white-space:nowrap;min-width:fit-content">🛒 Book &amp; Pay</button>
     <button class="nav-basket" id="nav-basket" onclick="openBasket()" title="Your Basket">
       <span class="nav-basket-icon">🛒</span>
       <span class="basket-count" id="basket-count">0</span>
@@ -1455,17 +1455,23 @@ h1, h2, h3, h4 { font-family: 'Libre Baskerville', serif; }
 <!-- ════ ADDRESS BAR ════ -->
 <div style="
   margin-top:72px;
-  background:rgba(10,8,14,.95);
-  border-bottom:1px solid rgba(212,160,23,.2);
-  padding:7px 24px;
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:8px;
+  background:linear-gradient(135deg,#1a1000,#2a1c00,#1a1000);
+  border-top:2px solid var(--gold2);
+  border-bottom:2px solid var(--gold4);
+  padding:10px 20px;
+  display:flex;align-items:center;justify-content:center;
+  flex-wrap:wrap;gap:16px;
+  box-shadow:0 4px 20px rgba(255,215,0,.15), inset 0 1px 0 rgba(255,215,0,.1);
 ">
-  <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:.2em;color:rgba(212,160,23,.6);text-transform:uppercase">
-    📍 17 Richmond Road, Cardiff CF24 3AQ
+  <div style="display:flex;align-items:center;gap:6px">
+    <span style="color:var(--gold2);font-size:14px">📍</span>
+    <span style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:.2em;color:var(--gold2);text-transform:uppercase;font-weight:700">17 Richmond Road, Cardiff CF24 3AQ</span>
   </div>
-  <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:.15em;color:rgba(212,160,23,.4);text-transform:uppercase">
-    Mon–Fri 9–6 &nbsp;·&nbsp; Sat 10–4 &nbsp;·&nbsp; Sun by Appointment
+  <span style="color:rgba(212,160,23,.4);font-size:10px">◆</span>
+  <div style="display:flex;align-items:center;gap:6px">
+    <span id="addr-status-dot" style="width:8px;height:8px;border-radius:50%;background:#ff4444;display:inline-block;box-shadow:0 0 6px #ff4444"></span>
+    <span id="addr-status-txt" style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:.18em;color:#ff4444;text-transform:uppercase;font-weight:700">CLOSED</span>
+    <span style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:.12em;color:rgba(212,160,23,.5);text-transform:uppercase">&nbsp;Mon–Fri 9–6 · Sat 10–4 · Sun Appt</span>
   </div>
 </div>
 
@@ -2658,6 +2664,7 @@ function updateStatus(){
     txt.textContent = 'CLOSED';
     availDot.style.background = '#ff4444';
     availTxt.style.color = 'var(--gold2)';
+    availTxt.style.fontSize = 'clamp(14px,2.5vw,18px)';
     availTxt.textContent = 'CLOSED';
   }
 }
